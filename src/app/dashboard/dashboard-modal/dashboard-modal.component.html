@@ -1,0 +1,17 @@
+<h1 mat-dialog-title style="border-bottom: 1px solid #00124B" >BTC Subscribe</h1>
+<div mat-dialog-content>
+  <p>Subscription Amount</p>
+  <form class="example-form">
+    <div fxLayout="column" fxLayoutAlign="start stretch" >
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Please Enter The Quantity" value="">
+    </mat-form-field>
+    <mat-checkbox style="font-size: 10px" >I have Read And I Agree To <a href="">Didex Invest Service Agreement</a></mat-checkbox>
+</div>
+  </form>
+</div>
+<div mat-dialog-actions>
+<!--  <button mat-button (click)="onNoClick()">No Thanks</button>-->
+  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial color="primary" style="width: 100%" >Ok</button>
+</div>
+

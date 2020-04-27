@@ -1,0 +1,46 @@
+table {
+  width: 100%;
+}
+.tableDesign{
+  box-shadow: none;
+  border: 1px solid white;
+  border-radius: 8px;
+  margin: 20px auto;
+  border-spacing: unset;
+  width: 80%;
+  text-align: center;
+
+}
+td.mat-cell, td.mat-footer-cell, th.mat-header-cell {
+  text-align: center;
+}
+.header{
+  padding: 20px;
+  text-align: center;
+  background-color: #162A6D;
+}
+.investment-header{
+  width: 80%;
+  margin: auto;
+  padding: 30px 0;
+}
+.table-header{
+  border-bottom: 1px solid white;
+  padding: 25px;
+  text-align: left;
+}
+.table-footer{
+  background-color: #0D2161;
+  border-radius: 10px;
+}
+.button-carousels{
+  margin-top: 5px;
+  width: 100%;
+}
+.item-carousels{
+  align-content: center;
+  border: 1px solid white;
+  padding: 5px;
+  border-radius: 8px;
+  margin: 0 5px;
+}

@@ -1,0 +1,14 @@
+.display-hide {
+  display: flex !important;
+}
+.display-show{
+  display: none !important;
+}
+@media only screen and (max-width: 950px) {
+  .display-hide {
+    display: none !important;
+  }
+  .display-show{
+      display: flex !important;
+  }
+}
