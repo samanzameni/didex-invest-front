@@ -3,6 +3,11 @@ import {MatTableDataSource} from '@angular/material/table';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
 import {DashboardModalComponent} from './dashboard-modal/dashboard-modal.component';
+import {DashboardService} from '../@core/Dashboard/dashboard.service';
+import {Funds} from '../@core/Dashboard/funds';
+import {Records} from '../@core/Dashboard/records';
+import {OpenClose} from '../@core/Dashboard/open-close';
+import {FundsType} from '../@core/Dashboard/funds-type.enum';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,74 +16,90 @@ import {DashboardModalComponent} from './dashboard-modal/dashboard-modal.compone
 })
 
 export class DashboardComponent implements OnInit {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
-  Images = [ '../../assets/1.jpg', '../../assets/2.png', '../../assets/3.jpg' , '../../assets/logo didex - 002.svg'];
+  constructor(public dialog: MatDialog, private dashboardService: DashboardService) {
+    this.open = {
+      fundId: null,
+      amount: null,
+    };
+    this.close = {
+      fundId: null,
+    };
+  }
+
+  funds: Funds[];
+  records: Records[];
+  open: OpenClose;
+  close: OpenClose;
+  panelOpenState = false;
+  displayedColumns: string[] = ['timeStamp', 'fundName', 'type', 'brfore', 'after', 'accrued', 'id'];
+  dataSource = new MatTableDataSource();
+  fundsEnum = FundsType;
   CarouselOptions = {
     responsive: {
       320: {
         items: 1
-
       },
       600: {
         items: 2
-
       },
-      980: {
+      1000: {
+        items: 2
+      },
+      1200: {
         items: 3, dots: true, nav: true,
       }
     }
   };
-  animal: string;
-  name: string;
-  constructor(public dialog: MatDialog) {}
-  openDialog(): void {
+  showFunds() {
+    return this.dashboardService.getFunds().subscribe(
+      (res: any) => {
+        console.log(res);
+        this.funds = res;
+      },
+      err => {
+        console.log(err);
+      },
+    );
+  }
+
+  showRecords() {
+    return this.dashboardService.getRecords().subscribe(
+      (res: any) => {
+        console.log(res);
+        this.records = res;
+        this.dataSource.data = this.records;
+        this.dataSource.paginator = this.paginator;
+      },
+      err => {
+        console.log(err);
+      },
+    );
+  }
+
+  closePost(fundId) {
+    this.close.fundId = fundId;
+    return this.dashboardService.postClose(this.close).subscribe(
+      (res: any) => {
+        console.log(res);
+      },
+      err => {
+        console.log(err);
+      },
+    );
+  }
+  openDialog(fund): void {
+    this.open.fundId = fund.id;
     const dialogRef = this.dialog.open(DashboardModalComponent, {
-      width: '450px',
-
-      data: {name: this.name, animal: this.animal}
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      this.animal = result;
+      width: '500px',
+      data: {id: this.open.fundId}
     });
   }
 
   ngOnInit() {
-    this.dataSource.paginator = this.paginator;
+    this.showFunds();
+    this.showRecords();
   }
 }
 
-export interface DialogData {
-  animal: 'panda' | 'unicorn' | 'lion';
-}
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-  {position: 11, name: 'Sodium', weight: 22.9897, symbol: 'Na'},
-  {position: 12, name: 'Magnesium', weight: 24.305, symbol: 'Mg'},
-  {position: 13, name: 'Aluminum', weight: 26.9815, symbol: 'Al'},
-  {position: 14, name: 'Silicon', weight: 28.0855, symbol: 'Si'},
-  {position: 15, name: 'Phosphorus', weight: 30.9738, symbol: 'P'},
-  {position: 16, name: 'Sulfur', weight: 32.065, symbol: 'S'},
-  {position: 17, name: 'Chlorine', weight: 35.453, symbol: 'Cl'},
-  {position: 18, name: 'Argon', weight: 39.948, symbol: 'Ar'},
-  {position: 19, name: 'Potassium', weight: 39.0983, symbol: 'K'},
-  {position: 20, name: 'Calcium', weight: 40.078, symbol: 'Ca'},
-];

@@ -177,6 +177,10 @@ a{
   background-color: #f5aa28;
   color: white;
 }
+.mat-button.mat-accent, .mat-icon-button.mat-accent, .mat-stroked-button.mat-accent {
+  background-color: #047ff8;
+  color: white;
+}
 .mat-menu-content:not(:empty){
   background-color: #162A6D ;
 }
@@ -184,3 +188,30 @@ a{
   font-family: overpass;
   src: url(assets/font/overpass/overpass-regular.otf) format("opentype");
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.mat-accordion>.mat-expansion-panel-spacing:last-child, .mat-accordion>:last-child:not(.mat-expansion-panel) .mat-expansion-panel-spacing{
+  background-color: #0D2161;
+}
+.mat-expansion-panel-header:not([aria-disabled=true]){
+  background-color: #0D2161;
+}
+
+.mat-expansion-panel .mat-expansion-panel-header.cdk-keyboard-focused:not([aria-disabled=true]), .mat-expansion-panel .mat-expansion-panel-header.cdk-program-focused:not([aria-disabled=true]), .mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:hover:not([aria-disabled=true]){
+  background: #0D2161;
+}
+.mat-expansion-panel-content{
+  background: #0D2161;
+}
+.mat-stroked-button:not([disabled]) {
+  border-color: #f44336;
+}
+

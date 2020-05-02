@@ -1,11 +1,17 @@
 .display-hide {
   display: flex !important;
 }
+.display-hide-logo {
+  display: inline-block !important;
+}
 .display-show{
   display: none !important;
 }
 @media only screen and (max-width: 950px) {
   .display-hide {
+    display: none !important;
+  }
+  .display-hide-logo {
     display: none !important;
   }
   .display-show{
