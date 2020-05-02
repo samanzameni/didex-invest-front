@@ -1,0 +1,35 @@
+variables:
+  RELEASE_FOLDER: 'dist'
+  DEPLOY_FOLDER: 'c:\sites\didex.investClient'
+
+stages:
+  - build
+  - test
+  - deploy
+
+build_job:
+  stage: build
+  only:
+    - tags
+  script:
+    - npm i
+    - ng build --prod
+test_job:
+  stage: test
+  only:
+    - tags 
+  script:
+    - dir
+
+deploy_job:
+  stage: deploy
+  only:
+    - tags
+  script:
+    - npm i
+    - ng build --prod
+    - xcopy  /S /Q /Y /F .\dist C:\sites\didex.investClient\
+  dependencies:
+    - build_job
+    - test_job
+
