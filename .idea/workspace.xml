@@ -1,9 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="230ce5ad-3df5-4794-8dd6-769c16315bbf" name="Default Changelist" comment="">
+    <list default="true" id="230ce5ad-3df5-4794-8dd6-769c16315bbf" name="Default Changelist" comment="complete v1 with new route.">
+      <change afterPath="$PROJECT_DIR$/dist/Invest/3rdpartylicenses.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/Invest/5-es2015.3b88e0df223b14927ab0.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/Invest/5-es5.3b88e0df223b14927ab0.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/Invest/assets/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/Invest/assets/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/Invest/assets/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/Invest/assets/font/overpass/overpass-bold-italic.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/Invest/assets/font/overpass/overpass-bold.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/Invest/assets/font/overpass/overpass-extrabold-italic.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/Invest/assets/font/overpass/overpass-extrabold.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/Invest/assets/font/overpass/overpass-extralight-italic.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/Invest/assets/font/overpass/overpass-extralight.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/Invest/assets/font/overpass/overpass-heavy-italic.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/Invest/assets/font/overpass/overpass-heavy.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/Invest/assets/font/overpass/overpass-italic.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/Invest/assets/font/overpass/overpass-light-italic.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/Invest/assets/font/overpass/overpass-light.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/Invest/assets/font/overpass/overpass-regular.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/Invest/assets/font/overpass/overpass-semibold-italic.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/Invest/assets/font/overpass/overpass-semibold.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/Invest/assets/font/overpass/overpass-thin-italic.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/Invest/assets/font/overpass/overpass-thin.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/Invest/assets/logo didex - 002.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/Invest/assets/logo-white-symbol.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/Invest/assets/logo-white-text.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/Invest/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/Invest/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/Invest/main-es2015.8ba9f2d35cff16d2afe3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/Invest/main-es5.8ba9f2d35cff16d2afe3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/Invest/overpass-regular.e33eb0fdaa9b5610a9e0.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/Invest/owl.video.play.4a37f8008959c75f619b.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/Invest/polyfills-es2015.5b10b8fd823b6392f1fd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/Invest/polyfills-es5.3e8196928d184a6e5319.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/Invest/runtime-es2015.822436741cb032f00741.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/Invest/runtime-es5.822436741cb032f00741.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/Invest/scripts.4a4a815a9626fcecc4c8.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/Invest/styles.1d715ad333dbabd0118f.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/.cache/angular-build-dl/content-v2/sha512/12/d3/6426158bf0fc501a24db0cbb0f1d332053dfa2c9c3cf017ef48dcba8983f688c22951ecc8dc6724248ffde81508303bbdc9fd98d8f84e8a2dcb79e60a8c8" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/.cache/angular-build-dl/content-v2/sha512/1e/01/c18d246bc6707ee647b9cc2d66e7954531a32a6a55a2b1a4dffd0ce077d6911d2ee578256224fd20a439e982b55db6d68bdcb8cb35ec781c2793ae4e7efa" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/.cache/angular-build-dl/content-v2/sha512/1e/56/91efa0c3684ddd4520c12dfa1d680b70c509e1a83b2f8655c40130e9ad33606b3e16025e2feb2d5b6e38ce0c6bdd6b4129c48f86616ca4d0e87867cf3157" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/.cache/angular-build-dl/content-v2/sha512/51/c9/fad226cd1296a064f82433c47c87f1ff49b8d9be5c7bddccc2265aee4fc8841612f31bb172484e2ba77ac6fb8617d7ea0418f6f1ef74f549f7df94eb3b7a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/.cache/angular-build-dl/content-v2/sha512/57/d5/2355c7fbf9f0706227fb6490f9a8f1c45e11a7a59e242718087ba387dbc488d7fb86aed20a31b267a49e7ad07170d6fe023ccaa4f5da7a1226619e6d452a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/.cache/angular-build-dl/content-v2/sha512/a0/a5/d19bce870b87210bc1ac9ce97d996847718850c42f3eccfa3d56a47efac720ca326fc6cb87bff9e676a919ca4567d1d6d5dc8546a638c1b4650e87e7ddab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/.cache/angular-build-dl/content-v2/sha512/d3/15/4c27a22e79f8b13fe24192a3575dc439e6d5ceff19860ce2ffa517eb5b8f1a89f83a8438c7a5ec545b87a379ebda1f14a4424ccb47ed7187b4eac0bca715" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/.cache/angular-build-dl/index-v5/34/13/d9e0e185f85135fb94fe34e09f35cebf8cb114ba4e68d94d521dbdc10256" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/.cache/angular-build-dl/index-v5/3e/b4/f9f10c2246a5a4ef64472254fb8f72ffbafb9aab5257a9b33d8e9838486e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/.cache/angular-build-dl/index-v5/73/e6/8feb2b3f819ac60359e40e9ca3183f118c449ae646a847fd530510c259e4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/.cache/angular-build-dl/index-v5/7f/40/ef3024337701b2deb7e6817ff652e2b1774fd6147bf1d462b5ded0ad8972" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/.cache/angular-build-dl/index-v5/92/e8/f16ad191e96af67768817b3388712aad45160dd21e2154a4377071276f6f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/.cache/angular-build-dl/index-v5/ac/ab/74a8be843d18bf0b0109ac4943560a5d070f222f2095da9c8417be9f7c4c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/.cache/angular-build-dl/index-v5/af/21/3fb87a7c450f72f31c992b0c09507a4d97db14270f4888ba2b55e79ab3b7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/.cache/angular-build-dl/index-v5/b1/54/1f2521979f9b6f71d152bb144b33c9769914bafc86872eb67cefe305e7eb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/.cache/terser-webpack-plugin/content-v2/sha512/05/c5/79784f05efcceb27d23d5ea68c85d8db54b553dc69b3fb2e43a6140f9b4a9fff2a92c1a327c50d937f4740e13c2ce30d94a40eb92fe7ce901106bbf249fb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/.cache/terser-webpack-plugin/content-v2/sha512/1c/df/f315551f583a610aece3a667e2a12a3c842d88e491b677d1972d3a402b3bacb41ca042d329543aa1182ed5c08ffb814d816c6cccad69ac6e78fff5ab0120" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/.cache/terser-webpack-plugin/content-v2/sha512/23/18/8e40e8d07ee7e6a91e92baaf0be9131dcaceac610e7e5e667cf1bf5f5be9c4aa84eefe06b2794d1c3c0d950325a99e301cb5a62189b2dfc30988c5712b21" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/.cache/terser-webpack-plugin/content-v2/sha512/41/49/75da611e736e15141902d049c981847b6f54434c61afb20d66c68672c5b100f592d116512dffc4ddd1186c1b612971759a078ff3bd8b3d6ec9bedb46238c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/.cache/terser-webpack-plugin/content-v2/sha512/4f/aa/da6062533d38046cc21294c8b0f9f99f2a294fb4f8823f74d7ceaa6d969a0f607fe523a84493f781a5712d213b2412b7e9a1735b0854abfbf40a2efefa0e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/.cache/terser-webpack-plugin/content-v2/sha512/60/45/124575881f3efd46f606ef5270b13ba2f3ca4b8894c9be2ee98c6cda4596a13feed7bcabd45dcf913e19733d6160f88bf75cdb355696169806b5397e9fd5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/.cache/terser-webpack-plugin/content-v2/sha512/d0/a0/8f88cd69f85ce58511bb77ec891dda538af06956b491257c56d39062a173e44f58288ad1c0a79c36cc93e54e227f92e5416701490eebd4465c7176b09005" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/.cache/terser-webpack-plugin/index-v5/0d/6f/e54700460800bd50054d7cd85978894f21c422314ab8895622250d6dd6ac" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/.cache/terser-webpack-plugin/index-v5/22/07/ae11e8263e0324e91d1bb5b0d6525ceb30fc4fe936804da1b796fa07a848" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/.cache/terser-webpack-plugin/index-v5/6a/62/d2358ea67abdfbb3b81c38b0859ae1d2121d2d89facddfe8d9271a2ddb98" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/.cache/terser-webpack-plugin/index-v5/77/27/5c8a8894f2f6d32fd3bf3785b8d33a5bb1490c80fbec6e6310b185c87e12" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/.cache/terser-webpack-plugin/index-v5/89/f6/e3e33bc1f0e44069c98ca068baa69b6701ca52f5dc2506dc65f7698b781e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/.cache/terser-webpack-plugin/index-v5/bc/5a/15ddf2f6835a464a67680efbe4edf187e53fbafa02dd7409072ed5db98bc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/.cache/terser-webpack-plugin/index-v5/cd/d7/707c41bed0b82a446ddc09c99941574fd195ad0d8231cca69bf93c86788d" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitlab-ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.gitlab-ci.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/@core/Dashboard/funds.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/@core/Dashboard/funds.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/dashboard/dashboard.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/dashboard.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/dashboard/dashboard.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/dashboard.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +131,7 @@
       <workItem from="1587795831429" duration="5585000" />
       <workItem from="1587969266939" duration="7285000" />
       <workItem from="1588057622264" duration="774000" />
-      <workItem from="1588058451385" duration="60542000" />
+      <workItem from="1588058451385" duration="69838000" />
     </task>
     <task id="LOCAL-00001" summary="first push">
       <created>1587970575838</created>
@@ -100,7 +168,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588414805428</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="complete v1 with tag.">
+      <created>1588417027143</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1588417027143</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -123,21 +198,22 @@
     <MESSAGE value="push without node modules." />
     <MESSAGE value="complete v1." />
     <MESSAGE value="complete v1 with tag." />
-    <option name="LAST_COMMIT_MESSAGE" value="complete v1 with tag." />
+    <MESSAGE value="complete v1 with new route." />
+    <option name="LAST_COMMIT_MESSAGE" value="complete v1 with new route." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="423" y="0" key="CommitChangelistDialog2" timestamp="1588414799453">
+    <state x="324" y="0" key="CommitChangelistDialog2" timestamp="1588431487196">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="423" y="0" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1588414799453" />
+    <state x="324" y="0" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1588431487196" />
     <state x="580" y="186" key="FileChooserDialogImpl" timestamp="1588085715695">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="580" y="186" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1588085715695" />
-    <state x="392" y="160" key="Vcs.Push.Dialog.v2" timestamp="1588414863906">
+    <state x="392" y="160" key="Vcs.Push.Dialog.v2" timestamp="1588417099180">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="392" y="160" key="Vcs.Push.Dialog.v2/0.0.1600.860@0.0.1600.860" timestamp="1588414863906" />
+    <state x="392" y="160" key="Vcs.Push.Dialog.v2/0.0.1600.860@0.0.1600.860" timestamp="1588417099180" />
     <state x="486" y="146" width="627" height="568" key="find.popup" timestamp="1588155312325">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

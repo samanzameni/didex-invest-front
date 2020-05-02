@@ -23,16 +23,16 @@
             <div style="border-bottom: 1px solid white; padding: 5px; margin-bottom: 5px;">{{fun.name}}</div>
             <div fxLayout="row" fxLayoutAlign="start stretch" >
               <div fxFlex="50">hi</div>
-              <div fxFlex="50" style="text-align: right;">{{fun.minimumFund}} - {{fun.maximumFund}} {{fun.fundCurrencyShortName}}</div>
+              <div fxFlex="50" style="text-align: right;">{{fun.minimumFund}} - {{fun.maximumFund}} <b style="color: #F5AA28">{{fun.fundCurrencyShortName}}</b></div>
             </div>
             <div fxLayout="row" fxLayoutAlign="center stretch" >
               <div fxFlex="80">{{fun.fixedInterest}}% Per Year In Week</div>
             </div>
             <div fxLayout="row" fxLayoutAlign="center stretch" >
-              <div fxFlex="80">Min Per%0.5 - Max Per %0.5</div>
+              <div fxFlex="80">Duration: {{fun.yearsDisplay}}{{fun.monthsDisplay}}{{fun.daysDisplay}}</div>
             </div>
             <div fxLayout="row" fxLayoutAlign="center stretch" >
-              <div fxFlex="80">{{fundsEnum[fun.type]}} Plan</div>
+              <div fxFlex="80" style="color: #F5AA28; text-align: center"><b>{{fundsEnum[fun.type]}} Plan</b></div>
             </div>
             <div fxLayout="row" fxLayoutAlign="start stretch" >
               <div fxFlex="100"><button mat-raised-button color="primary" class="button-carousels" (click)="openDialog(fun)">Subscribe</button></div>
@@ -47,17 +47,13 @@
                       More
                     </mat-panel-title>
                   </mat-expansion-panel-header>
-                  <div fxLayout="row" fxLayoutAlign="start stretch" >
-                    <div fxFlex="50">hi</div>
-                    <div fxFlex="50" style="text-align: right;">hi</div>
+                  <div fxLayout="row" fxLayoutAlign="start stretch" style="font-size: 10px">
+                    <div fxFlex="50">Total Supply</div>
+                    <div fxFlex="50" style="text-align: right;">{{fun.totalSupply}} <b>{{fun.fundCurrencyShortName}}</b></div>
                   </div>
                   <div fxLayout="row" fxLayoutAlign="start stretch" >
-                    <div fxFlex="50">hi</div>
-                    <div fxFlex="50" style="text-align: right;">hi</div>
-                  </div>
-                  <div fxLayout="row" fxLayoutAlign="start stretch" >
-                    <div fxFlex="50">hi</div>
-                    <div fxFlex="50" style="text-align: right;">hi</div>
+                    <div fxFlex="50">Expiration Date</div>
+                    <div fxFlex="50" style="text-align: right;">{{fun.expirationDate}}</div>
                   </div>
                 </mat-expansion-panel>
                 </mat-accordion>
@@ -73,7 +69,7 @@
       My Investment History
     </div>
     <div class="mat-elevation-z8">
-      <table mat-table [dataSource]="dataSource"  >
+      <table mat-table [dataSource]="dataSource">
 
         <ng-container matColumnDef="timeStamp">
           <th mat-header-cell *matHeaderCellDef> Date </th>

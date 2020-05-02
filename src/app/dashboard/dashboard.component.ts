@@ -14,9 +14,7 @@ import {FundsType} from '../@core/Dashboard/funds-type.enum';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-
 export class DashboardComponent implements OnInit {
-
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   constructor(public dialog: MatDialog, private dashboardService: DashboardService) {
     this.open = {
@@ -27,7 +25,6 @@ export class DashboardComponent implements OnInit {
       fundId: null,
     };
   }
-
   funds: Funds[];
   records: Records[];
   open: OpenClose;
@@ -36,6 +33,10 @@ export class DashboardComponent implements OnInit {
   displayedColumns: string[] = ['timeStamp', 'fundName', 'type', 'brfore', 'after', 'accrued', 'id'];
   dataSource = new MatTableDataSource();
   fundsEnum = FundsType;
+  years: any;
+  months: any;
+  days: any;
+
   CarouselOptions = {
     responsive: {
       320: {
@@ -57,6 +58,15 @@ export class DashboardComponent implements OnInit {
       (res: any) => {
         console.log(res);
         this.funds = res;
+        for (const i of this.funds) {
+            this.years = Math.floor(i.duration / 365);
+            this.months = Math.floor(i.duration % 365 / 30);
+            this.days = Math.floor(i.duration % 365 % 30);
+
+            i.yearsDisplay = this.years > 0 ? this.years + (this.years === 1 ? ' year ' : ' years ') : '';
+            i.monthsDisplay = this.months > 0 ? this.months + (this.months === 1 ? ' month ' : ' months ') : '';
+            i.daysDisplay = this.days > 0 ? this.days + (this.days === 1 ? ' day' : ' days') : '';
+        }
       },
       err => {
         console.log(err);

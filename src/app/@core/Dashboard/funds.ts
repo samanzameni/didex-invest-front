@@ -10,4 +10,7 @@ export interface Funds {
   totalSupply: number;
   startDate: string;
   expirationDate: string;
+  yearsDisplay?: any;
+  monthsDisplay?: any;
+  daysDisplay?: any;
 }
