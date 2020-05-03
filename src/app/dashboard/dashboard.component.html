@@ -1,20 +1,17 @@
   <div fxLayout="column" fxLayoutAlign="start stretch" >
   <div class="header">
-    <h1 style="margin: auto;">Didex Invest</h1>
-    <h3 style="color: #F5AA28;margin: auto;">The Simple Way To Earn</h3>
+    <h1>Didex Invest</h1>
+    <h3>The Simple Way To Earn</h3>
   </div>
     <div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="10px" fxLayoutAlign="start stretch" class="investment-header">
-    <div fxFlex="40" fxFlex.sm="100" fxFlex.xs="100">
-      <div style="padding: 0 20px">
-        <h2 style="margin: auto;">Select Your</h2>
-        <h2 style="color: #F5AA28;margin: auto;">Investment Plan</h2>
-        <br>
-        <div>To invest your funds in an investment plan you must
+    <div fxFlex="29.5" fxFlex.sm="100" fxFlex.xs="100" class="investment-header-content">
+        <h2>select your</h2>
+        <h2 style="color: #F5AA28">investment plan</h2>
+        <p>To invest your funds in an investment plan you must
           have funds on the main balance. Each investment plan is
           created for its interest and duration. If you withdraw
           funds from the investment plan earlier than required,
-          interest will not be charged.</div>
-      </div>
+          interest will not be charged.</p>
     </div>
     <div fxFlex="60" fxFlex.sm="100" fxFlex.xs="100">
       <owl-carousel [options]="CarouselOptions " [items]="funds" [carouselClasses]="['owl-theme', 'sliding']" >
@@ -29,7 +26,8 @@
               <div fxFlex="80">{{fun.fixedInterest}}% Per Year In Week</div>
             </div>
             <div fxLayout="row" fxLayoutAlign="center stretch" >
-              <div fxFlex="80">Duration: {{fun.yearsDisplay}}{{fun.monthsDisplay}}{{fun.daysDisplay}}</div>
+              <div fxFlex="40">Duration</div>
+              <div fxFlex="40" style="text-align: right;">{{fun.yearsDisplay}}{{fun.monthsDisplay}}{{fun.daysDisplay}}</div>
             </div>
             <div fxLayout="row" fxLayoutAlign="center stretch" >
               <div fxFlex="80" style="color: #F5AA28; text-align: center"><b>{{fundsEnum[fun.type]}} Plan</b></div>
@@ -51,7 +49,7 @@
                     <div fxFlex="50">Total Supply</div>
                     <div fxFlex="50" style="text-align: right;">{{fun.totalSupply}} <b>{{fun.fundCurrencyShortName}}</b></div>
                   </div>
-                  <div fxLayout="row" fxLayoutAlign="start stretch" >
+                  <div fxLayout="row" fxLayoutAlign="start stretch" style="font-size: 10px">
                     <div fxFlex="50">Expiration Date</div>
                     <div fxFlex="50" style="text-align: right;">{{fun.expirationDate}}</div>
                   </div>
