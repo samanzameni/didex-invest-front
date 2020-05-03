@@ -29,7 +29,8 @@
               <div fxFlex="80">{{fun.fixedInterest}}% Per Year In Week</div>
             </div>
             <div fxLayout="row" fxLayoutAlign="center stretch" >
-              <div fxFlex="80">Duration: {{fun.yearsDisplay}}{{fun.monthsDisplay}}{{fun.daysDisplay}}</div>
+              <div fxFlex="40">Duration</div>
+              <div fxFlex="40" style="text-align: right;">{{fun.yearsDisplay}}{{fun.monthsDisplay}}{{fun.daysDisplay}}</div>
             </div>
             <div fxLayout="row" fxLayoutAlign="center stretch" >
               <div fxFlex="80" style="color: #F5AA28; text-align: center"><b>{{fundsEnum[fun.type]}} Plan</b></div>
@@ -51,7 +52,7 @@
                     <div fxFlex="50">Total Supply</div>
                     <div fxFlex="50" style="text-align: right;">{{fun.totalSupply}} <b>{{fun.fundCurrencyShortName}}</b></div>
                   </div>
-                  <div fxLayout="row" fxLayoutAlign="start stretch" >
+                  <div fxLayout="row" fxLayoutAlign="start stretch" style="font-size: 10px">
                     <div fxFlex="50">Expiration Date</div>
                     <div fxFlex="50" style="text-align: right;">{{fun.expirationDate}}</div>
                   </div>
