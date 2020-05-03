@@ -15,10 +15,23 @@ td.mat-cell, td.mat-footer-cell, th.mat-header-cell {
   text-align: center;
 }
 .header{
+  height: 252px;
   padding: 20px;
   text-align: center;
   background-color: #162A6D;
 }
+
+.header h1 {
+  font-size: 78px;
+  padding-top: 49.5px;
+  line-height: 100px;
+}
+
+.header h3 {
+  font-size: 42px;
+  font-weight: lighter;
+}
+
 .investment-header{
   width: 80%;
   margin: auto;
