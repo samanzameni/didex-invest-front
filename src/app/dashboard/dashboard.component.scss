@@ -15,7 +15,6 @@ td.mat-cell, td.mat-footer-cell, th.mat-header-cell {
   text-align: center;
 }
 .header{
-  height: 252px;
   padding: 0 20px;
   text-align: center;
   background-color: #162A6D;
@@ -34,6 +33,8 @@ td.mat-cell, td.mat-footer-cell, th.mat-header-cell {
   font-size: 42px;
   font-weight: lighter;
   color: #F5AA28;
+  padding-bottom: 49.5px;
+  line-height: 3rem;
 }
 
 .investment-header{
@@ -43,8 +44,7 @@ td.mat-cell, td.mat-footer-cell, th.mat-header-cell {
 }
 
 .investment-header-content {
-  padding: 0 20px;
-  height: 342px;
+  padding: 0px 20px;
 }
 
 .investment-header-content h2 {
