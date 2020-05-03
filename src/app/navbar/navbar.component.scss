@@ -1,20 +1,77 @@
-.display-hide {
-  display: flex !important;
-}
-.display-hide-logo {
-  display: inline-block !important;
-}
-.display-show{
-  display: none !important;
-}
-@media only screen and (max-width: 950px) {
-  .display-hide {
-    display: none !important;
+@import '../../styles.scss';
+
+:host {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: $ddx-dark-main;
+  color: white;
+
+  width: 100%;
+  height: 60px;
+  box-sizing: border-box;
+  padding: 5px 10px;
+
+  .link-button {
+    display: none;
   }
-  .display-hide-logo {
-    display: none !important;
+
+  .logo__container {
+    height: 100%;
+
+    a {
+      height: 100%;
+      text-decoration: none;
+      color: $ddx-light;
+      align-items: center;
+
+      &:active {
+        color: $ddx-light;
+      }
+
+      img {
+        height: 100%;
+        object-fit: contain;
+        margin: 0 3px;
+      }
+
+      #didexLogoText {
+        height: 35%;
+        object-fit: contain;
+        display: none;
+      }
+    }
   }
-  .display-show{
-      display: flex !important;
+
+  .navbar-items__container {
+    align-items: center;
+
+    .auth-button {
+      height: max-content;
+      margin: 2px;
+    }
+  }
+}
+
+@media screen and (min-width: 640px) {
+  :host {
+    padding: 5px 40px;
+
+    .link-button {
+      display: block;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  :host {
+    .logo__container {
+      a {
+        #didexLogoText {
+          display: flex;
+        }
+      }
+    }
   }
 }
