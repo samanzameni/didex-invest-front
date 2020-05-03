@@ -21,6 +21,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {CloseModalComponent} from '../dashboard/close-modal/close-modal.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     PagesComponent,
     NavbarComponent,
     DashboardComponent,
-    DashboardModalComponent
+    DashboardModalComponent,
+    CloseModalComponent,
   ],
   imports: [
     CommonModule,
@@ -54,8 +56,9 @@ import {MatExpansionModule} from '@angular/material/expansion';
     PagesComponent,
     NavbarComponent,
     DashboardComponent,
-    DashboardModalComponent
+    DashboardModalComponent,
+    CloseModalComponent,
   ],
-  entryComponents: [DashboardModalComponent]
+  entryComponents: [DashboardModalComponent, CloseModalComponent]
 })
 export class PagesModule { }

@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="230ce5ad-3df5-4794-8dd6-769c16315bbf" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/dashboard/dashboard-modal/dashboard-modal.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/dashboard-modal/dashboard-modal.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/dashboard/dashboard-modal/dashboard-modal.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/dashboard-modal/dashboard-modal.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/dashboard/dashboard-modal/dashboard-modal.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/dashboard-modal/dashboard-modal.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/dashboard/dashboard.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/dashboard.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/dashboard/dashboard.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/dashboard.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/pages/pages-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/pages-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/pages/pages.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/pages.module.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +76,7 @@
       <workItem from="1587969266939" duration="7285000" />
       <workItem from="1588057622264" duration="774000" />
       <workItem from="1588058451385" duration="78524000" />
-      <workItem from="1588503455327" duration="3959000" />
+      <workItem from="1588503455327" duration="8596000" />
     </task>
     <task id="LOCAL-00001" summary="first push">
       <created>1587970575838</created>
@@ -130,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588436361026</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="change subscribe popup css.">
+      <created>1588507662892</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1588507662892</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -157,21 +168,22 @@
     <MESSAGE value="complete v1 with tag." />
     <MESSAGE value="complete v1 with new route." />
     <MESSAGE value="complete v1 with fixed route." />
-    <option name="LAST_COMMIT_MESSAGE" value="complete v1 with fixed route." />
+    <MESSAGE value="change subscribe popup css." />
+    <option name="LAST_COMMIT_MESSAGE" value="change subscribe popup css." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="324" y="0" key="CommitChangelistDialog2" timestamp="1588436357917">
+    <state x="324" y="0" key="CommitChangelistDialog2" timestamp="1588512653517">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="324" y="0" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1588436357917" />
+    <state x="324" y="0" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1588512653517" />
     <state x="580" y="186" key="FileChooserDialogImpl" timestamp="1588501298580">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="580" y="186" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1588501298580" />
-    <state x="392" y="160" key="Vcs.Push.Dialog.v2" timestamp="1588436400501">
+    <state x="392" y="160" key="Vcs.Push.Dialog.v2" timestamp="1588507670588">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="392" y="160" key="Vcs.Push.Dialog.v2/0.0.1600.860@0.0.1600.860" timestamp="1588436400501" />
+    <state x="392" y="160" key="Vcs.Push.Dialog.v2/0.0.1600.860@0.0.1600.860" timestamp="1588507670588" />
     <state x="486" y="146" width="627" height="568" key="find.popup" timestamp="1588155312325">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

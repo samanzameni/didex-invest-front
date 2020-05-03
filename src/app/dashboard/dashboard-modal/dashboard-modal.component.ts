@@ -23,7 +23,7 @@ export class DashboardModalComponent implements OnInit {
   createForm() {
     this.dashForm = this.formBuilder.group({
       number: ['', [Validators.required , Validators.max(this.data.max) , Validators.min(this.data.min)]],
-      check: ['', [Validators.required]],
+      check: [false, [Validators.requiredTrue]],
     });
   }
   openPost() {

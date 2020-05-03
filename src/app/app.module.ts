@@ -9,6 +9,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {PagesModule} from './pages/pages.module';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { CloseModalComponent } from './dashboard/close-modal/close-modal.component';
 
 @NgModule({
   declarations: [
