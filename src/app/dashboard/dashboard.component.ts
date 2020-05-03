@@ -62,7 +62,6 @@ export class DashboardComponent implements OnInit {
             this.years = Math.floor(i.duration / 365);
             this.months = Math.floor(i.duration % 365 / 30);
             this.days = Math.floor(i.duration % 365 % 30);
-
             i.yearsDisplay = this.years > 0 ? this.years + (this.years === 1 ? ' year ' : ' years ') : '';
             i.monthsDisplay = this.months > 0 ? this.months + (this.months === 1 ? ' month ' : ' months ') : '';
             i.daysDisplay = this.days > 0 ? this.days + (this.days === 1 ? ' day' : ' days') : '';
@@ -103,7 +102,7 @@ export class DashboardComponent implements OnInit {
     this.open.fundId = fund.id;
     const dialogRef = this.dialog.open(DashboardModalComponent, {
       width: '500px',
-      data: {id: this.open.fundId}
+      data: {id: this.open.fundId , min: fund.minimumFund , max: fund.maximumFund , name: fund.fundCurrencyShortName}
     });
   }
 

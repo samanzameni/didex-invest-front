@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="230ce5ad-3df5-4794-8dd6-769c16315bbf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/dashboard/dashboard.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/dashboard.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/dashboard/dashboard-modal/dashboard-modal.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/dashboard-modal/dashboard-modal.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/dashboard/dashboard-modal/dashboard-modal.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/dashboard-modal/dashboard-modal.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/dashboard/dashboard-modal/dashboard-modal.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/dashboard-modal/dashboard-modal.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/dashboard/dashboard.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/dashboard.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +20,11 @@
         <option name="title" value="All" />
       </GitPushTagMode>
     </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1b1NqCDKXfO2pctDFnOd0ChsuOE" />
@@ -29,7 +37,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="C:/StarAdmin-Free-Angular-Admin-Template-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -63,7 +71,8 @@
       <workItem from="1587795831429" duration="5585000" />
       <workItem from="1587969266939" duration="7285000" />
       <workItem from="1588057622264" duration="774000" />
-      <workItem from="1588058451385" duration="71835000" />
+      <workItem from="1588058451385" duration="78524000" />
+      <workItem from="1588503455327" duration="3959000" />
     </task>
     <task id="LOCAL-00001" summary="first push">
       <created>1587970575838</created>
@@ -114,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588431511295</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="complete v1 with fixed route.">
+      <created>1588436361026</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1588436361026</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,7 +141,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -138,21 +156,22 @@
     <MESSAGE value="complete v1." />
     <MESSAGE value="complete v1 with tag." />
     <MESSAGE value="complete v1 with new route." />
-    <option name="LAST_COMMIT_MESSAGE" value="complete v1 with new route." />
+    <MESSAGE value="complete v1 with fixed route." />
+    <option name="LAST_COMMIT_MESSAGE" value="complete v1 with fixed route." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="324" y="0" key="CommitChangelistDialog2" timestamp="1588431507243">
+    <state x="324" y="0" key="CommitChangelistDialog2" timestamp="1588436357917">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="324" y="0" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1588431507243" />
-    <state x="580" y="186" key="FileChooserDialogImpl" timestamp="1588085715695">
+    <state x="324" y="0" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1588436357917" />
+    <state x="580" y="186" key="FileChooserDialogImpl" timestamp="1588501298580">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="580" y="186" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1588085715695" />
-    <state x="392" y="160" key="Vcs.Push.Dialog.v2" timestamp="1588431550110">
+    <state x="580" y="186" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1588501298580" />
+    <state x="392" y="160" key="Vcs.Push.Dialog.v2" timestamp="1588436400501">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="392" y="160" key="Vcs.Push.Dialog.v2/0.0.1600.860@0.0.1600.860" timestamp="1588431550110" />
+    <state x="392" y="160" key="Vcs.Push.Dialog.v2/0.0.1600.860@0.0.1600.860" timestamp="1588436400501" />
     <state x="486" y="146" width="627" height="568" key="find.popup" timestamp="1588155312325">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
