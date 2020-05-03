@@ -1,20 +1,17 @@
   <div fxLayout="column" fxLayoutAlign="start stretch" >
   <div class="header">
-    <h1 style="margin: auto;">Didex Invest</h1>
-    <h3 style="color: #F5AA28;margin: auto;">The Simple Way To Earn</h3>
+    <h1>Didex Invest</h1>
+    <h3>The Simple Way To Earn</h3>
   </div>
     <div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="10px" fxLayoutAlign="start stretch" class="investment-header">
-    <div fxFlex="40" fxFlex.sm="100" fxFlex.xs="100">
-      <div style="padding: 0 20px">
-        <h2 style="margin: auto;">Select Your</h2>
-        <h2 style="color: #F5AA28;margin: auto;">Investment Plan</h2>
-        <br>
-        <div>To invest your funds in an investment plan you must
+    <div fxFlex="29.5" fxFlex.sm="100" fxFlex.xs="100" class="investment-header-content">
+        <h2>select your</h2>
+        <h2 style="color: #F5AA28">investment plan</h2>
+        <p>To invest your funds in an investment plan you must
           have funds on the main balance. Each investment plan is
           created for its interest and duration. If you withdraw
           funds from the investment plan earlier than required,
-          interest will not be charged.</div>
-      </div>
+          interest will not be charged.</p>
     </div>
     <div fxFlex="60" fxFlex.sm="100" fxFlex.xs="100">
       <owl-carousel [options]="CarouselOptions " [items]="funds" [carouselClasses]="['owl-theme', 'sliding']" >
@@ -105,7 +102,7 @@
         <ng-container matColumnDef="id">
           <th mat-header-cell *matHeaderCellDef> Close Investment </th>
           <td mat-cell *matCellDef="let element">
-            <button mat-stroked-button color="warn" (click)="closePost(element.id)">
+            <button mat-stroked-button color="warn" (click)="closeDialog(element.id)">
               <mat-icon aria-hidden="false" aria-label="Example home icon" style="font-size: 20px;">close</mat-icon>Close</button></td>
         </ng-container>
 
