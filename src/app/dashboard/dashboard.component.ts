@@ -8,6 +8,7 @@ import {Funds} from '../@core/Dashboard/funds';
 import {Records} from '../@core/Dashboard/records';
 import {OpenClose} from '../@core/Dashboard/open-close';
 import {FundsType} from '../@core/Dashboard/funds-type.enum';
+import {CloseModalComponent} from './close-modal/close-modal.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -62,7 +63,6 @@ export class DashboardComponent implements OnInit {
             this.years = Math.floor(i.duration / 365);
             this.months = Math.floor(i.duration % 365 / 30);
             this.days = Math.floor(i.duration % 365 % 30);
-
             i.yearsDisplay = this.years > 0 ? this.years + (this.years === 1 ? ' year ' : ' years ') : '';
             i.monthsDisplay = this.months > 0 ? this.months + (this.months === 1 ? ' month ' : ' months ') : '';
             i.daysDisplay = this.days > 0 ? this.days + (this.days === 1 ? ' day' : ' days') : '';
@@ -88,25 +88,20 @@ export class DashboardComponent implements OnInit {
     );
   }
 
-  closePost(fundId) {
-    this.close.fundId = fundId;
-    return this.dashboardService.postClose(this.close).subscribe(
-      (res: any) => {
-        console.log(res);
-      },
-      err => {
-        console.log(err);
-      },
-    );
-  }
+
   openDialog(fund): void {
     this.open.fundId = fund.id;
     const dialogRef = this.dialog.open(DashboardModalComponent, {
       width: '500px',
-      data: {id: this.open.fundId}
+      data: {id: this.open.fundId , min: fund.minimumFund , max: fund.maximumFund , name: fund.fundCurrencyShortName}
     });
   }
-
+  closeDialog(closeId): void {
+    const dialogRef = this.dialog.open(CloseModalComponent, {
+      width: '500px',
+      data: {id: closeId}
+    });
+}
   ngOnInit() {
     this.showFunds();
     this.showRecords();

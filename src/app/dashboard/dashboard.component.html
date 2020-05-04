@@ -3,7 +3,7 @@
     <h1>Didex Invest</h1>
     <h3>The Simple Way To Earn</h3>
   </div>
-    <div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="10px" fxLayoutAlign="start stretch" class="investment-header">
+    <div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="50px" fxLayoutAlign="start stretch" class="investment-header">
     <div fxFlex="29.5" fxFlex.sm="100" fxFlex.xs="100" class="investment-header-content">
         <h2>select your</h2>
         <h2 style="color: #F5AA28">investment plan</h2>
@@ -16,26 +16,47 @@
     <div fxFlex="60" fxFlex.sm="100" fxFlex.xs="100">
       <owl-carousel [options]="CarouselOptions " [items]="funds" [carouselClasses]="['owl-theme', 'sliding']" >
         <div class="item" *ngFor="let fun of funds">
-          <div class="item-carousels" style="padding: 10px;font-size: 12px;">
-            <div style="border-bottom: 1px solid white; padding: 5px; margin-bottom: 5px;">{{fun.name}}</div>
-            <div fxLayout="row" fxLayoutAlign="start stretch" >
-              <div fxFlex="50">hi</div>
-              <div fxFlex="50" style="text-align: right;">{{fun.minimumFund}} - {{fun.maximumFund}} <b style="color: #F5AA28">{{fun.fundCurrencyShortName}}</b></div>
+          <div class="item-carousels">
+            <div style="border-bottom: 1px solid white; padding-left: 20px; margin-bottom: 5px; line-height: 30px; font-size: 14px;">{{fun.name}}</div>
+            <div fxLayout="row" fxLayoutAlign="start stretch" style="padding: 10px;" >
+              <div fxFlex="50" style="font-size: 20px;">hi</div>
+              <div fxFlex="50" style="font-size: 20px; text-align: right;">{{fun.minimumFund}} - {{fun.maximumFund}} <b style="font-size:23px; color: #F5AA28">{{fun.fundCurrencyShortName}}</b></div>
             </div>
-            <div fxLayout="row" fxLayoutAlign="center stretch" >
+            <!-- progressbar starts here -->
+            <div class="box">
+              <div class="percent">
+                <svg>
+                  <circle cx="65" cy="65" r="65"></circle>
+                  <circle cx="65" cy="65" r="65"></circle>
+                  <circle cx="65" cy="65" r="65"></circle>
+                  <circle cx="65" cy="65" r="65"></circle>
+                </svg>
+                <div class="number">
+                  <h2>
+                    1.10<span>%</span>
+                    <br>
+                    <span>Per day in week</span>
+                  </h2>
+                  <br>
+                </div>
+              </div>
+            </div>
+            <!-- progressbar ends here -->
+
+            <!-- <div fxLayout="row" fxLayoutAlign="center stretch" >
               <div fxFlex="80">{{fun.fixedInterest}}% Per Year In Week</div>
+            </div> -->
+            <div fxLayout="row" fxLayoutAlign="center stretch" style="padding: 0 10px;">
+              <div fxFlex="40">Min Per %0.5</div>
+              <div fxFlex="40" style="text-align: right;"><!-- {{fun.yearsDisplay}}{{fun.monthsDisplay}}{{fun.daysDisplay}} -->Max Per %0.5</div>
             </div>
-            <div fxLayout="row" fxLayoutAlign="center stretch" >
-              <div fxFlex="40">Duration</div>
-              <div fxFlex="40" style="text-align: right;">{{fun.yearsDisplay}}{{fun.monthsDisplay}}{{fun.daysDisplay}}</div>
+            <div fxLayout="row" fxLayoutAlign="center stretch" style="padding: 0 10px; line-height: 15px;">
+              <div fxFlex="80" style="color: #F5AA28; text-align: center; font-weight: lighter;"><b>{{fundsEnum[fun.type]}} Plan</b></div>
             </div>
-            <div fxLayout="row" fxLayoutAlign="center stretch" >
-              <div fxFlex="80" style="color: #F5AA28; text-align: center"><b>{{fundsEnum[fun.type]}} Plan</b></div>
-            </div>
-            <div fxLayout="row" fxLayoutAlign="start stretch" >
+            <div fxLayout="row" fxLayoutAlign="start stretch" style="padding: 10px;">
               <div fxFlex="100"><button mat-raised-button color="primary" class="button-carousels" (click)="openDialog(fun)">Subscribe</button></div>
             </div>
-            <div fxLayout="row" fxLayoutAlign="center stretch" >
+            <div fxLayout="row" fxLayoutAlign="center stretch" style="padding: 10px;">
               <div fxFlex="100">
                 <mat-accordion>
                 <mat-expansion-panel (opened)="panelOpenState = true"
@@ -102,7 +123,7 @@
         <ng-container matColumnDef="id">
           <th mat-header-cell *matHeaderCellDef> Close Investment </th>
           <td mat-cell *matCellDef="let element">
-            <button mat-stroked-button color="warn" (click)="closePost(element.id)">
+            <button mat-stroked-button color="warn" (click)="closeDialog(element.id)">
               <mat-icon aria-hidden="false" aria-label="Example home icon" style="font-size: 20px;">close</mat-icon>Close</button></td>
         </ng-container>
 

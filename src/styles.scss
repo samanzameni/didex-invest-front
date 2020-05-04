@@ -4,6 +4,8 @@
 @import 'https://overpass-30e2.kxcdn.com/overpass.css';
 // Plus imports for other components in your app.
 
+@import 'assets/reset.scss';
+
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
@@ -123,9 +125,9 @@ $didex-exchange-warn: mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
 $didex-exchange-theme: mat-dark-theme(
-    $didex-exchange-primary,
-    $didex-exchange-accent,
-    $didex-exchange-warn
+  $didex-exchange-primary,
+  $didex-exchange-accent,
+  $didex-exchange-warn
 );
 
 // Include theme styles for core and each component used in your app.
@@ -148,46 +150,58 @@ $ddx-light: white;
 $ddx-light-darker: #eee;
 $ddx-grey: #9a9a9a;
 
-
-html, body { height: 100%; }
+html,
+body {
+  height: 100%;
+}
 body {
   margin: 0;
-  font-family: overpass, "Helvetica Neue", sans-serif !important;
-  background-color: #0D2161;
+  font-family: overpass, 'Helvetica Neue', sans-serif !important;
+  background-color: #0d2161;
   color: $ddx-light;
   font-weight: lighter;
   line-height: 30px;
 }
-.mat-button, .mat-raised-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button, .mat-fab, .mat-mini-fab{
-  font-family: overpass, "Helvetica Neue", sans-serif !important;
+.mat-button,
+.mat-raised-button,
+.mat-icon-button,
+.mat-stroked-button,
+.mat-flat-button,
+.mat-fab,
+.mat-mini-fab {
+  font-family: overpass, 'Helvetica Neue', sans-serif !important;
 }
 .mat-table {
-  background: #0D2161;
+  background: #0d2161;
 }
-.mat-dialog-container{
-  background-color: #0D2161;
+.mat-dialog-container {
+  background-color: #0d2161;
 }
-a{
+a {
   color: #f09018;
 }
 .mat-dialog-content {
   overflow: unset !important;
 }
-.mat-button.mat-primary, .mat-icon-button.mat-primary, .mat-stroked-button.mat-primary {
+.mat-button.mat-primary,
+.mat-icon-button.mat-primary,
+.mat-stroked-button.mat-primary {
   background-color: #f5aa28;
   color: white;
 }
-.mat-button.mat-accent, .mat-icon-button.mat-accent, .mat-stroked-button.mat-accent {
+.mat-button.mat-accent,
+.mat-icon-button.mat-accent,
+.mat-stroked-button.mat-accent {
   background-color: #047ff8;
   color: white;
 }
-.mat-menu-content:not(:empty){
-  background-color: #162A6D ;
+.mat-menu-content:not(:empty) {
+  background: $ddx-dark-lighter;
 }
-@font-face {
-  font-family: overpass;
-  src: url(assets/font/overpass/overpass-regular.otf) format("opentype");
-}
+// @font-face {
+//   font-family: overpass;
+//   src: url(assets/font/overpass/overpass-regular.otf) format("opentype");
+// }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -195,21 +209,29 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type='number'] {
   -moz-appearance: textfield;
 }
-.mat-accordion>.mat-expansion-panel-spacing:last-child, .mat-accordion>:last-child:not(.mat-expansion-panel) .mat-expansion-panel-spacing{
-  background-color: #0D2161;
+.mat-accordion > .mat-expansion-panel-spacing:last-child,
+.mat-accordion
+  > :last-child:not(.mat-expansion-panel)
+  .mat-expansion-panel-spacing {
+  background-color: #0d2161;
 }
-.mat-expansion-panel-header:not([aria-disabled=true]){
-  background-color: #0D2161;
+.mat-expansion-panel-header:not([aria-disabled='true']) {
+  background-color: #0d2161;
 }
 
-.mat-expansion-panel .mat-expansion-panel-header.cdk-keyboard-focused:not([aria-disabled=true]), .mat-expansion-panel .mat-expansion-panel-header.cdk-program-focused:not([aria-disabled=true]), .mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:hover:not([aria-disabled=true]){
-  background: #0D2161;
+.mat-expansion-panel
+  .mat-expansion-panel-header.cdk-keyboard-focused:not([aria-disabled='true']),
+.mat-expansion-panel
+  .mat-expansion-panel-header.cdk-program-focused:not([aria-disabled='true']),
+.mat-expansion-panel:not(.mat-expanded)
+  .mat-expansion-panel-header:hover:not([aria-disabled='true']) {
+  background: #0d2161;
 }
-.mat-expansion-panel-content{
-  background: #0D2161;
+.mat-expansion-panel-content {
+  background: #0d2161;
 }
 .mat-stroked-button:not([disabled]) {
   border-color: #f44336;
