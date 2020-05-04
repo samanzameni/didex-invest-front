@@ -7,4 +7,5 @@ export interface Records {
   id: number;
   timeStamp: Date;
   type: number;
+  needButton?: boolean;
 }

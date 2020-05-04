@@ -9,6 +9,7 @@ import {Records} from '../@core/Dashboard/records';
 import {OpenClose} from '../@core/Dashboard/open-close';
 import {FundsType} from '../@core/Dashboard/funds-type.enum';
 import {CloseModalComponent} from './close-modal/close-modal.component';
+import { InvestRecordType } from '../@core/Dashboard/invest-record-type.enum';
 
 @Component({
   selector: 'app-dashboard',
@@ -37,7 +38,8 @@ export class DashboardComponent implements OnInit {
   years: any;
   months: any;
   days: any;
-  ids: number[];
+  ids: number[] = [-2];
+  investRecordType = InvestRecordType;
 
   CarouselOptions = {
     responsive: {
@@ -81,12 +83,12 @@ export class DashboardComponent implements OnInit {
         console.log(res);
         this.records = res;
         for (const i of this.records) {
-          this.ids = push(i.fundId);
-          if (this.ids !== i.fundId) {
-            this.ids = i.fundId;
-            } else {
-
-          }
+        if (i.type !== 2 && this.ids.indexOf(i.fundId) === -1) {
+          i.needButton = true;
+          this.ids.push(i.fundId);
+        } else {
+          i.needButton = false;
+        }
         }
         this.dataSource.data = this.records;
         this.dataSource.paginator = this.paginator;
