@@ -6,7 +6,7 @@
     <div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="50px" fxLayoutAlign="start stretch" class="investment-header">
     <div fxFlex="29.5" fxFlex.sm="100" fxFlex.xs="100" class="investment-header-content">
         <h2>select your</h2>
-        <h2 style="color: #F5AA28">investment plan</h2>
+        <h2>investment plan</h2>
         <p>To invest your funds in an investment plan you must
           have funds on the main balance. Each investment plan is
           created for its interest and duration. If you withdraw
@@ -17,10 +17,10 @@
       <owl-carousel [options]="CarouselOptions " [items]="funds" [carouselClasses]="['owl-theme', 'sliding']" >
         <div class="item" *ngFor="let fun of funds">
           <div class="item-carousels">
-            <div style="border-bottom: 1px solid white; padding-left: 20px; margin-bottom: 5px; line-height: 30px; font-size: 14px;">{{fun.name}}</div>
-            <div fxLayout="row" fxLayoutAlign="start stretch" style="padding: 10px;" >
-              <div fxFlex="50" style="font-size: 20px;">hi</div>
-              <div fxFlex="50" style="font-size: 20px; text-align: right;">{{fun.minimumFund}} - {{fun.maximumFund}} <b style="font-size:23px; color: #F5AA28">{{fun.fundCurrencyShortName}}</b></div>
+            <div id="item-carousels-wrapper">{{fun.name}}</div>
+            <div fxLayout="row" fxLayoutAlign="start stretch" id="item-carousels-inner-wrapper">
+              <div fxFlex="50">hi</div>
+              <div fxFlex="50">{{fun.minimumFund}} - {{fun.maximumFund}} <b style="color: #F5AA28;">{{fun.fundCurrencyShortName}}</b></div>
             </div>
             <!-- progressbar starts here -->
             <div class="box">
@@ -46,17 +46,17 @@
             <!-- <div fxLayout="row" fxLayoutAlign="center stretch" >
               <div fxFlex="80">{{fun.fixedInterest}}% Per Year In Week</div>
             </div> -->
-            <div fxLayout="row" fxLayoutAlign="center stretch" style="padding: 0 10px;">
+            <div fxLayout="row" fxLayoutAlign="center stretch">
               <div fxFlex="40">Min Per %0.5</div>
               <div fxFlex="40" style="text-align: right;"><!-- {{fun.yearsDisplay}}{{fun.monthsDisplay}}{{fun.daysDisplay}} -->Max Per %0.5</div>
             </div>
-            <div fxLayout="row" fxLayoutAlign="center stretch" style="padding: 0 10px; line-height: 15px;">
-              <div fxFlex="80" style="color: #F5AA28; text-align: center; font-weight: lighter;"><b>{{fundsEnum[fun.type]}} Plan</b></div>
+            <div fxLayout="row" fxLayoutAlign="center stretch" class="card-content">
+              <div fxFlex="80" id="plan-style"><b>{{fundsEnum[fun.type]}} Plan</b></div>
             </div>
-            <div fxLayout="row" fxLayoutAlign="start stretch" style="padding: 10px;">
+            <div fxLayout="row" fxLayoutAlign="start stretch" class="card-content">
               <div fxFlex="100"><button mat-raised-button color="primary" class="button-carousels" (click)="openDialog(fun)">Subscribe</button></div>
             </div>
-            <div fxLayout="row" fxLayoutAlign="center stretch" style="padding: 10px;">
+            <div fxLayout="row" fxLayoutAlign="center stretch" class="card-content">
               <div fxFlex="100">
                 <mat-accordion>
                 <mat-expansion-panel (opened)="panelOpenState = true"
