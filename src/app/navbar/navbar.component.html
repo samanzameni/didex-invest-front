@@ -1,107 +1,76 @@
-<div
-  fxLayout="row"
-  fxLayoutAlign="end stretch"
-  style="background-color: #00124b; padding: 10px;"
->
-  <div fxFlexAlign="start" fxFlex="20">
-    <img
-      src="assets/logo-white-symbol.svg"
-      alt=""
-      width="50"
-      style="margin: 0 3px;"
-    />
-    <img
-      src="assets/logo-white-text.svg"
-      alt=""
-      class="display-hide-logo"
-      width="70"
-      style="margin-bottom: 7px;"
-    />
-  </div>
-  <div fxFlex="80" fxLayoutAlign="end stretch" class="display-hide">
-    <button mat-button [matMenuTriggerFor]="menu">
-      English
-      <mat-icon>expand_more</mat-icon>
-    </button>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item>Item 1</button>
-      <button mat-menu-item>Item 2</button>
-    </mat-menu>
-    <button mat-button [matMenuTriggerFor]="belowMenu">
-      <mat-icon>headset_mic</mat-icon>Support
-    </button>
-    <mat-menu #belowMenu="matMenu">
-      <button mat-menu-item>Item 1</button>
-      <button mat-menu-item>Item 2</button>
-    </mat-menu>
-    <button mat-button [matMenuTriggerFor]="beforeMenu">
-      <mat-icon>person_outline</mat-icon>Hello, nasim
-      <mat-icon>expand_more</mat-icon>
-    </button>
-    <mat-menu #beforeMenu="matMenu">
-      <button mat-menu-item style="height: auto;">
-        <div fxLayout="column" fxLayoutAlign="start stretch">
-          <div>Hello Nasim</div>
-          <div>Nasim.mosaei@gmail.com</div>
-        </div>
+<div class="logo__container">
+  <a fxLayout="row" routerLink="/">
+    <img src="assets/logo-white-symbol.svg" alt="didex symbol" width="50px" />
+    <img src="assets/logo-white-text.svg" id="didexLogoText" alt="didex text" />
+  </a>
+</div>
+
+<div fxLayout="row" class="navbar-items__container">
+  <!-- <ng-container *ngSwitchCase="true">
+    <dropdown-menu title="Account" icon="account_balance_wallet">
+      <a mat-menu-item routerLink="/account/funds">Funds</a>
+      <a mat-menu-item routerLink="/account/reports">Reports</a>
+    </dropdown-menu>
+
+    <dropdown-menu title="Profile" icon="person">
+      <span mat-menu-item disabled class="navbar__personal-info-item"
+        >Hello, {{ personalInfo }}</span
+      >
+      <span
+        mat-menu-item
+        disabled
+        class="navbar__personal-info-item blue"
+        *ngIf="!!traderEmail"
+        >{{ traderEmail }}</span
+      >
+      <mat-divider></mat-divider>
+      <a
+        mat-menu-item
+        routerLink="/user/settings"
+        [queryParams]="{ tab: 'general' }"
+        >General Settings</a
+      >
+      <a
+        mat-menu-item
+        routerLink="/user/settings"
+        [queryParams]="{ tab: 'security' }"
+        >Security</a
+      >
+      <a
+        mat-menu-item
+        routerLink="/user/settings"
+        [queryParams]="{ tab: 'kyc' }"
+        >KYC</a
+      >
+      <button
+        mat-flat-button
+        color="accent"
+        class="sign-out-button"
+        (click)="requestSignOut()"
+      >
+        Sign Out
       </button>
-      <hr />
-      <button mat-menu-item>General Settings</button>
-      <button mat-menu-item>Security</button>
-      <button mat-menu-item>KYC</button>
-      <button mat-menu-item>
-        <button
-          style="width: 100%;"
-          class="mat-button mat-button-base mat-accent"
-        >
-          Sign Out
-        </button>
+    </dropdown-menu>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="false">
+    <a class="auth-button" routerLink="/auth/signin">
+      <button mat-stroked-button>
+        Sign In
       </button>
-    </mat-menu>
-    <button
-      mat-button
-      [matMenuTriggerFor]="mainMenu"
-      aria-label="Example icon-button with a menu"
-    >
-      <mat-icon>apps</mat-icon>
-    </button>
-    <mat-menu #mainMenu="matMenu">
-      <button mat-menu-item>
-        <span>Trade</span>
+    </a>
+    <a class="auth-button" routerLink="/auth/signup">
+      <button mat-stroked-button>
+        Sign Up
       </button>
-      <button mat-menu-item>
-        <span>Academy</span>
-      </button>
-      <button mat-menu-item>
-        <span>Invest</span>
-      </button>
-    </mat-menu>
-  </div>
-  <div fxFlex="80" fxLayoutAlign="end stretch" class="display-show">
-    <button mat-button [matMenuTriggerFor]="afterMenu">
-      <mat-icon>notifications_none</mat-icon>
-    </button>
-    <mat-menu #afterMenu="matMenu">
-      <button mat-menu-item>Item 1</button>
-      <button mat-menu-item>Item 2</button>
-    </mat-menu>
-    <button
-      mat-button
-      [matMenuTriggerFor]="mainMenu"
-      aria-label="Example icon-button with a menu"
-    >
-      <mat-icon>menu</mat-icon>
-    </button>
-    <mat-menu #mainMenu="matMenu">
-      <button mat-menu-item>
-        <span>Trade</span>
-      </button>
-      <button mat-menu-item>
-        <span>Academy</span>
-      </button>
-      <button mat-menu-item>
-        <span>Invest</span>
-      </button>
-    </mat-menu>
-  </div>
+    </a>
+  </ng-container> -->
+
+  <dropdown-menu title="Applications" icon="apps">
+    <a mat-menu-item routerLink="/">Trade</a>
+    <!-- TODO: URL -->
+    <a mat-menu-item routerLink="/">Academy</a>
+    <!-- TODO: URL -->
+    <a mat-menu-item routerLink="/">Invest</a>
+  </dropdown-menu>
 </div>

@@ -35,8 +35,7 @@
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js",
-              "./node_modules/owl.carousel/dist/owl.carousel.min.js",
-
+              "./node_modules/owl.carousel/dist/owl.carousel.min.js"
             ]
           },
           "configurations": {
@@ -107,7 +106,7 @@
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js",
-              "./node_modules/owl.carousel/dist/owl.carousel.min.js",
+              "./node_modules/owl.carousel/dist/owl.carousel.min.js"
             ]
           }
         },
@@ -139,5 +138,8 @@
       }
     }
   },
-  "defaultProject": "Invest"
+  "defaultProject": "Invest",
+  "cli": {
+    "analytics": false
+  }
 }
