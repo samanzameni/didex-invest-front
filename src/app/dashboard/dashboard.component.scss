@@ -1,19 +1,4 @@
-table {
-  width: 100%;
-}
-.tableDesign{
-  box-shadow: none;
-  border: 1px solid white;
-  border-radius: 8px;
-  margin: 20px auto;
-  border-spacing: unset;
-  width: 80%;
-  text-align: center;
 
-}
-td.mat-cell, td.mat-footer-cell, th.mat-header-cell {
-  text-align: center;
-}
 .header{
   padding: 0 20px;
   text-align: center;
@@ -47,6 +32,10 @@ td.mat-cell, td.mat-footer-cell, th.mat-header-cell {
   padding: 0px 20px;
 }
 
+.investment-header-content h2:nth-child(2) {
+  color: #F5AA28;
+}
+
 .investment-header-content h2 {
   margin: auto;
   font-size: 42px;
@@ -56,7 +45,7 @@ td.mat-cell, td.mat-footer-cell, th.mat-header-cell {
 }
 
 .investment-header-content p {
-  font-size: 10px;
+  font-size: 14px;
 }
 
 .mat-expansion-panel-header {
@@ -70,6 +59,26 @@ td.mat-cell, td.mat-footer-cell, th.mat-header-cell {
   border: 1px solid white;
   border-radius: 8px;
   margin: 0 5px;
+}
+
+#item-carousels-wrapper {
+  border-bottom: 1px solid white;
+  padding-left: 20px;
+  margin-bottom: 5px;
+  line-height: 30px;
+  font-size: 14px;
+}
+
+#item-carousels-inner-wrapper{
+  padding: 10px;
+}
+
+#item-carousels-inner-wrapper div {
+  font-size: 16px;
+}
+
+#item-carousels-inner-wrapper div:nth-child(2) {
+  text-align: right;
 }
 
 /* progress bar starts here */
@@ -153,6 +162,21 @@ td.mat-cell, td.mat-footer-cell, th.mat-header-cell {
 
 /* progress bar ends here */
 
+.card-content {
+  padding: 0 10px;
+  line-height: 15px;
+}
+
+#plan-style {
+  color: #F5AA28;
+  text-align: center;
+  font-weight: lighter;
+}
+
+.mat-expansion-panel {
+  font-size: 10px;
+}
+
 .button-carousels{
   margin-top: 5px;
   width: 100%;
@@ -170,4 +194,35 @@ td.mat-cell, td.mat-footer-cell, th.mat-header-cell {
   border-radius: 10px;
 }
 
+table {
+  width: 100%;
+}
 
+.tableDesign{
+  box-shadow: none;
+  border: 1px solid white;
+  border-radius: 8px;
+  margin: 20px auto;
+  border-spacing: unset;
+  width: 80%;
+  text-align: center;
+
+}
+
+td.mat-cell, td.mat-footer-cell, th.mat-header-cell {
+  text-align: center;
+}
+
+.close-button {
+  font-weight: lighter;
+  font-size: 13px;
+}
+
+.mat-stroked-button {
+  padding: 1px 7px;
+  line-height: 20px;
+}
+
+.mat-row {
+  line-height: 48px;
+}
