@@ -8,14 +8,14 @@
 /bazel-out
 
 # dependencies
-/node_modules
+#/node_modules
 
 # profiling files
 chrome-profiler-events*.json
 speed-measure-plugin*.json
 
 # IDEs and editors
-/.idea
+#/.idea
 .project
 .classpath
 .c9/
@@ -44,6 +44,4 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-/node_modules/
-/node_modules/
-/node_modules/
+

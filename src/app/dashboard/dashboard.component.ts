@@ -37,6 +37,7 @@ export class DashboardComponent implements OnInit {
   years: any;
   months: any;
   days: any;
+  ids: number[];
 
   CarouselOptions = {
     responsive: {
@@ -79,6 +80,14 @@ export class DashboardComponent implements OnInit {
       (res: any) => {
         console.log(res);
         this.records = res;
+        for (const i of this.records) {
+          this.ids = push(i.fundId);
+          if (this.ids !== i.fundId) {
+            this.ids = i.fundId;
+            } else {
+
+          }
+        }
         this.dataSource.data = this.records;
         this.dataSource.paginator = this.paginator;
       },
@@ -93,11 +102,19 @@ export class DashboardComponent implements OnInit {
       width: '500px',
       data: {id: this.open.fundId , min: fund.minimumFund , max: fund.maximumFund , name: fund.fundCurrencyShortName}
     });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.showFunds();
+    });
   }
   closeDialog(closeId): void {
     const dialogRef = this.dialog.open(CloseModalComponent, {
       width: '500px',
       data: {id: closeId}
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.showRecords();
     });
 }
   ngOnInit() {
