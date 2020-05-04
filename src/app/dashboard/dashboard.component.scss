@@ -219,6 +219,10 @@ td.mat-cell, td.mat-footer-cell, th.mat-header-cell {
 }
 
 .mat-stroked-button {
-  padding: 2px 7px;
+  padding: 1px 7px;
   line-height: 20px;
+}
+
+.mat-row {
+  line-height: 48px;
 }
