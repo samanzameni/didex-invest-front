@@ -24,6 +24,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDividerModule } from '@angular/material/divider';
 import { WidgetModule } from '../widget/widget.module';
 import { CloseModalComponent } from '../dashboard/close-modal/close-modal.component';
+import { MatSnackBarModule } from '@angular/material';
+
 
 @NgModule({
   declarations: [
@@ -54,6 +56,7 @@ import { CloseModalComponent } from '../dashboard/close-modal/close-modal.compon
     MatCheckboxModule,
     MatExpansionModule,
     MatDividerModule,
+    MatSnackBarModule
   ],
   exports: [
     PagesComponent,
