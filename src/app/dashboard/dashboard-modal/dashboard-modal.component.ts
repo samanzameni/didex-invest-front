@@ -3,6 +3,7 @@ import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {DashboardService} from '../../@core/Dashboard/dashboard.service';
 import {OpenClose} from '../../@core/Dashboard/open-close';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-dashboard-modal',
   templateUrl: './dashboard-modal.component.html',
@@ -11,8 +12,12 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 export class DashboardModalComponent implements OnInit {
   openDialog: OpenClose;
   dashForm: FormGroup;
+  errorVariable: boolean;
+  amountError: boolean;
+  showError: string;
   constructor(
     public dialogRef: MatDialogRef<DashboardModalComponent>, private dashboardService: DashboardService, private formBuilder: FormBuilder,
+    private snackBar: MatSnackBar,
     @Inject(MAT_DIALOG_DATA) public data: any) {
     this.openDialog = {
       fundId : null,
@@ -32,10 +37,21 @@ export class DashboardModalComponent implements OnInit {
     return this.dashboardService.postOpen(this.openDialog).subscribe(
       (res: any) => {
         console.log(res);
+        this.snackBar.open('You Have Successfully Confirm The Amount', 'Success', {
+          duration: 2000,
+        });
         this.dialogRef.close();
       },
       err => {
         console.log(err);
+        const errors = err.error.errors;
+        if (errors) {
+          this.showError = errors.amount;
+          this.amountError = true;
+        } else {
+          this.showError = 'Error';
+          this.errorVariable = true;
+        }
       },
     );
   }

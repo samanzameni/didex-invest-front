@@ -234,3 +234,6 @@ input[type='number'] {
 .mat-stroked-button:not([disabled]) {
   border-color: #f44336;
 }
+.cdk-global-scrollblock {
+position: unset !important;
+}
