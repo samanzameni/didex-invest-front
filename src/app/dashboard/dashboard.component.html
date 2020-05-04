@@ -123,8 +123,8 @@
         <ng-container matColumnDef="id">
           <th mat-header-cell *matHeaderCellDef> Close Investment </th>
           <td mat-cell *matCellDef="let element">
-            <button mat-stroked-button color="warn" (click)="closeDialog(element.id)">
-              <mat-icon aria-hidden="false" aria-label="Example home icon" style="font-size: 20px;">close</mat-icon>Close</button></td>
+            <button class="close-button" mat-stroked-button color="warn" (click)="closeDialog(element.id)">
+              <mat-icon aria-hidden="false" aria-label="Example home icon">close</mat-icon>Close</button></td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

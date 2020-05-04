@@ -197,6 +197,7 @@
 table {
   width: 100%;
 }
+
 .tableDesign{
   box-shadow: none;
   border: 1px solid white;
@@ -207,6 +208,17 @@ table {
   text-align: center;
 
 }
+
 td.mat-cell, td.mat-footer-cell, th.mat-header-cell {
   text-align: center;
+}
+
+.close-button {
+  font-weight: lighter;
+  font-size: 13px;
+}
+
+.mat-stroked-button {
+  padding: 2px 7px;
+  line-height: 20px;
 }
