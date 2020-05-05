@@ -1,5 +1,12 @@
 <div fxLayout="column" fxLayoutAlign="start stretch">
   <div class="header">
+    <div class="glow">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
     <h1>Didex Invest</h1>
     <h3>The Simple Way To Earn</h3>
   </div>
@@ -7,7 +14,7 @@
     fxLayout="row"
     fxLayout.sm="column"
     fxLayout.xs="column"
-    fxLayoutGap="50px"
+    fxLayoutGap="55px"
     fxLayoutAlign="start stretch"
     class="investment-header"
   >
@@ -26,7 +33,7 @@
         required, interest will not be charged.
       </p>
     </div>
-    <div fxFlex="60" fxFlex.sm="100" fxFlex.xs="100">
+    <div fxFlex="70" fxFlex.sm="100" fxFlex.xs="100">
       <owl-carousel
         [options]="CarouselOptions"
         [items]="funds"
@@ -57,9 +64,9 @@
                 </svg>
                 <div class="number">
                   <h2>
-                    1.10<span>%</span>
+                    {{fun.fixedInterest}}<span id="percent">%</span>
                     <br />
-                    <span>Per day in week</span>
+                    <span>Per Day In Year</span>
                   </h2>
                   <br />
                 </div>
@@ -71,10 +78,9 @@
               <div fxFlex="80">{{fun.fixedInterest}}% Per Year In Week</div>
             </div> -->
             <div fxLayout="row" fxLayoutAlign="center stretch">
-              <div fxFlex="40">Min Per %0.5</div>
+              <div fxFlex="40">Duration</div>
               <div fxFlex="40" style="text-align: right;">
-                <!-- {{fun.yearsDisplay}}{{fun.monthsDisplay}}{{fun.daysDisplay}} -->Max
-                Per %0.5
+                {{fun.yearsDisplay}}{{fun.monthsDisplay}}{{fun.daysDisplay}}
               </div>
             </div>
             <div
@@ -113,8 +119,8 @@
                     (opened)="panelOpenState = true"
                     (closed)="panelOpenState = false"
                   >
-                    <mat-expansion-panel-header>
-                      <mat-panel-title>
+                    <mat-expansion-panel-header style="text-align: center;">
+                      <mat-panel-title style="text-align: center;">
                         More
                       </mat-panel-title>
                     </mat-expansion-panel-header>
