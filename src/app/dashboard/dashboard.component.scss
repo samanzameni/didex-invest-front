@@ -48,8 +48,7 @@
   width: 0px;
   height: 0px;
   border-radius: 50%;
-  background-color: rgb(218, 216, 216);
-  box-shadow: 0 0 4px 4px rgb(116, 132, 160);
+  box-shadow: 0 0 10px 3px rgb(116, 132, 160);
   /* 0 0 100px 60px #f0f,
     0 0 140px 90px #0ff; */
 }
@@ -61,8 +60,7 @@
   width: 0px;
   height: 0px;
   border-radius: 50%;
-  background-color: rgb(218, 216, 216);
-  box-shadow: 0 0 3px 3px rgb(116, 132, 160);
+  box-shadow: 0 0 6px 3px rgb(116, 132, 160);
   /* 0 0 100px 60px #f0f,
     0 0 140px 90px #0ff; */
 }
@@ -74,8 +72,7 @@
   width: 0px;
   height: 0px;
   border-radius: 50%;
-  background-color: rgb(218, 216, 216);
-  box-shadow: 0 0 2px 2px rgb(116, 132, 160);
+  box-shadow: 0 0 4px 2px rgb(116, 132, 160);
   /* 0 0 100px 60px #f0f,
     0 0 140px 90px #0ff; */
 }
@@ -87,8 +84,7 @@
   width: 0px;
   height: 0px;
   border-radius: 50%;
-  background-color: rgb(218, 216, 216);
-  box-shadow: 0 0 2px 2px rgb(116, 132, 160);
+  box-shadow: 0 0 4px 2px rgb(116, 132, 160);
   /* 0 0 100px 60px #f0f,
     0 0 140px 90px #0ff; */
 }
@@ -100,8 +96,7 @@
   width: 0px;
   height: 0px;
   border-radius: 50%;
-  background-color: rgb(218, 216, 216);
-  box-shadow: 0 0 3px 3px rgb(116, 132, 160);
+  box-shadow: 0 0 6px 3px rgb(116, 132, 160);
 }
 
 .investment-header {
@@ -370,28 +365,44 @@ th.mat-header-cell {
   text-align: left;
 }
 
-@media only screen and (max-width: 768px) {
-  /* For Mobile: */
+@media only screen and (max-width: 460px) {
+  :host {
+    .header {
+      padding: 20px 10px;
+      margin-bottom: 10px;
 
-  .header h1 {
-    font-size: 46px;
-    padding-top: 30px;
-    line-height: 80px;
-  }
+      h1 {
+        font-size: 32px;
+        line-height: 32px;
+      }
 
-  .header h3 {
-    font-size: 24px;
-    padding-bottom: 30px;
-    line-height: 2.5rem;
-  }
+      h3 {
+        font-size: 18px;
+        line-height: 18px;
+      }
+    }
 
-  .investment-header-content h2 {
-    margin-bottom: 10px;
-    font-size: 28px;
-    line-height: 30px;
-  }
+    .investment-header {
+      width: 90%;
+      margin: 0 auto;
+      padding: 10px 0;
+      flex-direction: column;
+    }
 
-  .investment-header-content p {
-    font-size: 13px;
+    .investment-header-content {
+      padding-right: 0px;
+      text-align: center;
+
+      h2 {
+        font-size: 30px;
+        line-height: 40px;
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 21px;
+        text-align: center;
+      }
+    }
   }
 }

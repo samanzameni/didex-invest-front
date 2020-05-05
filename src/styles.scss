@@ -15,6 +15,11 @@ body {
   font-weight: lighter;
   line-height: 30px;
 }
+
+.owl-theme .owl-dots .owl-dot.active span {
+  background: $ddx-yellow;
+}
+
 .mat-button,
 .mat-raised-button,
 .mat-icon-button,
