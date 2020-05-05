@@ -236,9 +236,15 @@ input[type='number'] {
 .mat-expansion-panel-content {
   background: #0d2161;
 }
+
+.mat-expansion-panel-body {
+  padding: 0 0 16px !important;
+}
+
 .mat-stroked-button:not([disabled]) {
   border-color: #f44336;
 }
+
 .cdk-global-scrollblock {
   position: unset !important;
 }
@@ -246,3 +252,5 @@ input[type='number'] {
   font-size: 12px;
   font-weight: normal;
 }
+
+

@@ -64,7 +64,7 @@
                   <circle cx="65" cy="65" r="65"></circle>
                   <circle cx="65" cy="65" r="65"></circle>
                 </svg>
-                <div class="number">
+                <div class="number" style="text-anchor: middle;">
                   <h2>
                     {{fun.fixedInterest}}<span id="percent">%</span>
                     <br />
@@ -80,8 +80,8 @@
               <div fxFlex="80">{{fun.fixedInterest}}% Per Year In Week</div>
             </div> -->
             <div fxLayout="row" fxLayoutAlign="center stretch">
-              <div fxFlex="50" style="padding: 0px 10px;">Duration</div>
-              <div fxFlex="50" style="padding: 0px 10px; text-align: right;">
+              <div fxFlex="30" style="padding: 0px 10px;">Duration</div>
+              <div fxFlex="70" style="padding: 0px 10px; text-align: right;">
                 {{fun.yearsDisplay}}{{fun.monthsDisplay}}{{fun.daysDisplay}}
               </div>
             </div>
@@ -127,8 +127,8 @@
                       </mat-panel-title>
                     </mat-expansion-panel-header>
                     <div fxLayout="row" fxLayoutAlign="start stretch">
-                      <div fxFlex="50">Total Supply</div>
-                      <div fxFlex="50" style="text-align: right;">
+                      <div fxFlex="40" style="font-size: 10px;">Total Supply</div>
+                      <div fxFlex="60" style="text-align: right; font-size: 12px;">
                         {{ fun.totalSupply }}
                         <b>{{ fun.fundCurrencyShortName }}</b>
                       </div>
@@ -136,10 +136,9 @@
                     <div
                       fxLayout="row"
                       fxLayoutAlign="start stretch"
-                      style="font-size: 10px;"
                     >
-                      <div fxFlex="50">Expiration Date</div>
-                      <div fxFlex="50" style="text-align: right;">
+                      <div fxFlex="40" style="font-size: 10px;">Expiration Date</div>
+                      <div fxFlex="60" style="text-align: right; font-size: 12px;">
                         {{ fun.expirationDate }}
                       </div>
                     </div>
@@ -152,7 +151,7 @@
       </owl-carousel>
     </div>
   </div>
-  <div class="tableDesign" style="overflow: auto;">
+  <div class="tableDesign" style="overflow: auto">
     <div class="table-header">
       My Investment History
     </div>

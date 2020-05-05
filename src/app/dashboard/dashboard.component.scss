@@ -129,7 +129,7 @@
 
 .mat-expansion-panel-header-title {
   justify-content: end;
-  padding-top: 5px;
+  padding-top: 4px;
 }
 
 .mat-expansion-panel {
@@ -266,6 +266,10 @@
   font-size: 10px;
 }
 
+.mat-expansion-panel-body {
+  padding: 0;
+}
+
 .button-carousels {
   margin-top: 5px;
   width: 100%;
@@ -278,6 +282,7 @@
   padding: 25px;
   text-align: left;
 }
+
 .table-footer {
   background-color: #0d2161;
   border-radius: 10px;
@@ -293,14 +298,18 @@ table {
   border-radius: 8px;
   margin: 20px auto;
   border-spacing: unset;
-  width: 80%;
   text-align: center;
+  width: 80%;
 }
 
-td.mat-cell,
+/* td.mat-cell,
 td.mat-footer-cell,
 th.mat-header-cell {
   text-align: center;
+} */
+
+.mat-icon {
+  padding-top: 5px;
 }
 
 .close-button {
