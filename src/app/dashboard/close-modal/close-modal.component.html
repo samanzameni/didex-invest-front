@@ -1,15 +1,36 @@
-<h1 mat-dialog-title style="border-bottom: 1px solid #00124B ; font-size: 22px"><b>Close Investment</b></h1>
+<h1 mat-dialog-title style="border-bottom: 1px solid #00124b; font-size: 22px;">
+  <b>Close Investment</b>
+</h1>
 <div mat-dialog-content>
-  <p style="font-size: 18px; font-weight: lighter">Would you want to close your investment fund?
-    It cause you will lost your profits which is you've earned.
+  <p style="font-size: 18px; font-weight: lighter;">
+    Would you want to close your investment fund? It cause you will lost your
+    profits which is you've earned.
   </p>
-  <p style="font-size: 18px; font-weight: lighter">Are you sure to close?</p>
+  <p style="font-size: 18px; font-weight: lighter;">Are you sure to close?</p>
 </div>
-<mat-error *ngIf="amountError">{{showError}}</mat-error>
-<mat-error *ngIf="errorVariable">{{showError}}</mat-error>
+<mat-error *ngIf="amountError">{{ showError }}</mat-error>
+<mat-error *ngIf="errorVariable">{{ showError }}</mat-error>
 <div mat-dialog-actions>
-  <div fxLayout="row" fxLayoutAlign="center stretch"  fxLayoutGap="10px" style="width: 100%">
-    <div fxFlex="100"><button mat-stroked-button color="warn" style="width: 100%" mat-button (click)="onNoClick()">No, I'm Not Sure</button></div>
-    <div fxFlex="100"><button mat-stroked-button color="primary" style="width: 100%" (click)="closePost()" cdkFocusInitial>Yes, I'm Sure</button></div>
+  <div
+    fxLayout="row"
+    fxLayoutAlign="center stretch"
+    fxLayoutGap="10px"
+    style="width: 100%;"
+  >
+    <div fxFlex="100">
+      <button mat-stroked-button style="width: 100%;" (click)="onNoClick()">
+        No, I'm Not Sure
+      </button>
+    </div>
+    <div fxFlex="100">
+      <button
+        mat-raised-button
+        color="primary"
+        style="width: 100%;"
+        (click)="closePost()"
+      >
+        Yes, I'm Sure
+      </button>
+    </div>
   </div>
 </div>

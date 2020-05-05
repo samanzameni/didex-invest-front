@@ -1,13 +1,33 @@
-<h1 mat-dialog-title style="border-bottom: 1px solid #00124B ; font-size: 22px"><b>{{data.name}}</b> Subscribe</h1>
+<h4 mat-dialog-title style="border-bottom: 1px solid #00124b; font-size: 22px;">
+  <b>{{ data.name }}</b> Subscribe
+</h4>
 <div mat-dialog-content>
-  <p style="font-size: 18px">Subscription Amount</p>
   <form class="example-form" [formGroup]="dashForm">
-    <div fxLayout="column" fxLayoutAlign="start stretch" >
-    <mat-form-field class="example-full-width">
-      <input style="font-size: 14px; font-weight: lighter" matInput type="number" placeholder="Please Enter The Quantity" value="" [(ngModel)]="openDialog.amount" formControlName="number">
-    </mat-form-field>
-      <div *ngIf="dashForm.controls['number'].invalid && (dashForm.controls['number'].dirty || dashForm.controls['number'].touched)" class="alert alert-danger">
-        <div *ngIf="dashForm.controls['number'].errors.required" class="error-css">
+    <div fxLayout="column" fxLayoutAlign="start stretch">
+      <mat-form-field class="example-full-width">
+        <mat-label>Subscription Amount</mat-label>
+        <input
+          matInput
+          type="number"
+          placeholder="Please Enter The Quantity"
+          value=""
+          [(ngModel)]="openDialog.amount"
+          formControlName="number"
+        />
+        <span matSuffix>{{ data.name }}</span>
+      </mat-form-field>
+      <div
+        *ngIf="
+          dashForm.controls['number'].invalid &&
+          (dashForm.controls['number'].dirty ||
+            dashForm.controls['number'].touched)
+        "
+        class="alert alert-danger"
+      >
+        <div
+          *ngIf="dashForm.controls['number'].errors.required"
+          class="error-css"
+        >
           Quantity is required.
         </div>
         <div *ngIf="dashForm.controls['number'].errors.max" class="error-css">
@@ -17,14 +37,27 @@
           The number is less than Min.
         </div>
       </div>
-      <mat-error *ngIf="amountError">{{showError}}</mat-error>
-    <mat-checkbox formControlName="check" style="font-size: 12px; font-weight: lighter" >I have Read And I Agree To <a href="">Didex Invest Service Agreement</a></mat-checkbox>
-      <mat-error *ngIf="errorVariable">{{showError}}</mat-error>
-</div>
+      <mat-error *ngIf="amountError">{{ showError }}</mat-error>
+      <mat-checkbox
+        formControlName="check"
+        style="font-size: 12px; font-weight: lighter;"
+        >I have read and I agree to
+        <a class="modal-link" href=""
+          >Didex Invest Service Agreement</a
+        ></mat-checkbox
+      >
+      <mat-error *ngIf="errorVariable">{{ showError }}</mat-error>
+    </div>
   </form>
 </div>
 <div mat-dialog-actions>
-
-  <button mat-button  cdkFocusInitial [disabled]="!dashForm.valid" (click)="openPost()" color="primary" style="width: 100%" >Confirm</button>
+  <button
+    mat-raised-button
+    [disabled]="!dashForm.valid"
+    (click)="openPost()"
+    color="primary"
+    style="width: 100%;"
+  >
+    Confirm
+  </button>
 </div>
-

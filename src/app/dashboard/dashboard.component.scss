@@ -1,14 +1,44 @@
+@import '../../styles.scss';
+
 .header {
-  padding: 0 20px;
-  text-align: center;
+  padding: 30px 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: #162a6d;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
+  position: relative;
+
+  h1 {
+    font-size: 46px;
+    line-height: 46px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    z-index: 1;
+  }
+
+  h3 {
+    margin: auto;
+    font-size: 23px;
+    line-height: 23px;
+    font-weight: 200;
+    color: $ddx-yellow;
+    z-index: 1;
+  }
 }
 
 /* glow dots start here */
 
 .glow {
-  z-index: 1;
+  z-index: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
 }
 
 .glow div:nth-child(1) {
@@ -19,51 +49,47 @@
   height: 0px;
   border-radius: 50%;
   background-color: rgb(218, 216, 216);
-  box-shadow:
-    0 0 4px 4px rgb(116, 132, 160)
-    /* 0 0 100px 60px #f0f,
+  box-shadow: 0 0 4px 4px rgb(116, 132, 160);
+  /* 0 0 100px 60px #f0f,
     0 0 140px 90px #0ff; */
 }
 
 .glow div:nth-child(2) {
   position: absolute;
-  top: 23%;
+  top: 28%;
   left: 40%;
   width: 0px;
   height: 0px;
   border-radius: 50%;
   background-color: rgb(218, 216, 216);
-  box-shadow:
-    0 0 3px 3px rgb(116, 132, 160)
-    /* 0 0 100px 60px #f0f,
+  box-shadow: 0 0 3px 3px rgb(116, 132, 160);
+  /* 0 0 100px 60px #f0f,
     0 0 140px 90px #0ff; */
 }
 
 .glow div:nth-child(3) {
   position: absolute;
-  top: 23%;
+  top: 77%;
   left: 45%;
   width: 0px;
   height: 0px;
   border-radius: 50%;
   background-color: rgb(218, 216, 216);
-  box-shadow:
-    0 0 2px 2px rgb(116, 132, 160);
-    /* 0 0 100px 60px #f0f,
+  box-shadow: 0 0 2px 2px rgb(116, 132, 160);
+  /* 0 0 100px 60px #f0f,
     0 0 140px 90px #0ff; */
 }
 
 .glow div:nth-child(4) {
   position: absolute;
-  top: 30%;
+  top: 46%;
   right: 45%;
   width: 0px;
   height: 0px;
   border-radius: 50%;
   background-color: rgb(218, 216, 216);
-  box-shadow:
-    0 0 2px 2px rgb(116, 132, 160)
-    /* 0 0 100px 60px #f0f,
+  box-shadow: 0 0 2px 2px rgb(116, 132, 160);
+  /* 0 0 100px 60px #f0f,
     0 0 140px 90px #0ff; */
 }
 
@@ -75,54 +101,37 @@
   height: 0px;
   border-radius: 50%;
   background-color: rgb(218, 216, 216);
-  box-shadow:
-    0 0 3px 3px rgb(116, 132, 160);
-}
-
-.header h1 {
-  margin: auto;
-  font-size: 74px;
-  font-weight: 600;
-  padding-top: 40px;
-  line-height: 100px;
-  z-index: 2;
-}
-
-.header h3 {
-  margin: auto;
-  font-size: 38px;
-  font-weight: lighter;
-  color: #f5aa28;
-  padding-bottom: 40px;
-  line-height: 3rem;
-  z-index: 2;
+  box-shadow: 0 0 3px 3px rgb(116, 132, 160);
 }
 
 .investment-header {
   width: 80%;
-  margin: auto;
+  margin: 10px auto 70px auto;
   padding: 30px 0;
-  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .investment-header-content {
-  padding-right: 20px;
-}
+  padding-right: 10px;
 
-.investment-header-content h2:nth-child(2) {
-  color: #f5aa28;
-}
+  h2 {
+    margin: auto;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 50px;
+    text-transform: capitalize;
 
-.investment-header-content h2 {
-  margin: auto;
-  font-size: 42px;
-  font-weight: 600;
-  line-height: 60px;
-  text-transform: capitalize;
-}
+    &.highlighted {
+      color: $ddx-yellow;
+    }
+  }
 
-.investment-header-content p {
-  font-size: 14px;
+  p {
+    font-size: 14px;
+    line-height: 23px;
+    text-align: justify;
+  }
 }
 
 .mat-expansion-panel-header {
@@ -316,9 +325,18 @@ th.mat-header-cell {
   padding-top: 5px;
 }
 
-.close-button {
+.mat-stroked-button.close-button {
   font-weight: lighter;
   font-size: 13px;
+  border-color: $ddx-red;
+
+  .close-button__icon {
+    font-size: 13px;
+    line-height: 13px;
+    width: unset;
+    height: unset;
+    padding: 0;
+  }
 }
 
 .mat-stroked-button {
@@ -339,7 +357,8 @@ th.mat-header-cell {
   line-height: 55px;
 }
 
-.mat-row, .mat-header-row {
+.mat-row,
+.mat-header-row {
   min-width: 1200px;
 }
 
@@ -359,12 +378,11 @@ th.mat-header-cell {
     padding-top: 30px;
     line-height: 80px;
   }
-  
+
   .header h3 {
     font-size: 24px;
     padding-bottom: 30px;
     line-height: 2.5rem;
-    
   }
 
   .investment-header-content h2 {
@@ -372,9 +390,8 @@ th.mat-header-cell {
     font-size: 28px;
     line-height: 30px;
   }
-  
+
   .investment-header-content p {
     font-size: 13px;
   }
-  
 }

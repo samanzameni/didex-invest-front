@@ -104,17 +104,11 @@ export class DashboardComponent implements OnInit {
   showRecords() {
     return this.dashboardService.getRecords().subscribe(
       (res: any) => {
-        console.log(res);
         this.records = res;
         for (const i of this.records) {
-          if (
-            i.type !== InvestRecordType.Closing &&
-            this.ids.indexOf(i.fundId) === -1
-          ) {
-            i.needButton = true;
+          if (!this.ids.includes(i.fundId)) {
             this.ids.push(i.fundId);
-          } else {
-            i.needButton = false;
+            i.needButton = i.type !== InvestRecordType.Closing;
           }
         }
         this.dataSource.data = this.records;
