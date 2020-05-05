@@ -230,10 +230,19 @@ input[type='number'] {
   .mat-expansion-panel-header:hover:not([aria-disabled='true']) {
   background: #0d2161;
 }
+.mat-expansion-panel:not([class*='mat-elevation-z']) {
+  box-shadow: none;
+}
 .mat-expansion-panel-content {
   background: #0d2161;
 }
 .mat-stroked-button:not([disabled]) {
   border-color: #f44336;
 }
-
+.cdk-global-scrollblock {
+  position: unset !important;
+}
+.mat-error {
+  font-size: 12px;
+  font-weight: normal;
+}

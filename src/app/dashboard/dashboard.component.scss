@@ -1,8 +1,7 @@
-
-.header{
+.header {
   padding: 0 20px;
   text-align: center;
-  background-color: #162A6D;
+  background-color: #162a6d;
 }
 
 .header h1 {
@@ -17,12 +16,12 @@
   margin: auto;
   font-size: 38px;
   font-weight: lighter;
-  color: #F5AA28;
+  color: #f5aa28;
   padding-bottom: 49.5px;
   line-height: 3rem;
 }
 
-.investment-header{
+.investment-header {
   width: 80%;
   margin: auto;
   padding: 30px 0;
@@ -33,7 +32,7 @@
 }
 
 .investment-header-content h2:nth-child(2) {
-  color: #F5AA28;
+  color: #f5aa28;
 }
 
 .investment-header-content h2 {
@@ -52,7 +51,7 @@
   font-family: overpass, 'Helvetica Neue', sans-serif;
 }
 
-.item-carousels{
+.item-carousels {
   /* padding: 10px; */
   font-size: 12px;
   align-content: center;
@@ -69,7 +68,7 @@
   font-size: 14px;
 }
 
-#item-carousels-inner-wrapper{
+#item-carousels-inner-wrapper {
   padding: 10px;
 }
 
@@ -113,29 +112,28 @@
   transform: translate(5px, 5px);
   stroke-dasharray: 440;
   stroke-dashoffset: 440;
-  stroke-Linecap: round;
+  stroke-linecap: round;
 }
 
 .box .percent svg circle:nth-child(1) {
   stroke-dashoffset: 90;
-  stroke: #F5AA28;
+  stroke: #f5aa28;
 }
-
 
 .box .percent svg circle:nth-child(2) {
   stroke-dashoffset: 100;
-  stroke: #0D2161;
+  stroke: #0d2161;
   stroke-width: 5px;
 }
- 
+
 .box .percent svg circle:nth-child(3) {
   stroke-dashoffset: 510;
-  stroke: #F5AA28;
+  stroke: #f5aa28;
 }
 
 .box .percent svg circle:nth-child(4) {
-  stroke-dashoffset: 110;
-  stroke: #F5AA28;
+  stroke-dashoffset: calc(440 - (440 * 75 / 100));
+  stroke: #f5aa28;
 }
 
 .box .percent .number {
@@ -168,7 +166,7 @@
 }
 
 #plan-style {
-  color: #F5AA28;
+  color: #f5aa28;
   text-align: center;
   font-weight: lighter;
 }
@@ -177,20 +175,20 @@
   font-size: 10px;
 }
 
-.button-carousels{
+.button-carousels {
   margin-top: 5px;
   width: 100%;
-  border-radius: 10px;
+  border-radius: 5px;
   line-height: 27px;
 }
 
-.table-header{
+.table-header {
   border-bottom: 1px solid white;
   padding: 25px;
   text-align: left;
 }
-.table-footer{
-  background-color: #0D2161;
+.table-footer {
+  background-color: #0d2161;
   border-radius: 10px;
 }
 
@@ -198,7 +196,7 @@ table {
   width: 100%;
 }
 
-.tableDesign{
+.tableDesign {
   box-shadow: none;
   border: 1px solid white;
   border-radius: 8px;
@@ -206,10 +204,11 @@ table {
   border-spacing: unset;
   width: 80%;
   text-align: center;
-
 }
 
-td.mat-cell, td.mat-footer-cell, th.mat-header-cell {
+td.mat-cell,
+td.mat-footer-cell,
+th.mat-header-cell {
   text-align: center;
 }
 

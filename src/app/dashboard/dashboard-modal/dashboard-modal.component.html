@@ -17,7 +17,9 @@
           The number is less than Min.
         </div>
       </div>
+      <mat-error *ngIf="amountError">{{showError}}</mat-error>
     <mat-checkbox formControlName="check" style="font-size: 12px; font-weight: lighter" >I have Read And I Agree To <a href="">Didex Invest Service Agreement</a></mat-checkbox>
+      <mat-error *ngIf="errorVariable">{{showError}}</mat-error>
 </div>
   </form>
 </div>
