@@ -307,3 +307,20 @@ th.mat-header-cell {
 .mat-row {
   line-height: 48px;
 }
+
+.table-header {
+  padding: 15px 25px;
+  font-weight: 500;
+}
+
+.mat-header-row {
+  line-height: 55px;
+}
+
+td.mat-cell {
+  text-align: left;
+}
+
+th.mat-header-cell {
+  text-align: left;
+}
