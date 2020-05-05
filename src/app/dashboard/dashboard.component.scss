@@ -2,6 +2,7 @@
   padding: 0 20px;
   text-align: center;
   background-color: #162a6d;
+  margin-bottom: 10px;
 }
 
 /* glow dots start here */
@@ -82,7 +83,7 @@
   margin: auto;
   font-size: 74px;
   font-weight: 600;
-  padding-top: 49.5px;
+  padding-top: 40px;
   line-height: 100px;
   z-index: 2;
 }
@@ -92,7 +93,7 @@
   font-size: 38px;
   font-weight: lighter;
   color: #f5aa28;
-  padding-bottom: 49.5px;
+  padding-bottom: 40px;
   line-height: 3rem;
   z-index: 2;
 }
@@ -101,6 +102,7 @@
   width: 80%;
   margin: auto;
   padding: 30px 0;
+  margin-bottom: 20px;
 }
 
 .investment-header-content {
@@ -289,6 +291,7 @@
 }
 
 table {
+  min-width: 1000px;
   width: 100%;
 }
 
@@ -299,6 +302,7 @@ table {
   margin: 20px auto;
   border-spacing: unset;
   text-align: center;
+  min-width: 1000px;
   width: 80%;
 }
 
@@ -335,10 +339,42 @@ th.mat-header-cell {
   line-height: 55px;
 }
 
+.mat-row, .mat-header-row {
+  min-width: 1200px;
+}
+
 td.mat-cell {
   text-align: left;
 }
 
 th.mat-header-cell {
   text-align: left;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For Mobile: */
+
+  .header h1 {
+    font-size: 46px;
+    padding-top: 30px;
+    line-height: 80px;
+  }
+  
+  .header h3 {
+    font-size: 24px;
+    padding-bottom: 30px;
+    line-height: 2.5rem;
+    
+  }
+
+  .investment-header-content h2 {
+    margin-bottom: 10px;
+    font-size: 28px;
+    line-height: 40px;
+  }
+  
+  .investment-header-content p {
+    font-size: 13px;
+  }
+  
 }
