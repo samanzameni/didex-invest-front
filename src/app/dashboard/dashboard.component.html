@@ -162,7 +162,9 @@
 
         <ng-container matColumnDef="type">
           <th mat-header-cell *matHeaderCellDef>Action</th>
-          <td mat-cell *matCellDef="let element">{{ element.type }}</td>
+          <td mat-cell *matCellDef="let element">
+            {{ investRecordType[element.type] }}
+          </td>
         </ng-container>
 
         <ng-container matColumnDef="brfore">
@@ -184,12 +186,15 @@
           <th mat-header-cell *matHeaderCellDef>Close Investment</th>
           <td mat-cell *matCellDef="let element">
             <button
-              class="close-button"
+              *ngIf="element.needButton"
               mat-stroked-button
               color="warn"
               (click)="closeDialog(element.fundId)"
             >
-              <mat-icon aria-hidden="false" aria-label="Example home icon"
+              <mat-icon
+                aria-hidden="false"
+                aria-label="Example home icon"
+                style="font-size: 20px;"
                 >close</mat-icon
               >Close
             </button>

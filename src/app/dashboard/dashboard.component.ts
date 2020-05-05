@@ -9,6 +9,7 @@ import { Records } from '../@core/Dashboard/records';
 import { OpenClose } from '../@core/Dashboard/open-close';
 import { FundsType } from '../@core/Dashboard/funds-type.enum';
 import { CloseModalComponent } from './close-modal/close-modal.component';
+import { InvestRecordType } from '../@core/Dashboard/ invest-record-type.enum';
 
 @Component({
   selector: 'app-dashboard',
@@ -17,6 +18,7 @@ import { CloseModalComponent } from './close-modal/close-modal.component';
 })
 export class DashboardComponent implements OnInit {
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+
   constructor(
     public dialog: MatDialog,
     private dashboardService: DashboardService
@@ -28,12 +30,15 @@ export class DashboardComponent implements OnInit {
     this.close = {
       fundId: null,
     };
+    this.ids = [];
   }
   funds: Funds[];
   records: Records[];
   open: OpenClose;
   close: OpenClose;
   panelOpenState = false;
+  ids: number[];
+  investRecordType = InvestRecordType;
   displayedColumns: string[] = [
     'timeStamp',
     'fundName',
@@ -48,7 +53,6 @@ export class DashboardComponent implements OnInit {
   years: any;
   months: any;
   days: any;
-  ids: number[];
 
   CarouselOptions = {
     responsive: {
@@ -102,14 +106,14 @@ export class DashboardComponent implements OnInit {
       (res: any) => {
         console.log(res);
         this.records = res;
-        // for (const i of this.records) {
-        //   this.ids = push(i.fundId);
-        //   if (this.ids !== i.fundId) {
-        //     this.ids = i.fundId;
-        //     } else {
-
-        //   }
-        // }
+        for (const i of this.records) {
+          if (i.type !== 2 && this.ids.indexOf(i.fundId) === -1) {
+            i.needButton = true;
+            this.ids.push(i.fundId);
+          } else {
+            i.needButton = false;
+          }
+        }
         this.dataSource.data = this.records;
         this.dataSource.paginator = this.paginator;
       },
