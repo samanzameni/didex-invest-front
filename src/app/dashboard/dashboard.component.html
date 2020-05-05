@@ -7,7 +7,9 @@
       <div></div>
       <div></div>
     </div>
-    <h1>Didex Invest</h1>
+    <h1>
+      Didex Invest
+    </h1>
     <h3>The Simple Way To Earn</h3>
   </div>
   <div
@@ -62,7 +64,7 @@
                   <circle cx="65" cy="65" r="65"></circle>
                   <circle cx="65" cy="65" r="65"></circle>
                 </svg>
-                <div class="number">
+                <div class="number" style="text-anchor: middle;">
                   <h2>
                     {{ fun.fixedInterest }}<span id="percent">%</span>
                     <br />
@@ -78,8 +80,8 @@
               <div fxFlex="80">{{fun.fixedInterest}}% Per Year In Week</div>
             </div> -->
             <div fxLayout="row" fxLayoutAlign="center stretch">
-              <div fxFlex="40">Duration</div>
-              <div fxFlex="40" style="text-align: right;">
+              <div fxFlex="30" style="padding: 0px 10px;">Duration</div>
+              <div fxFlex="70" style="padding: 0px 10px; text-align: right;">
                 {{ fun.yearsDisplay }}{{ fun.monthsDisplay
                 }}{{ fun.daysDisplay }}
               </div>
@@ -120,25 +122,33 @@
                     (opened)="panelOpenState = true"
                     (closed)="panelOpenState = false"
                   >
-                    <mat-expansion-panel-header style="text-align: center;">
-                      <mat-panel-title style="text-align: center;">
+                    <mat-expansion-panel-header
+                      style="max-width: 55px; margin: 0 auto;"
+                    >
+                      <mat-panel-title>
                         More
                       </mat-panel-title>
                     </mat-expansion-panel-header>
                     <div fxLayout="row" fxLayoutAlign="start stretch">
-                      <div fxFlex="50">Total Supply</div>
-                      <div fxFlex="50" style="text-align: right;">
+                      <div fxFlex="40" style="font-size: 10px;">
+                        Total Supply
+                      </div>
+                      <div
+                        fxFlex="60"
+                        style="text-align: right; font-size: 12px;"
+                      >
                         {{ fun.totalSupply }}
                         <b>{{ fun.fundCurrencyShortName }}</b>
                       </div>
                     </div>
-                    <div
-                      fxLayout="row"
-                      fxLayoutAlign="start stretch"
-                      style="font-size: 10px;"
-                    >
-                      <div fxFlex="50">Expiration Date</div>
-                      <div fxFlex="50" style="text-align: right;">
+                    <div fxLayout="row" fxLayoutAlign="start stretch">
+                      <div fxFlex="40" style="font-size: 10px;">
+                        Expiration Date
+                      </div>
+                      <div
+                        fxFlex="60"
+                        style="text-align: right; font-size: 12px;"
+                      >
                         {{ fun.expirationDate }}
                       </div>
                     </div>
@@ -199,7 +209,10 @@
               color="warn"
               (click)="closeDialog(element.fundId)"
             >
-              <mat-icon aria-hidden="false" aria-label="Example home icon"
+              <mat-icon
+                aria-hidden="false"
+                aria-label="Example home icon"
+                style="font-size: 15px;"
                 >close</mat-icon
               >Close
             </button>
