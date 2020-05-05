@@ -7,7 +7,7 @@
     fxLayout="row"
     fxLayout.sm="column"
     fxLayout.xs="column"
-    fxLayoutGap="50px"
+    fxLayoutGap="55px"
     fxLayoutAlign="start stretch"
     class="investment-header"
   >
@@ -26,7 +26,7 @@
         required, interest will not be charged.
       </p>
     </div>
-    <div fxFlex="60" fxFlex.sm="100" fxFlex.xs="100">
+    <div fxFlex="70" fxFlex.sm="100" fxFlex.xs="100">
       <owl-carousel
         [options]="CarouselOptions"
         [items]="funds"
@@ -67,13 +67,13 @@
             </div>
             <!-- progressbar ends here -->
 
-            <!-- <div fxLayout="row" fxLayoutAlign="center stretch" >
+            <div fxLayout="row" fxLayoutAlign="center stretch" >
               <div fxFlex="80">{{fun.fixedInterest}}% Per Year In Week</div>
-            </div> -->
+            </div>
             <div fxLayout="row" fxLayoutAlign="center stretch">
               <div fxFlex="40">Min Per %0.5</div>
               <div fxFlex="40" style="text-align: right;">
-                <!-- {{fun.yearsDisplay}}{{fun.monthsDisplay}}{{fun.daysDisplay}} -->Max
+                {{fun.yearsDisplay}}{{fun.monthsDisplay}}{{fun.daysDisplay}}Max
                 Per %0.5
               </div>
             </div>

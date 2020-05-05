@@ -28,7 +28,7 @@
 }
 
 .investment-header-content {
-  padding: 0px 20px;
+  padding-right: 20px;
 }
 
 .investment-header-content h2:nth-child(2) {
@@ -132,7 +132,7 @@
 }
 
 .box .percent svg circle:nth-child(4) {
-  stroke-dashoffset: calc(440 - (440 * 75 / 100));
+  stroke-dashoffset: 110;
   stroke: #f5aa28;
 }
 
