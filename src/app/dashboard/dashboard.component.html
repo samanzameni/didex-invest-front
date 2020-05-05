@@ -1,5 +1,12 @@
 <div fxLayout="column" fxLayoutAlign="start stretch">
   <div class="header">
+    <div class="glow">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
     <h1>Didex Invest</h1>
     <h3>The Simple Way To Earn</h3>
   </div>
@@ -57,9 +64,9 @@
                 </svg>
                 <div class="number">
                   <h2>
-                    1.10<span>%</span>
+                    {{fun.fixedInterest}}<span id="percent">%</span>
                     <br />
-                    <span>Per day in week</span>
+                    <span>Per Day In Year</span>
                   </h2>
                   <br />
                 </div>
@@ -67,14 +74,13 @@
             </div>
             <!-- progressbar ends here -->
 
-            <div fxLayout="row" fxLayoutAlign="center stretch" >
+            <!-- <div fxLayout="row" fxLayoutAlign="center stretch" >
               <div fxFlex="80">{{fun.fixedInterest}}% Per Year In Week</div>
-            </div>
+            </div> -->
             <div fxLayout="row" fxLayoutAlign="center stretch">
-              <div fxFlex="40">Min Per %0.5</div>
+              <div fxFlex="40">Duration</div>
               <div fxFlex="40" style="text-align: right;">
-                {{fun.yearsDisplay}}{{fun.monthsDisplay}}{{fun.daysDisplay}}Max
-                Per %0.5
+                {{fun.yearsDisplay}}{{fun.monthsDisplay}}{{fun.daysDisplay}}
               </div>
             </div>
             <div

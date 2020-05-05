@@ -4,12 +4,87 @@
   background-color: #162a6d;
 }
 
+/* glow dots start here */
+
+.glow {
+  z-index: 1;
+}
+
+.glow div:nth-child(1) {
+  position: absolute;
+  top: 23%;
+  left: 30%;
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+  background-color: rgb(218, 216, 216);
+  box-shadow:
+    0 0 4px 4px rgb(116, 132, 160)
+    /* 0 0 100px 60px #f0f,
+    0 0 140px 90px #0ff; */
+}
+
+.glow div:nth-child(2) {
+  position: absolute;
+  top: 23%;
+  left: 40%;
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+  background-color: rgb(218, 216, 216);
+  box-shadow:
+    0 0 3px 3px rgb(116, 132, 160)
+    /* 0 0 100px 60px #f0f,
+    0 0 140px 90px #0ff; */
+}
+
+.glow div:nth-child(3) {
+  position: absolute;
+  top: 23%;
+  left: 45%;
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+  background-color: rgb(218, 216, 216);
+  box-shadow:
+    0 0 2px 2px rgb(116, 132, 160);
+    /* 0 0 100px 60px #f0f,
+    0 0 140px 90px #0ff; */
+}
+
+.glow div:nth-child(4) {
+  position: absolute;
+  top: 30%;
+  right: 45%;
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+  background-color: rgb(218, 216, 216);
+  box-shadow:
+    0 0 2px 2px rgb(116, 132, 160)
+    /* 0 0 100px 60px #f0f,
+    0 0 140px 90px #0ff; */
+}
+
+.glow div:nth-child(5) {
+  position: absolute;
+  top: 35%;
+  right: 35%;
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+  background-color: rgb(218, 216, 216);
+  box-shadow:
+    0 0 3px 3px rgb(116, 132, 160);
+}
+
 .header h1 {
   margin: auto;
   font-size: 74px;
   font-weight: 600;
   padding-top: 49.5px;
   line-height: 100px;
+  z-index: 2;
 }
 
 .header h3 {
@@ -19,6 +94,7 @@
   color: #f5aa28;
   padding-bottom: 49.5px;
   line-height: 3rem;
+  z-index: 2;
 }
 
 .investment-header {
@@ -163,6 +239,12 @@
 .card-content {
   padding: 0 10px;
   line-height: 15px;
+}
+
+#percent {
+  color: #f5aa28;
+  font-size: 1rem;
+  text-align: right;
 }
 
 #plan-style {
