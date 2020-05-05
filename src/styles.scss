@@ -4,6 +4,8 @@
 @import 'https://overpass-30e2.kxcdn.com/overpass.css';
 // Plus imports for other components in your app.
 
+@import 'assets/reset.scss';
+
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
@@ -228,6 +230,9 @@ input[type='number'] {
   .mat-expansion-panel-header:hover:not([aria-disabled='true']) {
   background: #0d2161;
 }
+.mat-expansion-panel:not([class*='mat-elevation-z']) {
+  box-shadow: none;
+}
 .mat-expansion-panel-content {
   background: #0d2161;
 }
@@ -235,7 +240,7 @@ input[type='number'] {
   border-color: #f44336;
 }
 .cdk-global-scrollblock {
-position: unset !important;
+  position: unset !important;
 }
 .mat-error {
   font-size: 12px;

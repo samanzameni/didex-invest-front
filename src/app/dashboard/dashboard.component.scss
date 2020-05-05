@@ -1,28 +1,12 @@
-table {
-  width: 100%;
-}
-.tableDesign{
-  box-shadow: none;
-  border: 1px solid white;
-  border-radius: 8px;
-  margin: 20px auto;
-  border-spacing: unset;
-  width: 80%;
-  text-align: center;
-
-}
-td.mat-cell, td.mat-footer-cell, th.mat-header-cell {
-  text-align: center;
-}
-.header{
+.header {
   padding: 0 20px;
   text-align: center;
-  background-color: #162A6D;
+  background-color: #162a6d;
 }
 
 .header h1 {
   margin: auto;
-  font-size: 78px;
+  font-size: 74px;
   font-weight: 600;
   padding-top: 49.5px;
   line-height: 100px;
@@ -30,14 +14,14 @@ td.mat-cell, td.mat-footer-cell, th.mat-header-cell {
 
 .header h3 {
   margin: auto;
-  font-size: 42px;
+  font-size: 38px;
   font-weight: lighter;
-  color: #F5AA28;
+  color: #f5aa28;
   padding-bottom: 49.5px;
   line-height: 3rem;
 }
 
-.investment-header{
+.investment-header {
   width: 80%;
   margin: auto;
   padding: 30px 0;
@@ -47,35 +31,197 @@ td.mat-cell, td.mat-footer-cell, th.mat-header-cell {
   padding: 0px 20px;
 }
 
+.investment-header-content h2:nth-child(2) {
+  color: #f5aa28;
+}
+
 .investment-header-content h2 {
   margin: auto;
-  font-size: 50px;
+  font-size: 42px;
   font-weight: 600;
   line-height: 60px;
   text-transform: capitalize;
 }
 
 .investment-header-content p {
-  font-size: 18px;
+  font-size: 14px;
 }
 
-.table-header{
+.mat-expansion-panel-header {
+  font-family: overpass, 'Helvetica Neue', sans-serif;
+}
+
+.item-carousels {
+  /* padding: 10px; */
+  font-size: 12px;
+  align-content: center;
+  border: 1px solid white;
+  border-radius: 8px;
+  margin: 0 5px;
+}
+
+#item-carousels-wrapper {
+  border-bottom: 1px solid white;
+  padding-left: 20px;
+  margin-bottom: 5px;
+  line-height: 30px;
+  font-size: 14px;
+}
+
+#item-carousels-inner-wrapper {
+  padding: 10px;
+}
+
+#item-carousels-inner-wrapper div {
+  font-size: 16px;
+}
+
+#item-carousels-inner-wrapper div:nth-child(2) {
+  text-align: right;
+}
+
+/* progress bar starts here */
+.box {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: transparent;
+}
+
+.percent {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+
+.box .percent svg {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+
+.box .percent svg circle {
+  width: 150px;
+  height: 150px;
+  fill: none;
+  stroke-width: 3;
+  stroke: #000;
+  transform: translate(5px, 5px);
+  stroke-dasharray: 440;
+  stroke-dashoffset: 440;
+  stroke-linecap: round;
+}
+
+.box .percent svg circle:nth-child(1) {
+  stroke-dashoffset: 90;
+  stroke: #f5aa28;
+}
+
+.box .percent svg circle:nth-child(2) {
+  stroke-dashoffset: 100;
+  stroke: #0d2161;
+  stroke-width: 5px;
+}
+
+.box .percent svg circle:nth-child(3) {
+  stroke-dashoffset: 510;
+  stroke: #f5aa28;
+}
+
+.box .percent svg circle:nth-child(4) {
+  stroke-dashoffset: calc(440 - (440 * 75 / 100));
+  stroke: #f5aa28;
+}
+
+.box .percent .number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.box .percent .number h2 {
+  font-size: 48px;
+  font-weight: lighter;
+  line-height: 10px;
+}
+
+.box .percent .number h2 span {
+  font-size: 11px;
+}
+
+/* progress bar ends here */
+
+.card-content {
+  padding: 0 10px;
+  line-height: 15px;
+}
+
+#plan-style {
+  color: #f5aa28;
+  text-align: center;
+  font-weight: lighter;
+}
+
+.mat-expansion-panel {
+  font-size: 10px;
+}
+
+.button-carousels {
+  margin-top: 5px;
+  width: 100%;
+  border-radius: 5px;
+  line-height: 27px;
+}
+
+.table-header {
   border-bottom: 1px solid white;
   padding: 25px;
   text-align: left;
 }
-.table-footer{
-  background-color: #0D2161;
+.table-footer {
+  background-color: #0d2161;
   border-radius: 10px;
 }
-.button-carousels{
-  margin-top: 5px;
+
+table {
   width: 100%;
 }
-.item-carousels{
-  align-content: center;
+
+.tableDesign {
+  box-shadow: none;
   border: 1px solid white;
-  padding: 5px;
   border-radius: 8px;
-  margin: 0 5px;
+  margin: 20px auto;
+  border-spacing: unset;
+  width: 80%;
+  text-align: center;
+}
+
+td.mat-cell,
+td.mat-footer-cell,
+th.mat-header-cell {
+  text-align: center;
+}
+
+.close-button {
+  font-weight: lighter;
+  font-size: 13px;
+}
+
+.mat-stroked-button {
+  padding: 1px 7px;
+  line-height: 20px;
+}
+
+.mat-row {
+  line-height: 48px;
 }
