@@ -64,7 +64,7 @@
                 </svg>
                 <div class="number">
                   <h2>
-                    {{fun.fixedInterest}}<span id="percent">%</span>
+                    {{ fun.fixedInterest }}<span id="percent">%</span>
                     <br />
                     <span>Per Day In Year</span>
                   </h2>
@@ -80,7 +80,8 @@
             <div fxLayout="row" fxLayoutAlign="center stretch">
               <div fxFlex="40">Duration</div>
               <div fxFlex="40" style="text-align: right;">
-                {{fun.yearsDisplay}}{{fun.monthsDisplay}}{{fun.daysDisplay}}
+                {{ fun.yearsDisplay }}{{ fun.monthsDisplay
+                }}{{ fun.daysDisplay }}
               </div>
             </div>
             <div
@@ -192,15 +193,13 @@
           <th mat-header-cell *matHeaderCellDef>Close Investment</th>
           <td mat-cell *matCellDef="let element">
             <button
+              class="close-button"
               *ngIf="element.needButton"
               mat-stroked-button
               color="warn"
               (click)="closeDialog(element.fundId)"
             >
-              <mat-icon
-                aria-hidden="false"
-                aria-label="Example home icon"
-                style="font-size: 20px;"
+              <mat-icon aria-hidden="false" aria-label="Example home icon"
                 >close</mat-icon
               >Close
             </button>
