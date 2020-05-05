@@ -9,6 +9,7 @@ import {Records} from '../@core/Dashboard/records';
 import {OpenClose} from '../@core/Dashboard/open-close';
 import {FundsType} from '../@core/Dashboard/funds-type.enum';
 import {CloseModalComponent} from './close-modal/close-modal.component';
+import { InvestRecordType } from '../@core/Dashboard/invest-record-type.enum';
 
 @Component({
   selector: 'app-dashboard',
@@ -16,8 +17,11 @@ import {CloseModalComponent} from './close-modal/close-modal.component';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
-  constructor(public dialog: MatDialog, private dashboardService: DashboardService) {
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+  constructor(
+    public dialog: MatDialog,
+    private dashboardService: DashboardService
+  ) {
     this.open = {
       fundId: null,
       amount: null,
@@ -31,7 +35,15 @@ export class DashboardComponent implements OnInit {
   open: OpenClose;
   close: OpenClose;
   panelOpenState = false;
-  displayedColumns: string[] = ['timeStamp', 'fundName', 'type', 'brfore', 'after', 'accrued', 'id'];
+  displayedColumns: string[] = [
+    'timeStamp',
+    'fundName',
+    'type',
+    'brfore',
+    'after',
+    'accrued',
+    'id',
+  ];
   dataSource = new MatTableDataSource();
   fundsEnum = FundsType;
   years: any;
@@ -80,12 +92,16 @@ export class DashboardComponent implements OnInit {
       (res: any) => {
         console.log(res);
         this.records = res;
+        this.ids = [null];
         for (const i of this.records) {
-          this.ids = push(i.fundId);
-          if (this.ids !== i.fundId) {
-            this.ids = i.fundId;
-            } else {
-
+          if (
+            i.type !== InvestRecordType.Closing &&
+            this.ids.indexOf(i.fundId) === -1
+          ) {
+            i.needButton = true;
+            this.ids.push(i.fundId);
+          } else {
+            i.needButton = false;
           }
         }
         this.dataSource.data = this.records;
