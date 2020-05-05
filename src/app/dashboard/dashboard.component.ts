@@ -19,6 +19,7 @@ import { InvestRecordType } from '../@core/Dashboard/ invest-record-type.enum';
 export class DashboardComponent implements OnInit {
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
+  ids: number[];
   constructor(
     public dialog: MatDialog,
     private dashboardService: DashboardService
@@ -37,7 +38,6 @@ export class DashboardComponent implements OnInit {
   open: OpenClose;
   close: OpenClose;
   panelOpenState = false;
-  ids: number[];
   investRecordType = InvestRecordType;
   displayedColumns: string[] = [
     'timeStamp',
@@ -107,7 +107,10 @@ export class DashboardComponent implements OnInit {
         console.log(res);
         this.records = res;
         for (const i of this.records) {
-          if (i.type !== 2 && this.ids.indexOf(i.fundId) === -1) {
+          if (
+            i.type !== InvestRecordType.Closing &&
+            this.ids.indexOf(i.fundId) === -1
+          ) {
             i.needButton = true;
             this.ids.push(i.fundId);
           } else {
