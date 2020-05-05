@@ -7,7 +7,9 @@
       <div></div>
       <div></div>
     </div>
-    <h1>Didex Invest</h1>
+    <h1>
+        Didex Invest
+    </h1>
     <h3>The Simple Way To Earn</h3>
   </div>
   <div
@@ -78,8 +80,8 @@
               <div fxFlex="80">{{fun.fixedInterest}}% Per Year In Week</div>
             </div> -->
             <div fxLayout="row" fxLayoutAlign="center stretch">
-              <div fxFlex="40">Duration</div>
-              <div fxFlex="40" style="text-align: right;">
+              <div fxFlex="50" style="padding: 0px 10px;">Duration</div>
+              <div fxFlex="50" style="padding: 0px 10px; text-align: right;">
                 {{fun.yearsDisplay}}{{fun.monthsDisplay}}{{fun.daysDisplay}}
               </div>
             </div>
@@ -119,9 +121,9 @@
                     (opened)="panelOpenState = true"
                     (closed)="panelOpenState = false"
                   >
-                    <mat-expansion-panel-header style="text-align: center;">
-                      <mat-panel-title style="text-align: center;">
-                        More
+                    <mat-expansion-panel-header style="max-width: 55px; margin: 0 auto;">
+                      <mat-panel-title>
+                          More
                       </mat-panel-title>
                     </mat-expansion-panel-header>
                     <div fxLayout="row" fxLayoutAlign="start stretch">
@@ -200,7 +202,7 @@
               <mat-icon
                 aria-hidden="false"
                 aria-label="Example home icon"
-                style="font-size: 20px;"
+                style="font-size: 15px;"
                 >close</mat-icon
               >Close
             </button>

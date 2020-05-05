@@ -127,6 +127,15 @@
   font-family: overpass, 'Helvetica Neue', sans-serif;
 }
 
+.mat-expansion-panel-header-title {
+  justify-content: end;
+  padding-top: 5px;
+}
+
+.mat-expansion-panel {
+  background: none;
+}
+
 .item-carousels {
   /* padding: 10px; */
   font-size: 12px;
