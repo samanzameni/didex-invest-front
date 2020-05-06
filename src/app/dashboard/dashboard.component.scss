@@ -454,7 +454,7 @@ th.mat-header-cell {
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 960px) {
   .item {
     margin: 0 auto;
     max-width: 300px;
@@ -466,7 +466,7 @@ th.mat-header-cell {
 
   .investment-header-content {
     p {
-      margin-bottom: 50px;
+      margin-bottom: 30px;
     }
   }
 
