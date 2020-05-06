@@ -77,6 +77,8 @@ body {
 }
 .mat-dialog-container {
   background-color: #0d2161;
+  padding: 0  24px 24px 24px !important; 
+  font-family: overpass, 'Helvetica Neue', sans-serif;
 }
 a {
   color: $ddx-light;

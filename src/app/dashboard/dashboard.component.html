@@ -1,4 +1,4 @@
-<div fxLayout="column" fxLayoutAlign="start stretch">
+<div fxLayout="column" fxLayoutAlign="start">
   <div class="header">
     <div class="glow">
       <div></div>
@@ -17,7 +17,7 @@
     fxLayout.sm="column"
     fxLayout.xs="column"
     fxLayoutGap="20px"
-    fxLayoutAlign="start stretch"
+    fxLayoutAlign="start"
     class="investment-header"
   >
     <div
@@ -46,7 +46,7 @@
             <div id="item-carousels-wrapper">{{ fun.name }}</div>
             <div
               fxLayout="row"
-              fxLayoutAlign="start stretch"
+              fxLayoutAlign="start"
               id="item-carousels-inner-wrapper"
             >
               <div fxFlex="50" fxLayout="row" fxLayoutAlign="start">
@@ -64,10 +64,10 @@
               </div>
               <div fxFlex="50">
                 {{ fun.minimumFund }}-{{ fun.maximumFund }}
-                <b style="color: #f5aa28;">{{ fun.fundCurrencyShortName }}</b>
+                <b id="fund-currency-short-name">{{ fun.fundCurrencyShortName }}</b>
               </div>
             </div>
-            <!-- progressbar starts here -->
+            <!-- circle starts here -->
             <div class="box">
               <div class="percent">
                 <svg>
@@ -76,7 +76,7 @@
                   <circle cx="65" cy="65" r="65"></circle>
                   <circle cx="65" cy="65" r="65"></circle>
                 </svg>
-                <div class="number" style="text-anchor: middle;">
+                <div class="number">
                   <h2>
                     {{ fun.fixedInterest }}<span id="percent">%</span>
                     <br />
@@ -90,21 +90,17 @@
                 </div>
               </div>
             </div>
-            <!-- progressbar ends here -->
-
-            <!-- <div fxLayout="row" fxLayoutAlign="center stretch" >
-              <div fxFlex="80">{{fun.fixedInterest}}% Per Year In Week</div>
-            </div> -->
-            <div fxLayout="row" fxLayoutAlign="center stretch">
-              <div fxFlex="30" style="padding: 0px 10px;">Duration</div>
-              <div fxFlex="70" style="padding: 0px 10px; text-align: right;">
+            <!-- circle ends here -->
+            <div fxLayout="row" class="card-content-duration" fxLayoutAlign="center">
+              <div fxFlex="30">Duration</div>
+              <div fxFlex="70">
                 {{ fun.yearsDisplay }}{{ fun.monthsDisplay
                 }}{{ fun.daysDisplay }}
               </div>
             </div>
             <div
               fxLayout="row"
-              fxLayoutAlign="center stretch"
+              fxLayoutAlign="center"
               class="card-content"
             >
               <div fxFlex="80" id="plan-style">
@@ -113,7 +109,7 @@
             </div>
             <div
               fxLayout="row"
-              fxLayoutAlign="start stretch"
+              fxLayoutAlign="start"
               class="card-content"
             >
               <div fxFlex="100">
@@ -129,7 +125,7 @@
             </div>
             <div
               fxLayout="row"
-              fxLayoutAlign="center stretch"
+              fxLayoutAlign="center"
               class="card-content"
             >
               <div fxFlex="100">
@@ -138,32 +134,28 @@
                     (opened)="panelOpenState = true"
                     (closed)="panelOpenState = false"
                   >
-                    <mat-expansion-panel-header
-                      style="max-width: 55px; margin: 0 auto;"
-                    >
+                    <mat-expansion-panel-header>
                       <mat-panel-title>
                         More
                       </mat-panel-title>
                     </mat-expansion-panel-header>
-                    <div fxLayout="row" fxLayoutAlign="start stretch">
-                      <div fxFlex="40" style="font-size: 10px;">
+                    <div class="expansion-panel-content" fxLayout="row" fxLayoutAlign="start">
+                      <div fxFlex="40">
                         Total Supply
                       </div>
                       <div
                         fxFlex="60"
-                        style="text-align: right; font-size: 12px;"
                       >
                         {{ fun.totalSupply }}
                         <b>{{ fun.fundCurrencyShortName }}</b>
                       </div>
                     </div>
-                    <div fxLayout="row" fxLayoutAlign="start stretch">
-                      <div fxFlex="40" style="font-size: 10px;">
+                    <div class="expansion-panel-content" fxLayout="row" fxLayoutAlign="start">
+                      <div fxFlex="40">
                         Expiration Date
                       </div>
                       <div
                         fxFlex="60"
-                        style="text-align: right; font-size: 12px;"
                       >
                         {{ fun.expirationDate | date: 'mediumDate' }}
                       </div>
