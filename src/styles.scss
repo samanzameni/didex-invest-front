@@ -14,6 +14,34 @@ body {
   color: $ddx-light;
   font-weight: lighter;
   line-height: 30px;
+  width: 100vw;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+* {
+  scrollbar-color: rgba($ddx-light, 0.2) rgba($ddx-light, 0.1); /* thumb and track color */
+  scrollbar-width: 5px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba($ddx-light, 0.1);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba($ddx-light, 0.2);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba($ddx-light, 0.3);
 }
 
 .owl-theme .owl-dots .owl-dot.active span {

@@ -10,6 +10,7 @@ import { OpenClose } from '../@core/Dashboard/open-close';
 import { FundsType } from '../@core/Dashboard/funds-type.enum';
 import { CloseModalComponent } from './close-modal/close-modal.component';
 import { InvestRecordType } from '../@core/Dashboard/ invest-record-type.enum';
+import { CONSTANTS } from '@core/util/constants';
 
 @Component({
   selector: 'app-dashboard',
@@ -99,6 +100,14 @@ export class DashboardComponent implements OnInit {
         console.log(err);
       }
     );
+  }
+
+  get paginatorSizeOptions(): number[] {
+    return [
+      CONSTANTS.PAGINATION_LIMIT_SMALL,
+      CONSTANTS.PAGINATION_LIMIT,
+      CONSTANTS.PAGINATION_LIMIT_BIG,
+    ];
   }
 
   showRecords() {

@@ -294,19 +294,23 @@
   border-radius: 10px;
 }
 
-table {
-  min-width: 1000px;
+.table-container {
   width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  min-width: 750px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .tableDesign {
-  box-shadow: none;
   border: 1px solid white;
-  border-radius: 8px;
+  box-sizing: border-box;
+  border-radius: 5px;
   margin: 20px auto;
-  border-spacing: unset;
-  text-align: center;
-  min-width: 1000px;
   width: 80%;
 }
 
