@@ -42,7 +42,7 @@
         [carouselClasses]="['owl-theme', 'sliding']"
       >
         <div class="item" *ngFor="let fun of funds">
-          <div class="item-carousels">
+          <div class="item-carousels" fxLayoutGap="20px">
             <div id="item-carousels-wrapper">{{ fun.name }}</div>
             <div
               fxLayout="row"

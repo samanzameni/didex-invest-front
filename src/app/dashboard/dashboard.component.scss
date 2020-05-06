@@ -100,7 +100,8 @@
 }
 
 .investment-header-content {
-  padding-right: 10px;
+  /* padding-right: 10px; */
+  margin-right: 30px;
 
   h2 {
     margin: auto;
@@ -453,6 +454,20 @@ th.mat-header-cell {
   }
 }
 
-@media only screen and (min-width: 768px) {
-  
+@media only screen and (max-width: 768px) {
+  .item {
+    margin: 0 auto;
+    max-width: 300px;
+  }
+
+  .item-carousels {
+    margin: 0 10px;
+  }
+
+  .investment-header-content {
+    p {
+      margin-bottom: 50px;
+    }
+  }
+
 }
