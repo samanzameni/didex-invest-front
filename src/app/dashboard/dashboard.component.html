@@ -49,7 +49,19 @@
               fxLayoutAlign="start stretch"
               id="item-carousels-inner-wrapper"
             >
-              <div fxFlex="50">hi</div>
+              <div fxFlex="50" fxLayout="row" fxLayoutAlign="start">
+                <img
+                  [src]="
+                    'https://devapi.didex.com/' +
+                    fun.fundCurrencyShortName.trim() +
+                    '.svg'
+                  "
+                  alt=""
+                  width="25px"
+                  height="25px"
+                />
+                <span>{{ fun.fundCurrencyShortName.trim() }}</span>
+              </div>
               <div fxFlex="50">
                 {{ fun.minimumFund }}-{{ fun.maximumFund }}
                 <b style="color: #f5aa28;">{{ fun.fundCurrencyShortName }}</b>

@@ -44,6 +44,11 @@ body {
   background: rgba($ddx-light, 0.3);
 }
 
+.owl-carousel .owl-item img {
+  width: unset;
+  margin-right: 3px;
+}
+
 .owl-theme .owl-dots .owl-dot.active span {
   background: $ddx-yellow;
 }
