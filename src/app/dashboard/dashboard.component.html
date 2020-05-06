@@ -170,70 +170,82 @@
       My Investment History
     </div>
     <div class="mat-elevation-z8">
-      <div class="table-container">
-        <table mat-table [dataSource]="dataSource">
-          <ng-container matColumnDef="timeStamp">
-            <th mat-header-cell *matHeaderCellDef>Date</th>
-            <td mat-cell *matCellDef="let element">
-              {{ element.timeStamp | date: 'medium' }}
-            </td>
-          </ng-container>
+      <ng-template [ngIf]="isAuthorized" [ngIfElse]="notAuthorized">
+        <div class="table-container">
+          <table mat-table [dataSource]="dataSource">
+            <ng-container matColumnDef="timeStamp">
+              <th mat-header-cell *matHeaderCellDef>Date</th>
+              <td mat-cell *matCellDef="let element">
+                {{ element.timeStamp | date: 'medium' }}
+              </td>
+            </ng-container>
 
-          <ng-container matColumnDef="fundName">
-            <th mat-header-cell *matHeaderCellDef>Plan</th>
-            <td mat-cell *matCellDef="let element">{{ element.fundName }}</td>
-          </ng-container>
+            <ng-container matColumnDef="fundName">
+              <th mat-header-cell *matHeaderCellDef>Plan</th>
+              <td mat-cell *matCellDef="let element">{{ element.fundName }}</td>
+            </ng-container>
 
-          <ng-container matColumnDef="type">
-            <th mat-header-cell *matHeaderCellDef>Action</th>
-            <td mat-cell *matCellDef="let element">
-              {{ investRecordType[element.type] }}
-            </td>
-          </ng-container>
+            <ng-container matColumnDef="type">
+              <th mat-header-cell *matHeaderCellDef>Action</th>
+              <td mat-cell *matCellDef="let element">
+                {{ investRecordType[element.type] }}
+              </td>
+            </ng-container>
 
-          <ng-container matColumnDef="brfore">
-            <th mat-header-cell *matHeaderCellDef>Before</th>
-            <td mat-cell *matCellDef="let element">{{ element.brfore }}</td>
-          </ng-container>
+            <ng-container matColumnDef="brfore">
+              <th mat-header-cell *matHeaderCellDef>Before</th>
+              <td mat-cell *matCellDef="let element">{{ element.brfore }}</td>
+            </ng-container>
 
-          <ng-container matColumnDef="after">
-            <th mat-header-cell *matHeaderCellDef>After</th>
-            <td mat-cell *matCellDef="let element">{{ element.after }}</td>
-          </ng-container>
+            <ng-container matColumnDef="after">
+              <th mat-header-cell *matHeaderCellDef>After</th>
+              <td mat-cell *matCellDef="let element">{{ element.after }}</td>
+            </ng-container>
 
-          <ng-container matColumnDef="accrued">
-            <th mat-header-cell *matHeaderCellDef>Sum Accrued</th>
-            <td mat-cell *matCellDef="let element">{{ element.accrued }}</td>
-          </ng-container>
+            <ng-container matColumnDef="accrued">
+              <th mat-header-cell *matHeaderCellDef>Sum Accrued</th>
+              <td mat-cell *matCellDef="let element">{{ element.accrued }}</td>
+            </ng-container>
 
-          <ng-container matColumnDef="id">
-            <th mat-header-cell *matHeaderCellDef>Close Investment</th>
-            <td mat-cell *matCellDef="let element">
-              <button
-                class="close-button"
-                *ngIf="element.needButton"
-                mat-stroked-button
-                color="warn"
-                (click)="closeDialog(element.fundId)"
-              >
-                <mat-icon
-                  class="close-button__icon"
-                  aria-hidden="false"
-                  aria-label="Example home icon"
-                  >close</mat-icon
-                >Close
-              </button>
-            </td>
-          </ng-container>
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef>Close Investment</th>
+              <td mat-cell *matCellDef="let element">
+                <button
+                  class="close-button"
+                  *ngIf="element.needButton"
+                  mat-stroked-button
+                  color="warn"
+                  (click)="closeDialog(element.fundId)"
+                >
+                  <mat-icon
+                    class="close-button__icon"
+                    aria-hidden="false"
+                    aria-label="Example home icon"
+                    >close</mat-icon
+                  >Close
+                </button>
+              </td>
+            </ng-container>
 
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-        </table>
-      </div>
-      <mat-paginator
-        class="table-footer"
-        [pageSizeOptions]="paginatorSizeOptions"
-      ></mat-paginator>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+          </table>
+        </div>
+        <mat-paginator
+          class="table-footer"
+          [pageSizeOptions]="paginatorSizeOptions"
+        ></mat-paginator>
+      </ng-template>
+      <ng-template #notAuthorized>
+        <div class="auth-message-container">
+          <h3>You should sign in to see your investment records</h3>
+          <a class="auth-button" href="/auth/signin">
+            <button mat-raised-button color="primary">
+              Sign In
+            </button>
+          </a>
+        </div>
+      </ng-template>
     </div>
   </div>
 </div>

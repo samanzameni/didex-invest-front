@@ -3,7 +3,6 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { DashboardModalComponent } from './dashboard-modal/dashboard-modal.component';
-import { DashboardService } from '../@core/Dashboard/dashboard.service';
 import { Funds } from '../@core/Dashboard/funds';
 import { Records } from '../@core/Dashboard/records';
 import { OpenClose } from '../@core/Dashboard/open-close';
@@ -11,6 +10,8 @@ import { FundsType } from '../@core/Dashboard/funds-type.enum';
 import { CloseModalComponent } from './close-modal/close-modal.component';
 import { InvestRecordType } from '../@core/Dashboard/ invest-record-type.enum';
 import { CONSTANTS } from '@core/util/constants';
+import { DashboardRESTService } from '@core/services/REST';
+import { AuthService } from '@core/services';
 
 @Component({
   selector: 'app-dashboard',
@@ -21,9 +22,11 @@ export class DashboardComponent implements OnInit {
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
   ids: number[];
+
   constructor(
     public dialog: MatDialog,
-    private dashboardService: DashboardService
+    private dashboardService: DashboardRESTService,
+    private authService: AuthService
   ) {
     this.open = {
       fundId: null,
@@ -108,6 +111,10 @@ export class DashboardComponent implements OnInit {
       CONSTANTS.PAGINATION_LIMIT,
       CONSTANTS.PAGINATION_LIMIT_BIG,
     ];
+  }
+
+  get isAuthorized(): boolean {
+    return this.authService.isAuthorized;
   }
 
   showRecords() {
