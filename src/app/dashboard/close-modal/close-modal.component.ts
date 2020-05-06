@@ -3,6 +3,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { DashboardService } from '../../@core/Dashboard/dashboard.service';
 import { OpenClose } from '../../@core/Dashboard/open-close';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { DashboardRESTService } from '@core/services/REST';
 
 @Component({
   selector: 'app-close-modal',
@@ -16,7 +17,7 @@ export class CloseModalComponent implements OnInit {
   showError: string;
   constructor(
     public dialogRef: MatDialogRef<CloseModalComponent>,
-    private dashboardService: DashboardService,
+    private dashboardService: DashboardRESTService,
     private snackBar: MatSnackBar,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {

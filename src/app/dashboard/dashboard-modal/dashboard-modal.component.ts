@@ -1,13 +1,14 @@
-import {Component, Inject, OnInit} from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
-import {DashboardService} from '../../@core/Dashboard/dashboard.service';
-import {OpenClose} from '../../@core/Dashboard/open-close';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { DashboardService } from '../../@core/Dashboard/dashboard.service';
+import { OpenClose } from '../../@core/Dashboard/open-close';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { DashboardRESTService } from '@core/services/REST';
 @Component({
   selector: 'app-dashboard-modal',
   templateUrl: './dashboard-modal.component.html',
-  styleUrls: ['./dashboard-modal.component.scss']
+  styleUrls: ['./dashboard-modal.component.scss'],
 })
 export class DashboardModalComponent implements OnInit {
   openDialog: OpenClose;
@@ -16,18 +17,28 @@ export class DashboardModalComponent implements OnInit {
   amountError: boolean;
   showError: string;
   constructor(
-    public dialogRef: MatDialogRef<DashboardModalComponent>, private dashboardService: DashboardService, private formBuilder: FormBuilder,
+    public dialogRef: MatDialogRef<DashboardModalComponent>,
+    private dashboardService: DashboardRESTService,
+    private formBuilder: FormBuilder,
     private snackBar: MatSnackBar,
-    @Inject(MAT_DIALOG_DATA) public data: any) {
+    @Inject(MAT_DIALOG_DATA) public data: any
+  ) {
     this.openDialog = {
-      fundId : null,
+      fundId: null,
       amount: null,
     };
     this.createForm();
   }
   createForm() {
     this.dashForm = this.formBuilder.group({
-      number: ['', [Validators.required , Validators.max(this.data.max) , Validators.min(this.data.min)]],
+      number: [
+        '',
+        [
+          Validators.required,
+          Validators.max(this.data.max),
+          Validators.min(this.data.min),
+        ],
+      ],
       check: [false, [Validators.requiredTrue]],
     });
   }
@@ -37,12 +48,16 @@ export class DashboardModalComponent implements OnInit {
     return this.dashboardService.postOpen(this.openDialog).subscribe(
       (res: any) => {
         console.log(res);
-        this.snackBar.open('You Have Successfully Confirm The Amount', 'Success', {
-          duration: 2000,
-        });
+        this.snackBar.open(
+          'You Have Successfully Confirm The Amount',
+          'Success',
+          {
+            duration: 2000,
+          }
+        );
         this.dialogRef.close();
       },
-      err => {
+      (err) => {
         console.log(err);
         const errors = err.error.errors;
         if (errors) {
@@ -52,11 +67,11 @@ export class DashboardModalComponent implements OnInit {
           this.showError = 'Error';
           this.errorVariable = true;
         }
-      },
+      }
     );
   }
 
   ngOnInit() {
-console.log(this.data);
+    console.log(this.data);
   }
 }
