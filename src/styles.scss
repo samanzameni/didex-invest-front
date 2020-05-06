@@ -48,6 +48,16 @@ body {
   background: $ddx-yellow;
 }
 
+.mat-checkbox {
+  .mat-checkbox-layout {
+    white-space: normal;
+
+    .mat-checkbox-label {
+      line-height: 16px;
+    }
+  }
+}
+
 .mat-button,
 .mat-raised-button,
 .mat-icon-button,
