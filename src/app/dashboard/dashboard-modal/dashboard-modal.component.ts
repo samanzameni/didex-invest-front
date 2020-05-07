@@ -1,17 +1,16 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { DashboardService } from '../../@core/Dashboard/dashboard.service';
-import { OpenClose } from '../../@core/Dashboard/open-close';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { DashboardRESTService } from '@core/services/REST';
+import { OpenInvestmentData } from '@core/models';
 @Component({
   selector: 'app-dashboard-modal',
   templateUrl: './dashboard-modal.component.html',
   styleUrls: ['./dashboard-modal.component.scss'],
 })
 export class DashboardModalComponent implements OnInit {
-  openDialog: OpenClose;
+  openDialog: OpenInvestmentData;
   dashForm: FormGroup;
   errorVariable: boolean;
   amountError: boolean;

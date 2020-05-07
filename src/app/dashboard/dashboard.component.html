@@ -1,12 +1,5 @@
 <div fxLayout="column" fxLayoutAlign="start">
   <div class="header">
-    <div class="glow">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
     <h1>
       Didex Invest
     </h1>
@@ -64,7 +57,9 @@
               </div>
               <div fxFlex="50">
                 {{ fun.minimumFund }}-{{ fun.maximumFund }}
-                <b id="fund-currency-short-name">{{ fun.fundCurrencyShortName }}</b>
+                <b id="fund-currency-short-name">{{
+                  fun.fundCurrencyShortName
+                }}</b>
               </div>
             </div>
             <!-- circle starts here -->
@@ -91,27 +86,23 @@
               </div>
             </div>
             <!-- circle ends here -->
-            <div fxLayout="row" class="card-content-duration" fxLayoutAlign="center">
+            <div
+              fxLayout="row"
+              class="card-content-duration"
+              fxLayoutAlign="center"
+            >
               <div fxFlex="30">Duration</div>
               <div fxFlex="70">
                 {{ fun.yearsDisplay }}{{ fun.monthsDisplay
                 }}{{ fun.daysDisplay }}
               </div>
             </div>
-            <div
-              fxLayout="row"
-              fxLayoutAlign="center"
-              class="card-content"
-            >
+            <div fxLayout="row" fxLayoutAlign="center" class="card-content">
               <div fxFlex="80" id="plan-style">
                 <b>{{ fundsEnum[fun.type] }} Plan</b>
               </div>
             </div>
-            <div
-              fxLayout="row"
-              fxLayoutAlign="start"
-              class="card-content"
-            >
+            <div fxLayout="row" fxLayoutAlign="start" class="card-content">
               <div fxFlex="100">
                 <button
                   mat-raised-button
@@ -123,11 +114,7 @@
                 </button>
               </div>
             </div>
-            <div
-              fxLayout="row"
-              fxLayoutAlign="center"
-              class="card-content"
-            >
+            <div fxLayout="row" fxLayoutAlign="center" class="card-content">
               <div fxFlex="100">
                 <mat-accordion>
                   <mat-expansion-panel
@@ -139,24 +126,28 @@
                         More
                       </mat-panel-title>
                     </mat-expansion-panel-header>
-                    <div class="expansion-panel-content" fxLayout="row" fxLayoutAlign="start">
+                    <div
+                      class="expansion-panel-content"
+                      fxLayout="row"
+                      fxLayoutAlign="start"
+                    >
                       <div fxFlex="40">
                         Total Supply
                       </div>
-                      <div
-                        fxFlex="60"
-                      >
+                      <div fxFlex="60">
                         {{ fun.totalSupply }}
                         <b>{{ fun.fundCurrencyShortName }}</b>
                       </div>
                     </div>
-                    <div class="expansion-panel-content" fxLayout="row" fxLayoutAlign="start">
+                    <div
+                      class="expansion-panel-content"
+                      fxLayout="row"
+                      fxLayoutAlign="start"
+                    >
                       <div fxFlex="40">
                         Expiration Date
                       </div>
-                      <div
-                        fxFlex="60"
-                      >
+                      <div fxFlex="60">
                         {{ fun.expirationDate | date: 'mediumDate' }}
                       </div>
                     </div>

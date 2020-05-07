@@ -1,17 +1,24 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { DashboardModalComponent } from './dashboard-modal/dashboard-modal.component';
-import { Funds } from '../@core/Dashboard/funds';
-import { Records } from '../@core/Dashboard/records';
-import { OpenClose } from '../@core/Dashboard/open-close';
-import { FundsType } from '../@core/Dashboard/funds-type.enum';
-import { CloseModalComponent } from './close-modal/close-modal.component';
-import { InvestRecordType } from '../@core/Dashboard/ invest-record-type.enum';
-import { CONSTANTS } from '@core/util/constants';
-import { DashboardRESTService } from '@core/services/REST';
+
 import { AuthService } from '@core/services';
+import { DashboardRESTService } from '@core/services/REST';
+import { CONSTANTS } from '@core/util/constants';
+
+import {
+  Fund,
+  FundType,
+  Record,
+  RecordType,
+  OpenInvestmentData,
+  CloseInvestmentData,
+} from '@core/models';
+
+import { DashboardModalComponent } from './dashboard-modal/dashboard-modal.component';
+import { CloseModalComponent } from './close-modal/close-modal.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -37,12 +44,12 @@ export class DashboardComponent implements OnInit {
     };
     this.ids = [];
   }
-  funds: Funds[];
-  records: Records[];
-  open: OpenClose;
-  close: OpenClose;
+  funds: Fund[];
+  records: Record[];
+  open: OpenInvestmentData;
+  close: CloseInvestmentData;
   panelOpenState = false;
-  investRecordType = InvestRecordType;
+  investRecordType = RecordType;
   displayedColumns: string[] = [
     'timeStamp',
     'fundName',
@@ -53,7 +60,7 @@ export class DashboardComponent implements OnInit {
     'id',
   ];
   dataSource = new MatTableDataSource();
-  fundsEnum = FundsType;
+  fundsEnum = FundType;
   years: any;
   months: any;
   days: any;
@@ -118,13 +125,14 @@ export class DashboardComponent implements OnInit {
   }
 
   showRecords() {
+    this.ids = [];
     return this.dashboardService.getRecords().subscribe(
       (res: any) => {
         this.records = res;
         for (const i of this.records) {
           if (!this.ids.includes(i.fundId)) {
             this.ids.push(i.fundId);
-            i.needButton = i.type !== InvestRecordType.Closing;
+            i.needButton = i.type !== RecordType.Closing;
           }
         }
         this.dataSource.data = this.records;

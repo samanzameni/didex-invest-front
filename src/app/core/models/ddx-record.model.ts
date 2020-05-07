@@ -1,4 +1,4 @@
-export interface Records {
+export interface Record {
   accrued: number;
   after: number;
   brfore: number;
@@ -6,6 +6,12 @@ export interface Records {
   fundId: number;
   id: number;
   timeStamp: Date;
-  type: number;
+  type: RecordType;
   needButton?: boolean;
+}
+
+export enum RecordType {
+  Opening = 1,
+  Closing = 2,
+  Interest = 3,
 }
