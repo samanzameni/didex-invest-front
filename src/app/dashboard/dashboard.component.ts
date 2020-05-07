@@ -118,6 +118,7 @@ export class DashboardComponent implements OnInit {
   }
 
   showRecords() {
+    this.ids = [];
     return this.dashboardService.getRecords().subscribe(
       (res: any) => {
         this.records = res;
