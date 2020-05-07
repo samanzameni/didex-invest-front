@@ -3,15 +3,15 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { DashboardModalComponent } from './dashboard-modal/dashboard-modal.component';
-import { Funds } from '../@core/Dashboard/funds';
-import { Records } from '../@core/Dashboard/records';
-import { OpenClose } from '../@core/Dashboard/open-close';
-import { FundsType } from '../@core/Dashboard/funds-type.enum';
-import { CloseModalComponent } from './close-modal/close-modal.component';
-import { InvestRecordType } from '../@core/Dashboard/ invest-record-type.enum';
 import { CONSTANTS } from '@core/util/constants';
 import { DashboardRESTService } from '@core/services/REST';
 import { AuthService } from '@core/services';
+import { Funds } from '@core/models/funds';
+import { Records } from '@core/models/records';
+import { OpenClose } from '@core/models/open-close';
+import { InvestRecordType } from '@core/models/ invest-record-type.enum';
+import { FundsType } from '@core/models/funds-type.enum';
+import { CloseModalComponent } from './close-modal/close-modal.component';
 
 @Component({
   selector: 'app-dashboard',

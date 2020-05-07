@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { OpenClose } from 'app/@core/Dashboard/open-close';
 import { StorageService } from '../ddx-storage.service';
 import { AbstractRESTService } from '@core/templates';
+import { OpenClose } from '@core/models/open-close';
 
 @Injectable()
 export class DashboardRESTService extends AbstractRESTService {

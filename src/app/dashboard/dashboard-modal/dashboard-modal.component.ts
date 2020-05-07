@@ -1,10 +1,9 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { DashboardService } from '../../@core/Dashboard/dashboard.service';
-import { OpenClose } from '../../@core/Dashboard/open-close';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { DashboardRESTService } from '@core/services/REST';
+import { OpenClose } from '@core/models/open-close';
 @Component({
   selector: 'app-dashboard-modal',
   templateUrl: './dashboard-modal.component.html',
