@@ -13,7 +13,7 @@ import { PagesModule } from './pages/pages.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDividerModule } from '@angular/material/divider';
-
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,6 +22,7 @@ import { MatDividerModule } from '@angular/material/divider';
     AppRoutingModule,
     NoopAnimationsModule,
     BrowserAnimationsModule,
+    CoreModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,

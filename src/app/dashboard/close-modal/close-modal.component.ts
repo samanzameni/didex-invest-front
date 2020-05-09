@@ -1,24 +1,28 @@
-import {Component, Inject, OnInit} from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
-import {DashboardService} from '../../@core/Dashboard/dashboard.service';
-import {OpenClose} from '../../@core/Dashboard/open-close';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { DashboardRESTService } from '../../core/services/REST';
+import { CloseInvestmentData } from '../../core/models';
 
 @Component({
   selector: 'app-close-modal',
   templateUrl: './close-modal.component.html',
-  styleUrls: ['./close-modal.component.scss']
+  styleUrls: ['./close-modal.component.scss'],
 })
 export class CloseModalComponent implements OnInit {
-  openDialog: OpenClose;
+  closeDialog: CloseInvestmentData;
   errorVariable: boolean;
   amountError: boolean;
+  needUpdate: boolean;
   showError: string;
   constructor(
-    public dialogRef: MatDialogRef<CloseModalComponent>, private dashboardService: DashboardService, private snackBar: MatSnackBar,
-    @Inject(MAT_DIALOG_DATA) public data: any) {
-    this.openDialog = {
-      fundId : null,
+    public dialogRef: MatDialogRef<CloseModalComponent>,
+    private dashboardService: DashboardRESTService,
+    private snackBar: MatSnackBar,
+    @Inject(MAT_DIALOG_DATA) public data: any
+  ) {
+    this.closeDialog = {
+      fundId: null,
     };
   }
 
@@ -26,17 +30,20 @@ export class CloseModalComponent implements OnInit {
     this.dialogRef.close();
   }
   closePost() {
-    this.openDialog.fundId = this.data.id;
-    return this.dashboardService.postClose(this.openDialog).subscribe(
+    this.closeDialog.fundId = this.data.id;
+    return this.dashboardService.postClose(this.closeDialog).subscribe(
       (res: any) => {
-        console.log(res);
-        this.snackBar.open('You Have Successfully Confirm The Amount', 'Success', {
-          duration: 2000,
-        });
+        this.needUpdate = true;
+        this.snackBar.open(
+          'You Have Successfully Confirm The Amount',
+          'Success',
+          {
+            duration: 2000,
+          }
+        );
         this.dialogRef.close();
       },
-      err => {
-        console.log(err);
+      (err) => {
         const errors = err.error.errors;
         if (errors) {
           this.showError = errors.fundId;
@@ -45,11 +52,9 @@ export class CloseModalComponent implements OnInit {
           this.showError = 'Error';
           this.errorVariable = true;
         }
-      },
+      }
     );
   }
   ngOnInit() {
-    console.log(this.data);
   }
-
 }

@@ -25,7 +25,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { WidgetModule } from '../widget/widget.module';
 import { CloseModalComponent } from '../dashboard/close-modal/close-modal.component';
 import { MatSnackBarModule } from '@angular/material';
-
+import { CoreModule } from '@core/core.module';
 
 @NgModule({
   declarations: [
@@ -37,6 +37,7 @@ import { MatSnackBarModule } from '@angular/material';
   ],
   imports: [
     WidgetModule,
+    CoreModule,
     CommonModule,
     RouterModule,
     PagesRoutingModule,
@@ -56,7 +57,7 @@ import { MatSnackBarModule } from '@angular/material';
     MatCheckboxModule,
     MatExpansionModule,
     MatDividerModule,
-    MatSnackBarModule
+    MatSnackBarModule,
   ],
   exports: [
     PagesComponent,

@@ -1,8 +1,8 @@
-export interface Funds {
+export interface Fund {
   id: number;
   fundCurrencyShortName: string;
   name: string;
-  type: number;
+  type: FundType;
   minimumFund: number;
   maximumFund: number;
   duration: number;
@@ -13,4 +13,9 @@ export interface Funds {
   yearsDisplay?: any;
   monthsDisplay?: any;
   daysDisplay?: any;
+}
+
+export enum FundType {
+  Fixed = 1,
+  Flexible = 2,
 }
