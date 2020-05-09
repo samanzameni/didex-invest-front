@@ -67,7 +67,7 @@
             </div>
             <!-- circle starts here -->
             <div class="box">
-              <div class="percent">
+              <div class="progress-bar-circle">
                 <svg>
                   <circle cx="65" cy="65" r="65"></circle>
                   <circle cx="65" cy="65" r="65"></circle>
@@ -76,7 +76,7 @@
                 </svg>
                 <div class="number">
                   <h2>
-                    {{ fun.fixedInterest }}<span id="percent">%</span>
+                    {{ fun.fixedInterest }}<span id="carousel-card__percent">%</span>
                     <br />
                     <span>{{
                       fun.type === fundsEnum.Fixed
@@ -239,7 +239,7 @@
           <h3>You should sign in to see your investment records</h3>
           <a class="auth-button" href="/auth/signin">
             <button mat-raised-button color="primary">
-              <!-- {{ 'Dashboard.table_content.not_authorized_button_text' | ddxLocale }} -->
+               Sign In
             </button>
           </a>
         </div>
