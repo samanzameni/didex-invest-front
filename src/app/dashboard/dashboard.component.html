@@ -62,7 +62,7 @@
                 {{ fun.minimumFund }}-{{ fun.maximumFund }}
                 <b id="fund-currency-short-name">{{
                   fun.fundCurrencyShortName
-                  }}</b>
+                }}</b>
               </div>
             </div>
             <!-- circle starts here -->
@@ -76,13 +76,14 @@
                 </svg>
                 <div class="number">
                   <h2>
-                    {{ fun.fixedInterest }}<span id="carousel-card__percent">%</span>
+                    {{ fun.fixedInterest
+                    }}<span id="carousel-card__percent">%</span>
                     <br />
                     <span>{{
                       fun.type === fundsEnum.Fixed
                         ? 'Annualized'
                         : 'Estimated Annual'
-                      }}</span>
+                    }}</span>
                   </h2>
                   <br />
                 </div>
@@ -168,7 +169,7 @@
       My Investment History
     </div>
     <div class="mat-elevation-z8">
-      <ng-template >
+      <ng-template [ngIf]="isAuthorized" [ngIfElse]="notAuthorized">
         <div class="table-container">
           <table mat-table [dataSource]="dataSource">
             <ng-container matColumnDef="timeStamp">
@@ -219,7 +220,7 @@
                     class="close-button__icon"
                     aria-hidden="false"
                     aria-label="Example home icon"
-                  >close</mat-icon
+                    >close</mat-icon
                   >Close
                 </button>
               </td>
@@ -239,7 +240,7 @@
           <h3>You should sign in to see your investment records</h3>
           <a class="auth-button" href="/auth/signin">
             <button mat-raised-button color="primary">
-               Sign In
+              Sign In
             </button>
           </a>
         </div>
