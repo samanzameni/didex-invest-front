@@ -108,19 +108,19 @@
   background: transparent;
 }
 
-.percent {
+.progress-bar-circle {
   position: relative;
   width: 150px;
   height: 150px;
 }
 
-.box .percent svg {
+.box .progress-bar-circle svg {
   position: relative;
   width: 150px;
   height: 150px;
 }
 
-.box .percent svg circle {
+.box .progress-bar-circle svg circle {
   width: 150px;
   height: 150px;
   fill: none;
@@ -132,28 +132,28 @@
   stroke-linecap: round;
 }
 
-.box .percent svg circle:nth-child(1) {
+.box .progress-bar-circle svg circle:nth-child(1) {
   stroke-dashoffset: 90;
   stroke: $ddx-yellow;
 }
 
-.box .percent svg circle:nth-child(2) {
+.box .progress-bar-circle svg circle:nth-child(2) {
   stroke-dashoffset: 100;
   stroke: #0d2161;
   stroke-width: 5px;
 }
 
-.box .percent svg circle:nth-child(3) {
+.box .progress-bar-circle svg circle:nth-child(3) {
   stroke-dashoffset: 510;
   stroke: $ddx-yellow;
 }
 
-.box .percent svg circle:nth-child(4) {
+.box .progress-bar-circle svg circle:nth-child(4) {
   stroke-dashoffset: 110;
   stroke: $ddx-yellow;
 }
 
-.box .percent .number {
+.box .progress-bar-circle .number {
   position: absolute;
   top: 0;
   left: 0;
@@ -165,13 +165,13 @@
   color: $ddx-light;
 }
 
-.box .percent .number h2 {
+.box .progress-bar-circle .number h2 {
   font-size: 48px;
   font-weight: lighter;
   line-height: 10px;
 }
 
-.box .percent .number h2 span {
+.box .progress-bar-circle .number h2 span {
   font-size: 11px;
 }
 
@@ -182,7 +182,7 @@
   line-height: 15px;
 }
 
-#percent {
+#carousel-card__percent {
   color: $ddx-yellow;
   font-size: 1rem;
   text-align: right;

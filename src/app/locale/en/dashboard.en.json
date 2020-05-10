@@ -1,0 +1,43 @@
+{
+    "title": "Dashboard",
+  
+    "header_content": {
+
+      "header_title": "Didex Invest",
+      "header_subtitle": "The Simple Way To Earn "
+      
+    },
+  
+    "hero_content": {
+
+      "hero_title": "Select Your ",
+      "hero_title_highlighted": "Investment Plan",
+      "hero_paragraph": "To invest your funds in an investment plan you must have funds on the main balance. Each investment plan is created for its interest and duration. If you withdraw funds from the investment plan earlier than required, interest will not be charged."
+
+    },
+  
+    "carousel_content": {
+
+      "carousel_card_percent": "%",
+
+      "carousel_card_duration": "Duration",
+
+      "carousel_card_plan_type": "Plan",
+  
+      "carousel_card_subscribe_button": "Subscribe",
+
+      "expansion_panel_button_text": "More",
+      "expansion_panel_content_total_supply": "Total Supply",
+      "expansion_panel_content_expiration_date": "Expiration Date"
+
+    },
+
+    "table_content": {
+        "table_header_text": "My Investment History",
+
+        "table_close_investment_button_text": "Close",
+
+        "not_authorized_message": "You should sign in to see your investment records",
+        "not_authorized_button_text": "Sign In"
+    }
+  }
