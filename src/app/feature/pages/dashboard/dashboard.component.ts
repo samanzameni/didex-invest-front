@@ -151,10 +151,11 @@ export class DashboardComponent implements OnInit {
         min: fund.minimumFund,
         max: fund.maximumFund,
         name: fund.fundCurrencyShortName,
+        needUpdate: false,
       },
     });
     dialogRef.afterClosed().subscribe((result) => {
-      if (result === true) {
+      if (result.needUpdate === true) {
         this.showRecords();
         this.showFunds();
       }
@@ -163,10 +164,10 @@ export class DashboardComponent implements OnInit {
   closeDialog(closeId): void {
     const dialogRef = this.dialog.open(CloseModalComponent, {
       width: '500px',
-      data: { id: closeId },
+      data: { id: closeId, needUpdate: false },
     });
     dialogRef.afterClosed().subscribe((result) => {
-      if (result === true) {
+      if (result.needUpdate === true) {
         this.showRecords();
         this.showFunds();
       }
