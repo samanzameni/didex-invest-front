@@ -4,9 +4,9 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
-import { AuthService } from '../core/services';
-import { DashboardRESTService } from '../core/services/REST';
-import { CONSTANTS } from '../core/util/constants';
+import { AuthService } from '../../../core/services';
+import { DashboardRESTService } from '../../../core/services/REST';
+import { CONSTANTS } from '../../../core/util/constants';
 
 import {
   Fund,
@@ -15,10 +15,10 @@ import {
   RecordType,
   OpenInvestmentData,
   CloseInvestmentData,
-} from '../core/models';
+} from '../../../core/models';
 
-import { DashboardModalComponent } from './dashboard-modal/dashboard-modal.component';
-import { CloseModalComponent } from './close-modal/close-modal.component';
+import { DashboardModalComponent } from '../../components/dashboard-modal/dashboard-modal.component';
+import { CloseModalComponent } from '../../components/close-modal/close-modal.component';
 
 @Component({
   selector: 'app-dashboard',

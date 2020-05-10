@@ -2,8 +2,8 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { DashboardRESTService } from '../../core/services/REST';
-import { OpenInvestmentData } from '../../core/models';
+import { DashboardRESTService } from '../../../core/services/REST';
+import { OpenInvestmentData } from '../../../core/models';
 @Component({
   selector: 'app-dashboard-modal',
   templateUrl: './dashboard-modal.component.html',
