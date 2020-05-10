@@ -13,7 +13,6 @@ export class CloseModalComponent implements OnInit {
   closeDialog: CloseInvestmentData;
   errorVariable: boolean;
   amountError: boolean;
-  needUpdate: boolean;
   showError: string;
   constructor(
     public dialogRef: MatDialogRef<CloseModalComponent>,
@@ -30,10 +29,10 @@ export class CloseModalComponent implements OnInit {
     this.dialogRef.close();
   }
   closePost() {
+    this.data.needUpdate = true;
     this.closeDialog.fundId = this.data.id;
     return this.dashboardService.postClose(this.closeDialog).subscribe(
       (res: any) => {
-        this.needUpdate = true;
         this.snackBar.open(
           'You Have Successfully Confirm The Amount',
           'Success',
@@ -41,7 +40,6 @@ export class CloseModalComponent implements OnInit {
             duration: 2000,
           }
         );
-        this.dialogRef.close();
       },
       (err) => {
         const errors = err.error.errors;

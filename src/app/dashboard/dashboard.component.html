@@ -165,7 +165,7 @@
       My Investment History
     </div>
     <div class="mat-elevation-z8">
-      <ng-template >
+      <ng-template [ngIf]="isAuthorized" [ngIfElse]="notAuthorized">
         <div class="table-container">
           <table mat-table [dataSource]="dataSource">
             <ng-container matColumnDef="timeStamp">

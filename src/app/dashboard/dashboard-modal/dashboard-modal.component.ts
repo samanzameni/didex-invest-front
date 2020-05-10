@@ -14,7 +14,6 @@ export class DashboardModalComponent implements OnInit {
   dashForm: FormGroup;
   errorVariable: boolean;
   amountError: boolean;
-  needUpdate: boolean;
   showError: string;
   constructor(
     public dialogRef: MatDialogRef<DashboardModalComponent>,
@@ -43,10 +42,10 @@ export class DashboardModalComponent implements OnInit {
     });
   }
   openPost() {
+    this.data.needUpdate = true;
     this.openDialog.fundId = this.data.id;
     return this.dashboardService.postOpen(this.openDialog).subscribe(
       (res: any) => {
-        this.needUpdate = true;
         this.snackBar.open(
           'You Have Successfully Confirm The Amount',
           'Success',
@@ -54,7 +53,6 @@ export class DashboardModalComponent implements OnInit {
             duration: 2000,
           }
         );
-        this.dialogRef.close();
       },
       (err) => {
         console.log(err);
