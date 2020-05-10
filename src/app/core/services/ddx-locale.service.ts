@@ -33,6 +33,7 @@ export class LocaleService {
     const splitedMessage: string[] = messageID
       .split('.')
       .filter((part) => part.length > 0);
+    // 'dashboard.mamad..khodeti' => ['dashboard', 'mamad', 'khodeti']
 
     let decodedMessageID: {
       messageSection: string;
@@ -76,6 +77,5 @@ export class LocaleService {
       console.warn('Translation not found in', decodedMessageID.messageSection);
       return '';
     }
-    return '';
   }
 }
