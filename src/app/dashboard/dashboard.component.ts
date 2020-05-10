@@ -4,9 +4,9 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
-import { AuthService } from '@core/services';
-import { DashboardRESTService } from '@core/services/REST';
-import { CONSTANTS } from '@core/util/constants';
+import { AuthService } from '../core/services';
+import { DashboardRESTService } from '../core/services/REST';
+import { CONSTANTS } from '../core/util/constants';
 
 import {
   Fund,
@@ -15,7 +15,7 @@ import {
   RecordType,
   OpenInvestmentData,
   CloseInvestmentData,
-} from '@core/models';
+} from '../core/models';
 
 import { DashboardModalComponent } from './dashboard-modal/dashboard-modal.component';
 import { CloseModalComponent } from './close-modal/close-modal.component';
@@ -86,7 +86,6 @@ export class DashboardComponent implements OnInit {
   showFunds() {
     return this.dashboardService.getFunds().subscribe(
       (res: any) => {
-        console.log(res);
         this.funds = res;
         for (const i of this.funds) {
           this.years = Math.floor(i.duration / 365);
@@ -155,8 +154,10 @@ export class DashboardComponent implements OnInit {
       },
     });
     dialogRef.afterClosed().subscribe((result) => {
-      console.log('The dialog was closed');
-      this.showFunds();
+      if ( result === true) {
+        this.showRecords();
+        this.showFunds();
+      }
     });
   }
   closeDialog(closeId): void {
@@ -165,8 +166,10 @@ export class DashboardComponent implements OnInit {
       data: { id: closeId },
     });
     dialogRef.afterClosed().subscribe((result) => {
-      console.log('The dialog was closed');
-      this.showRecords();
+      if ( result === true) {
+        this.showRecords();
+        this.showFunds();
+      }
     });
   }
   ngOnInit() {

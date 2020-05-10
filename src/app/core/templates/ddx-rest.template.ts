@@ -1,9 +1,9 @@
 import { HttpHeaders, HttpClient, HttpRequest } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-import { StorageService } from '@core/services/ddx-storage.service';
-import { CONSTANTS } from '@core/util/constants';
-import { environment } from '@environments/environment';
+import { StorageService } from '../services';
+import { CONSTANTS } from '../util/constants';
+import { environment } from '../../../environments/environment';
 import { Injectable } from '@angular/core';
 
 @Injectable()

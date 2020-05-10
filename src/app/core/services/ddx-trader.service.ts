@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Trader, TraderStatus, TraderKycImage } from '@core/models';
+import { Trader, TraderStatus, TraderKycImage } from '../models';
 import { Observable } from 'rxjs';
 import { TraderRESTService } from './REST';
 import { tap } from 'rxjs/operators';

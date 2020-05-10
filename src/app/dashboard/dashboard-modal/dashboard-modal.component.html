@@ -41,9 +41,9 @@
       <mat-checkbox
         formControlName="check"
         style="font-size: 12px; font-weight: lighter;"
-        >I have read and I agree to
+      >I have read and I agree to
         <a class="modal-link" href=""
-          >Didex Invest Service Agreement</a
+        >Didex Invest Service Agreement</a
         ></mat-checkbox
       >
       <mat-error *ngIf="errorVariable">{{ showError }}</mat-error>
@@ -57,6 +57,7 @@
     (click)="openPost()"
     color="primary"
     style="width: 100%;"
+    [mat-dialog-close]="needUpdate" cdkFocusInitial
   >
     Confirm
   </button>

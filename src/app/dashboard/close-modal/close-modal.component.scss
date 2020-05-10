@@ -1,53 +1,53 @@
 @import '../../../styles.scss';
 
 .mat-dialog-title {
-    line-height: 50px;
-    font-family: overpass, 'Helvetica Neue', sans-serif;
-    font-size: 20px;
-    font-weight: 800;
-    border-bottom: 2px solid #00124b;
-    margin-bottom: 16px;
+  line-height: 50px;
+  font-family: overpass, 'Helvetica Neue', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  border-bottom: 2px solid #00124b;
+  margin-bottom: 16px;
 }
 
 .mat-dialog-content{
-    p {
-        font-size: 16px;
-        font-weight: 300;
-    }
+  p {
+    font-size: 16px;
+    font-weight: 300;
+  }
 }
 
 .mat-dialog-content p:nth-child(2) {
-    padding-top: 10px;
+  padding-top: 10px;
 }
 
 .mat-stroked-button,
 .mat-raised-button,
 .mat-dialog-actions div:nth-child(1) {
-    width: 100%;
+  width: 100%;
 }
 
 .mat-stroked-button {
-    border: 1px solid $ddx-yellow;
-    color: $ddx-yellow;
-    border-color: $ddx-yellow;
+  border: 1px solid $ddx-yellow;
+  color: $ddx-yellow;
+  border-color: $ddx-yellow;
 }
 
 .mat-stroked-button:not([disabled]) {
-    border-color: $ddx-yellow;
+  border-color: $ddx-yellow;
 }
 
 .mat-stroked-button:not([disabled]) {
-    border-color: $ddx-yellow;
+  border-color: $ddx-yellow;
 }
 
 .button-fonts {
-    font-size: 12px;
+  font-size: 12px;
 }
 
 #button-container {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .mat-button-wrapper #no-button-styles {
-    color: $ddx-yellow;
+  color: $ddx-yellow;
 }

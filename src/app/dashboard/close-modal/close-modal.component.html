@@ -16,7 +16,7 @@
     fxLayoutAlign="center"
     fxLayoutGap="10px"
     id="button-container"
-    >
+  >
     <div fxFlex="100">
       <button id="no-button-styles" class="button-fonts" mat-stroked-button (click)="onNoClick()">
         No, I'm Not Sure
@@ -24,9 +24,10 @@
     </div>
     <div fxFlex="100">
       <button class="button-fonts"
-        mat-raised-button
-        color="primary"
-        (click)="closePost()"
+              mat-raised-button
+              color="primary"
+              (click)="closePost()"
+              [mat-dialog-close]="needUpdate" cdkFocusInitial
       >
         Yes, I'm Sure
       </button>

@@ -62,7 +62,7 @@
                 {{ fun.minimumFund }}-{{ fun.maximumFund }}
                 <b id="fund-currency-short-name">{{
                   fun.fundCurrencyShortName
-                }}</b>
+                  }}</b>
               </div>
             </div>
             <!-- circle starts here -->
@@ -82,7 +82,7 @@
                       fun.type === fundsEnum.Fixed
                         ? 'Annualized'
                         : 'Estimated Annual'
-                    }}</span>
+                      }}</span>
                   </h2>
                   <br />
                 </div>
@@ -168,7 +168,7 @@
       My Investment History
     </div>
     <div class="mat-elevation-z8">
-      <ng-template [ngIf]="isAuthorized" [ngIfElse]="notAuthorized">
+      <ng-template >
         <div class="table-container">
           <table mat-table [dataSource]="dataSource">
             <ng-container matColumnDef="timeStamp">
@@ -219,7 +219,7 @@
                     class="close-button__icon"
                     aria-hidden="false"
                     aria-label="Example home icon"
-                    >close</mat-icon
+                  >close</mat-icon
                   >Close
                 </button>
               </td>

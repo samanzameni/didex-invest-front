@@ -3,7 +3,7 @@ import {
   AuthRESTService,
   TraderRESTService,
   DashboardRESTService,
-} from '@core/services/REST';
+} from '../services/REST';
 
 @NgModule({
   declarations: [],

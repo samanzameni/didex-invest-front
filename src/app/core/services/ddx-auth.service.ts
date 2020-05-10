@@ -6,7 +6,7 @@ import {
   AuthResetPasswordFormData,
   AuthEmailActivationData,
   AuthResetPasswordData,
-} from '@core/models';
+} from '../models';
 import { StorageService } from './ddx-storage.service';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';

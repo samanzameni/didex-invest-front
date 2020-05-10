@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AbstractRESTService } from '@core/templates';
+import { AbstractRESTService } from '../../templates';
 import { StorageService } from '../ddx-storage.service';
 import { HttpClient } from '@angular/common/http';
 import {
@@ -8,7 +8,7 @@ import {
   AuthResetPasswordFormData,
   AuthResetPasswordData,
   AuthEmailActivationData,
-} from '@core/models';
+} from '../../models';
 import { Observable } from 'rxjs';
 
 @Injectable()
