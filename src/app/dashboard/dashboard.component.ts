@@ -106,7 +106,7 @@ export class DashboardComponent implements OnInit {
         }
       },
       (err) => {
-        console.log(err);
+        // console.log(err);
       }
     );
   }
@@ -138,7 +138,7 @@ export class DashboardComponent implements OnInit {
         this.dataSource.paginator = this.paginator;
       },
       (err) => {
-        console.log(err);
+        // console.log(err);
       }
     );
   }
@@ -154,7 +154,7 @@ export class DashboardComponent implements OnInit {
       },
     });
     dialogRef.afterClosed().subscribe((result) => {
-      if ( result === true) {
+      if (result === true) {
         this.showRecords();
         this.showFunds();
       }
@@ -166,7 +166,7 @@ export class DashboardComponent implements OnInit {
       data: { id: closeId },
     });
     dialogRef.afterClosed().subscribe((result) => {
-      if ( result === true) {
+      if (result === true) {
         this.showRecords();
         this.showFunds();
       }

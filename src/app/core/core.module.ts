@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
-import { RestModule } from './modules/rest.module';
-import { AuthService, StorageService, TraderService } from './services';
+import { RESTModule } from '@core/modules/rest.module';
+import { AuthService, StorageService, TraderService } from '@core/services';
 
 @NgModule({
   declarations: [],
-  imports: [RestModule],
+  imports: [RESTModule],
   providers: [AuthService, StorageService, TraderService],
   bootstrap: [],
 })

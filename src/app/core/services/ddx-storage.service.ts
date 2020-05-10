@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { BehaviorSubject } from 'rxjs';
-import { AuthTokenData } from '../models/ddx-token-data.model';
+import { AuthTokenData } from '@core/models';
 
 @Injectable()
 export class StorageService {

@@ -57,7 +57,7 @@ export class DashboardModalComponent implements OnInit {
         this.dialogRef.close();
       },
       (err) => {
-        console.log(err);
+        // console.log(err);
         const errors = err.error.errors;
         if (errors) {
           this.showError = errors.amount;
@@ -70,6 +70,5 @@ export class DashboardModalComponent implements OnInit {
     );
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 }
