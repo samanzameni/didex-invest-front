@@ -6,8 +6,8 @@ import {DashboardComponent} from '../feature/pages/dashboard/dashboard.component
 
 const routes: Routes = [
   {
-    path: '' , component: PagesComponent , children: [
-      {path: '' , component: DashboardComponent},
+    path: '', component: PagesComponent, children: [
+      { path: '', component: DashboardComponent},
     ]
   }
 ];
