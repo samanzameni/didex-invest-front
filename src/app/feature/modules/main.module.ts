@@ -9,7 +9,8 @@ import { WidgetModule } from '@widget/widget.module';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDividerModule } from '@angular/material/divider';
-import { MatButtonModule, MatMenuModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
 
 const routes: Routes = [
   {

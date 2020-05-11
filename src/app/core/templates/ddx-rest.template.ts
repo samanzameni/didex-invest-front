@@ -3,7 +3,7 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { environment } from '@environments/environment';
 import { Observable } from 'rxjs';
 
-import { StorageService } from '@core/services';
+import { StorageService } from '@core/services/ddx-storage.service';
 import { CONSTANTS } from '@core/util/constants';
 
 @Injectable()

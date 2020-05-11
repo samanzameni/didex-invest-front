@@ -155,7 +155,7 @@ export class DashboardComponent implements OnInit {
       },
     });
     dialogRef.afterClosed().subscribe((result) => {
-      if (result.needUpdate === true) {
+      if (!!result && result.needUpdate === true) {
         this.showRecords();
         this.showFunds();
       }
@@ -167,7 +167,7 @@ export class DashboardComponent implements OnInit {
       data: { id: closeId, needUpdate: false },
     });
     dialogRef.afterClosed().subscribe((result) => {
-      if (result.needUpdate === true) {
+      if (!!result && result.needUpdate === true) {
         this.showRecords();
         this.showFunds();
       }
