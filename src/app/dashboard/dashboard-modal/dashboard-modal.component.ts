@@ -27,6 +27,7 @@ export class DashboardModalComponent implements OnInit {
       amount: null,
     };
     this.createForm();
+
   }
   createForm() {
     this.dashForm = this.formBuilder.group({

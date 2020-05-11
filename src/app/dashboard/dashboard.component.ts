@@ -29,7 +29,7 @@ export class DashboardComponent implements OnInit {
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
   ids: number[];
-
+  needUpdate: boolean;
   constructor(
     public dialog: MatDialog,
     private dashboardService: DashboardRESTService,
@@ -155,7 +155,8 @@ export class DashboardComponent implements OnInit {
       },
     });
     dialogRef.afterClosed().subscribe((result) => {
-      if ( result.needUpdate === true) {
+      console.log(result);
+      if ( result === true) {
         this.showRecords();
         this.showFunds();
       }
@@ -170,7 +171,8 @@ export class DashboardComponent implements OnInit {
       },
     });
     dialogRef.afterClosed().subscribe((result) => {
-      if ( result.needUpdate === true) {
+      console.log(result);
+      if ( result.needUpdate === true && result.needUpdate !== undefined) {
         this.showRecords();
         this.showFunds();
       }

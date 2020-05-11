@@ -24,7 +24,6 @@ export class CloseModalComponent implements OnInit {
       fundId: null,
     };
   }
-
   onNoClick(): void {
     this.dialogRef.close();
   }
