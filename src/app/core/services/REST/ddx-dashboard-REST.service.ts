@@ -1,12 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { StorageService } from '../ddx-storage.service';
-import { AbstractRESTService } from '../../templates';
-import {
-  OpenInvestmentData,
-  CloseInvestmentData,
-} from '../../models/ddx-investment-data.model';
+import { StorageService } from '@core/services/ddx-storage.service';
+import { AbstractRESTService } from '@core/templates';
+import { OpenInvestmentData, CloseInvestmentData } from '@core/models';
 
 @Injectable()
 export class DashboardRESTService extends AbstractRESTService {

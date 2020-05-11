@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
-import { AbstractRESTService } from '../../templates';
-import { StorageService } from '../ddx-storage.service';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { AbstractRESTService } from '@core/templates';
+import { StorageService } from '@core/services/ddx-storage.service';
 import {
   AuthFormData,
   AuthFormResponse,
   AuthResetPasswordFormData,
   AuthResetPasswordData,
   AuthEmailActivationData,
-} from '../../models';
-import { Observable } from 'rxjs';
+} from '@core/models';
 
 @Injectable()
 export class AuthRESTService extends AbstractRESTService {

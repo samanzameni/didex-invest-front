@@ -4,9 +4,9 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
-import { AuthService } from '../core/services';
-import { DashboardRESTService } from '../core/services/REST';
-import { CONSTANTS } from '../core/util/constants';
+import { AuthService } from '@core/services';
+import { DashboardRESTService } from '@core/services/REST';
+import { CONSTANTS } from '@core/util/constants';
 
 import {
   Fund,
@@ -15,10 +15,10 @@ import {
   RecordType,
   OpenInvestmentData,
   CloseInvestmentData,
-} from '../core/models';
+} from '../../../core/models';
 
-import { DashboardModalComponent } from './dashboard-modal/dashboard-modal.component';
-import { CloseModalComponent } from './close-modal/close-modal.component';
+import { DashboardModalComponent } from '@feature/components';
+import { CloseModalComponent } from '@feature/components';
 
 @Component({
   selector: 'app-dashboard',
@@ -106,7 +106,7 @@ export class DashboardComponent implements OnInit {
         }
       },
       (err) => {
-        console.log(err);
+        // console.log(err);
       }
     );
   }
@@ -138,7 +138,7 @@ export class DashboardComponent implements OnInit {
         this.dataSource.paginator = this.paginator;
       },
       (err) => {
-        console.log(err);
+        // console.log(err);
       }
     );
   }
@@ -155,8 +155,8 @@ export class DashboardComponent implements OnInit {
       },
     });
     dialogRef.afterClosed().subscribe((result) => {
-      console.log(result);
-      if ( result === true) {
+
+      if (!!result && result.needUpdate === true) {
         this.showRecords();
         this.showFunds();
       }
@@ -165,14 +165,11 @@ export class DashboardComponent implements OnInit {
   closeDialog(closeId): void {
     const dialogRef = this.dialog.open(CloseModalComponent, {
       width: '500px',
-      data: {
-        id: closeId ,
-        needUpdate: false,
-      },
+
+      data: { id: closeId, needUpdate: false },
     });
     dialogRef.afterClosed().subscribe((result) => {
-      console.log(result);
-      if ( result.needUpdate === true && result.needUpdate !== undefined) {
+      if (!!result && result.needUpdate === true) {
         this.showRecords();
         this.showFunds();
       }

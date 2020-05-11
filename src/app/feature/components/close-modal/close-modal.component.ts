@@ -1,8 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { DashboardRESTService } from '../../core/services/REST';
-import { CloseInvestmentData } from '../../core/models';
+import { DashboardRESTService } from '@core/services/REST';
+import { CloseInvestmentData } from '@core/models';
 
 @Component({
   selector: 'app-close-modal',
@@ -32,6 +32,7 @@ export class CloseModalComponent implements OnInit {
     this.closeDialog.fundId = this.data.id;
     return this.dashboardService.postClose(this.closeDialog).subscribe(
       (res: any) => {
+        this.dialogRef.close({ data: this.data});
         this.snackBar.open(
           'You Have Successfully Confirm The Amount',
           'Success',
@@ -41,9 +42,9 @@ export class CloseModalComponent implements OnInit {
         );
       },
       (err) => {
-        const errors = err.error.errors;
+        const errors = err.error;
         if (errors) {
-          this.showError = errors.fundId;
+          this.showError = errors.errors.fundId;
           this.amountError = true;
         } else {
           this.showError = 'Error';
@@ -52,6 +53,5 @@ export class CloseModalComponent implements OnInit {
       }
     );
   }
-  ngOnInit() {
-  }
+  ngOnInit() {}
 }

@@ -28,7 +28,10 @@
         required, interest will not be charged.
       </p>
     </div>
-    <div fxFlex="70" fxFlex.sm="100" fxFlex.xs="100">
+
+    <!-- carousel starts here -->
+
+    <div id="carousel-wrapper" fxFlex="70" fxFlex.sm="100" fxFlex.xs="100">
       <owl-carousel
         [options]="CarouselOptions"
         [items]="funds"
@@ -59,12 +62,12 @@
                 {{ fun.minimumFund }}-{{ fun.maximumFund }}
                 <b id="fund-currency-short-name">{{
                   fun.fundCurrencyShortName
-                  }}</b>
+                }}</b>
               </div>
             </div>
             <!-- circle starts here -->
             <div class="box">
-              <div class="percent">
+              <div class="progress-bar-circle">
                 <svg>
                   <circle cx="65" cy="65" r="65"></circle>
                   <circle cx="65" cy="65" r="65"></circle>
@@ -73,13 +76,14 @@
                 </svg>
                 <div class="number">
                   <h2>
-                    {{ fun.fixedInterest }}<span id="percent">%</span>
+                    {{ fun.fixedInterest
+                    }}<span id="carousel-card__percent">%</span>
                     <br />
                     <span>{{
                       fun.type === fundsEnum.Fixed
                         ? 'Annualized'
                         : 'Estimated Annual'
-                      }}</span>
+                    }}</span>
                   </h2>
                   <br />
                 </div>
@@ -216,7 +220,7 @@
                     class="close-button__icon"
                     aria-hidden="false"
                     aria-label="Example home icon"
-                  >close</mat-icon
+                    >close</mat-icon
                   >Close
                 </button>
               </td>

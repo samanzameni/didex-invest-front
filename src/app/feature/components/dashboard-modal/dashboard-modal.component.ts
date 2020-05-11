@@ -1,9 +1,11 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { DashboardRESTService } from '../../core/services/REST';
-import { OpenInvestmentData } from '../../core/models';
+
+import { DashboardRESTService } from '@core/services/REST';
+import { OpenInvestmentData } from '@core/models';
 @Component({
   selector: 'app-dashboard-modal',
   templateUrl: './dashboard-modal.component.html',
@@ -47,6 +49,7 @@ export class DashboardModalComponent implements OnInit {
     this.openDialog.fundId = this.data.id;
     return this.dashboardService.postOpen(this.openDialog).subscribe(
       (res: any) => {
+        this.dialogRef.close({ data: this.data});
         this.snackBar.open(
           'You Have Successfully Confirm The Amount',
           'Success',
@@ -56,10 +59,10 @@ export class DashboardModalComponent implements OnInit {
         );
       },
       (err) => {
-        console.log(err);
-        const errors = err.error.errors;
+         console.log(err);
+        const errors = err.error;
         if (errors) {
-          this.showError = errors.amount;
+          this.showError = errors.errors.amount;
           this.amountError = true;
         } else {
           this.showError = 'Error';
@@ -69,6 +72,5 @@ export class DashboardModalComponent implements OnInit {
     );
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 }

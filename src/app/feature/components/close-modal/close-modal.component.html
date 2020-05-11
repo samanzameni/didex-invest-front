@@ -3,8 +3,8 @@
 </h1>
 <div mat-dialog-content>
   <p>
-    Would you want to close your investment fund?<br />It cause you will lost your
-    profits which is you've earned.
+    Would you want to close your investment fund?<br />It cause you will lost
+    your profits which is you've earned.
   </p>
   <p>Are you sure to close?</p>
 </div>
@@ -18,16 +18,22 @@
     id="button-container"
   >
     <div fxFlex="100">
-      <button id="no-button-styles" class="button-fonts" mat-stroked-button (click)="onNoClick()">
+      <button
+        id="no-button-styles"
+        class="button-fonts"
+        mat-stroked-button
+        (click)="onNoClick()"
+      >
         No, I'm Not Sure
       </button>
     </div>
     <div fxFlex="100">
-      <button class="button-fonts"
-              mat-raised-button
-              color="primary"
-              (click)="closePost()"
-              [mat-dialog-close]="data" cdkFocusInitial
+      <button
+        class="button-fonts"
+        mat-raised-button
+        color="primary"
+        (click)="closePost()"
+        cdkFocusInitial
       >
         Yes, I'm Sure
       </button>

@@ -1,5 +1,10 @@
 import { Injectable } from '@angular/core';
-import { AuthRESTService } from './REST';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
+
+import * as jwtDecode from 'jwt-decode';
+
 import {
   AuthFormData,
   AuthFormResponse,
@@ -7,11 +12,8 @@ import {
   AuthEmailActivationData,
   AuthResetPasswordData,
 } from '../models';
+import { AuthRESTService } from './REST';
 import { StorageService } from './ddx-storage.service';
-import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
-import { Router } from '@angular/router';
-import * as jwtDecode from 'jwt-decode';
 import { TraderService } from './ddx-trader.service';
 
 @Injectable()

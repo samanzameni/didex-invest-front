@@ -17,7 +17,7 @@ export class ProButtonComponent {
   @Input() type: 'button' | 'submit' = 'button';
   @Input() stroked = false;
 
-  @ViewChild('theButton', { static: false }) theButton: any;
+  @ViewChild('theButton') theButton: any;
 
   constructor(private renderer: Renderer2, private el: ElementRef) {
     (el.nativeElement as HTMLElement).tabIndex = 0;

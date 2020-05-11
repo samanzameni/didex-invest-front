@@ -3,7 +3,7 @@ import {
   AuthRESTService,
   TraderRESTService,
   DashboardRESTService,
-} from '../services/REST';
+} from '@core/services/REST';
 
 @NgModule({
   declarations: [],
@@ -11,4 +11,4 @@ import {
   providers: [AuthRESTService, TraderRESTService, DashboardRESTService],
   bootstrap: [],
 })
-export class RestModule {}
+export class RESTModule {}

@@ -5,7 +5,7 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () =>
-      import('./pages/pages.module').then((m) => m.PagesModule),
+      import('@feature/modules/main.module').then((m) => m.MainModule),
   },
   { path: '**', redirectTo: '' },
 ];

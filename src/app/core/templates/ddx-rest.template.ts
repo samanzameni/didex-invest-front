@@ -1,10 +1,10 @@
-import { HttpHeaders, HttpClient, HttpRequest } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { environment } from '@environments/environment';
 import { Observable } from 'rxjs';
 
-import { StorageService } from '../services';
-import { CONSTANTS } from '../util/constants';
-import { environment } from '../../../environments/environment';
-import { Injectable } from '@angular/core';
+import { StorageService } from '@core/services/ddx-storage.service';
+import { CONSTANTS } from '@core/util/constants';
 
 @Injectable()
 export abstract class AbstractRESTService {
@@ -65,7 +65,7 @@ export abstract class AbstractRESTService {
     method: string,
     body?: object
   ): Observable<any> {
-    url = this.baseURL + url;
+    url = this.baseURL.concat(url);
     switch (method) {
       case 'GET':
         return this.http.get(url);
@@ -85,13 +85,13 @@ export abstract class AbstractRESTService {
    *
    */
   public httpGET(url: string): Observable<any> {
-    return this.http.get(this.baseURL + url, {
+    return this.http.get(this.baseURL.concat(url), {
       headers: this.getFullHeaders(),
     });
   }
   public httpPOST(url: string, body: object): Observable<any> {
-    return this.http.post(this.baseURL + url, body, {
-      headers: this.getFullHeaders() ,
+    return this.http.post(this.baseURL.concat(url), body, {
+      headers: this.getFullHeaders(),
     });
   }
 
@@ -100,7 +100,7 @@ export abstract class AbstractRESTService {
    *
    */
   public httpPOSTFormData(url: string, formData: FormData): Observable<any> {
-    return this.http.post(this.baseURL + url, formData, {
+    return this.http.post(this.baseURL.concat(url), formData, {
       headers: this.getAuthHeaders(),
     });
   }
@@ -110,7 +110,7 @@ export abstract class AbstractRESTService {
    *
    */
   public httpPUT(url: string, body: object): Observable<any> {
-    return this.http.put(this.baseURL + url, body, {
+    return this.http.put(this.baseURL.concat(url), body, {
       headers: this.getFullHeaders(),
     });
   }
@@ -120,7 +120,7 @@ export abstract class AbstractRESTService {
    *
    */
   public httpPATCH(url: string, body: object): Observable<any> {
-    return this.http.patch(this.baseURL + url, body, {
+    return this.http.patch(this.baseURL.concat(url), body, {
       headers: this.getFullHeaders(),
     });
   }
@@ -130,7 +130,7 @@ export abstract class AbstractRESTService {
    *
    */
   public httpDELETE(url: string): Observable<any> {
-    return this.http.delete(this.baseURL + url, {
+    return this.http.delete(this.baseURL.concat(url), {
       headers: this.getFullHeaders(),
     });
   }
@@ -138,7 +138,7 @@ export abstract class AbstractRESTService {
   private getFullHeaders(): HttpHeaders {
     this.userAccessToken = this.storageService.getUserAccessToken();
     const headers = new HttpHeaders({
-      Authorization: 'Bearer ' + this.userAccessToken,
+      Authorization: `Bearer ${this.userAccessToken}`,
       'Content-Type': 'application/json; charset=utf-8',
     });
     return headers;
@@ -147,7 +147,7 @@ export abstract class AbstractRESTService {
   private getAuthHeaders(): HttpHeaders {
     this.userAccessToken = this.storageService.getUserAccessToken();
     const headers = new HttpHeaders({
-      Authorization: 'Bearer ' + this.userAccessToken,
+      Authorization: `Bearer ${this.userAccessToken}`,
     });
     return headers;
   }

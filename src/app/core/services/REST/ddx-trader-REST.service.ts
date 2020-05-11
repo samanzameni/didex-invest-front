@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { AbstractRESTService } from '../../templates';
 import { Observable } from 'rxjs';
-import { Trader } from '../../models';
+import { AbstractRESTService } from '@core/templates';
+import { Trader } from '@core/models';
 
 @Injectable()
 export class TraderRESTService extends AbstractRESTService {
