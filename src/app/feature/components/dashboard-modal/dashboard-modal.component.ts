@@ -48,6 +48,7 @@ export class DashboardModalComponent implements OnInit {
     this.openDialog.fundId = this.data.id;
     return this.dashboardService.postOpen(this.openDialog).subscribe(
       (res: any) => {
+        this.dialogRef.close({ data: this.data });
         this.snackBar.open(
           'You Have Successfully Confirm The Amount',
           'Success',
@@ -55,13 +56,11 @@ export class DashboardModalComponent implements OnInit {
             duration: 2000,
           }
         );
-        this.dialogRef.close();
       },
       (err) => {
-        // console.log(err);
-        const errors = err.error.errors;
+        const errors = err.error;
         if (errors) {
-          this.showError = errors.amount;
+          this.showError = errors.errors.amount;
           this.amountError = true;
         } else {
           this.showError = 'Error';

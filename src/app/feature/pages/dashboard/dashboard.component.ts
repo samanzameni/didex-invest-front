@@ -4,9 +4,9 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
-import { AuthService } from '../../../core/services';
-import { DashboardRESTService } from '../../../core/services/REST';
-import { CONSTANTS } from '../../../core/util/constants';
+import { AuthService } from '@core/services';
+import { DashboardRESTService } from '@core/services/REST';
+import { CONSTANTS } from '@core/util/constants';
 
 import {
   Fund,
@@ -17,8 +17,8 @@ import {
   CloseInvestmentData,
 } from '../../../core/models';
 
-import { DashboardModalComponent } from '../../components/dashboard-modal/dashboard-modal.component';
-import { CloseModalComponent } from '../../components/close-modal/close-modal.component';
+import { DashboardModalComponent } from '@feature/components';
+import { CloseModalComponent } from '@feature/components';
 
 @Component({
   selector: 'app-dashboard',
@@ -29,7 +29,7 @@ export class DashboardComponent implements OnInit {
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
   ids: number[];
-
+  needUpdate: boolean;
   constructor(
     public dialog: MatDialog,
     private dashboardService: DashboardRESTService,

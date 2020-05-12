@@ -8,8 +8,6 @@ import { CONSTANTS } from '@core/util/constants';
 
 @Injectable()
 export abstract class AbstractRESTService {
-  private userAccessToken: string;
-  protected baseURL: string;
 
   constructor(
     protected storageService: StorageService,
@@ -21,6 +19,17 @@ export abstract class AbstractRESTService {
 
     this.userAccessToken = this.storageService.getUserAccessToken();
   }
+  private userAccessToken: string;
+  protected baseURL: string;
+
+  /**
+   * Sets the header with bearer token authorization appended to it.
+   *
+   */
+  /**
+   * Sends a POST request with custom headers
+   *
+   */
 
   /**
    * Sends a custom request to ANY url WITHOUT custom headers,
@@ -80,11 +89,6 @@ export abstract class AbstractRESTService {
       headers: this.getFullHeaders(),
     });
   }
-
-  /**
-   * Sends a POST request with custom headers
-   *
-   */
   public httpPOST(url: string, body: object): Observable<any> {
     return this.http.post(this.baseURL.concat(url), body, {
       headers: this.getFullHeaders(),
@@ -131,10 +135,6 @@ export abstract class AbstractRESTService {
     });
   }
 
-  /**
-   * Sets the header with bearer token authorization appended to it.
-   *
-   */
   private getFullHeaders(): HttpHeaders {
     this.userAccessToken = this.storageService.getUserAccessToken();
     const headers = new HttpHeaders({
