@@ -93,6 +93,10 @@ export class AuthService {
     this.isUserAuthorized = false;
     this.traderService.removeCurrentTrader();
     this.traderService.removeCurrentTraderImages();
-    this.router.navigateByUrl('/auth/signin');
+    this.router.navigateByUrl(
+      this.router.parseUrl(
+        '/external-redirect?redirect_url=/auth/signin&from=/invest'
+      )
+    );
   }
 }

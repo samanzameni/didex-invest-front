@@ -9,14 +9,14 @@
   <ng-container *ngSwitchCase="true">
     <dropdown-menu title="Profile" icon="person">
       <span mat-menu-item disabled class="navbar__personal-info-item"
-      >Hello, {{ personalInfo }}</span
+        >Hello, {{ personalInfo }}</span
       >
       <span
         mat-menu-item
         disabled
         class="navbar__personal-info-item blue"
         *ngIf="!!traderEmail"
-      >{{ traderEmail }}</span
+        >{{ traderEmail }}</span
       >
       <mat-divider></mat-divider>
       <!-- <a
@@ -49,12 +49,20 @@
   </ng-container>
 
   <ng-container *ngSwitchCase="false">
-    <a class="auth-button" href="/auth/signin">
+    <a
+      class="auth-button"
+      routerLink="/external-redirect"
+      [queryParams]="{ redirect_url: '/auth/signin', from: '/invest' }"
+    >
       <button mat-stroked-button>
         Sign In
       </button>
     </a>
-    <a class="auth-button" href="/auth/signup">
+    <a
+      class="auth-button"
+      routerLink="/external-redirect"
+      [queryParams]="{ redirect_url: '/auth/signup', from: '/invest' }"
+    >
       <button mat-stroked-button>
         Sign Up
       </button>
