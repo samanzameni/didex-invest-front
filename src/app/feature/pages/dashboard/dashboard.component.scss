@@ -289,6 +289,10 @@ table {
   width: 80%;
 }
 
+td.mat-cell:last-of-type {
+  padding-right: 0px;
+}
+
 /* td.mat-cell,
 td.mat-footer-cell,
 th.mat-header-cell {
@@ -394,6 +398,13 @@ th.mat-header-cell {
       margin: 0 40px;
     }
   }
+
+  ::ng-deep .owl-dot.active span {
+    border-radius: 20px !important;
+    width: 30px !important;
+    transition: width 0.5s !important;
+   }
+   
 }
 
 @media only screen and (max-width: 960px) {
