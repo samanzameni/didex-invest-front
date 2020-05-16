@@ -3,6 +3,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import {OverlayModule} from '@angular/cdk/overlay';
 
 import { AuthService } from '@core/services';
 import { DashboardRESTService } from '@core/services/REST';
@@ -20,12 +21,15 @@ import {
 import { DashboardModalComponent } from '@feature/components';
 import { CloseModalComponent } from '@feature/components';
 
+
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
+
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
   ids: number[];
@@ -83,6 +87,9 @@ export class DashboardComponent implements OnInit {
       },
     },
   };
+
+
+
   showFunds() {
     return this.dashboardService.getFunds().subscribe(
       (res: any) => {
@@ -173,8 +180,11 @@ export class DashboardComponent implements OnInit {
       }
     });
   }
+
+
   ngOnInit() {
     this.showFunds();
     this.showRecords();
   }
+
 }

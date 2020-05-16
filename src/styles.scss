@@ -148,14 +148,14 @@ input[type='number'] {
   padding: 0 0 16px !important;
 }
 
-.mat-stroked-button:not([disabled]) {
-  // border-color: #f44336;
-}
-
 .cdk-global-scrollblock {
   position: unset !important;
 }
 .mat-error {
   font-size: 12px;
   font-weight: normal;
+}
+
+.cdk-overlay-container {
+  position: absolute;
 }
