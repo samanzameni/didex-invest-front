@@ -169,7 +169,7 @@
       My Investment History
     </div>
     <div class="mat-elevation-z8">
-      <!-- <ng-template [ngIf]="isAuthorized" [ngIfElse]="notAuthorized"> -->
+      <ng-template [ngIf]="isAuthorized" [ngIfElse]="notAuthorized">
         <div class="table-container">
           <table mat-table [dataSource]="dataSource">
             <ng-container matColumnDef="timeStamp">
@@ -234,8 +234,8 @@
           class="table-footer"
           [pageSizeOptions]="paginatorSizeOptions"
         ></mat-paginator>
-      <!-- </ng-template> -->
-      <!-- <ng-template #notAuthorized>
+      </ng-template>
+      <ng-template #notAuthorized>
         <div class="auth-message-container">
           <h3>You should sign in to see your investment records</h3>
           <a
@@ -248,7 +248,7 @@
             </button>
           </a>
         </div>
-      </ng-template> -->
+      </ng-template>
     </div>
   </div>
 </div>
