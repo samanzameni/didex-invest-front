@@ -25,6 +25,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { Routes, RouterModule } from '@angular/router';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 const routes: Routes = [
   {
@@ -60,6 +61,7 @@ const routes: Routes = [
     MatExpansionModule,
     MatDividerModule,
     MatSnackBarModule,
+    DragDropModule,
   ],
   entryComponents: [DashboardModalComponent, CloseModalComponent],
 })

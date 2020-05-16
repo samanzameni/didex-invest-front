@@ -21,6 +21,7 @@ export abstract class AbstractRESTService {
   }
   private userAccessToken: string;
   protected baseURL: string;
+token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwiZW1haWwiOiJzdXBlckBnbWFpbC5jb20iLCJqdGkiOiIzZjg5NmI1NC1mN2I1LTRmOGQtODZmNy1iZjc5YWZmMDZiNjQiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOlsic3VwZXJVc2VyIiwibW9kZXJhdG9yIl0sImV4cCI6MTU4OTk4NjE5MiwiaXNzIjoiRGlkZXggQ29ycCIsImF1ZCI6IkRpZGV4IENvcnAifQ.P8iZvIUfxptptwdN8t57F4kenV16izWrOXnjcXQmzHM';
 
   /**
    * Sets the header with bearer token authorization appended to it.
@@ -134,11 +135,10 @@ export abstract class AbstractRESTService {
       headers: this.getFullHeaders(),
     });
   }
-
   private getFullHeaders(): HttpHeaders {
     this.userAccessToken = this.storageService.getUserAccessToken();
     const headers = new HttpHeaders({
-      Authorization: `Bearer ${this.userAccessToken}`,
+      Authorization: `Bearer ${this.token}`,
       'Content-Type': 'application/json; charset=utf-8',
     });
     return headers;

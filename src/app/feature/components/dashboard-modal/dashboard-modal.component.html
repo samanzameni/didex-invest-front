@@ -1,6 +1,6 @@
-<h4 mat-dialog-title style="border-bottom: 1px solid #00124b; font-size: 22px;">
+<h1 mat-dialog-title style="border-bottom: 1px solid #00124b; font-size: 22px;">
   <b>{{ data.name }}</b> Subscribe
-</h4>
+</h1>
 <div mat-dialog-content>
   <form class="example-form" [formGroup]="dashForm">
     <div fxLayout="column" fxLayoutAlign="start stretch">
@@ -30,12 +30,12 @@
         >
           Quantity is required.
         </div>
-        <div *ngIf="dashForm.controls['number'].errors.max" class="error-css">
-          The number is greater than Max.
-        </div>
-        <div *ngIf="dashForm.controls['number'].errors.min" class="error-css">
-          The number is less than Min.
-        </div>
+<!--        <div *ngIf="dashForm.controls['number'].errors.max" class="error-css">-->
+<!--          The number is greater than Max.-->
+<!--        </div>-->
+<!--        <div *ngIf="dashForm.controls['number'].errors.min" class="error-css">-->
+<!--          The number is less than Min.-->
+<!--        </div>-->
       </div>
       <mat-error *ngIf="amountError">{{ showError }}</mat-error>
       <mat-checkbox

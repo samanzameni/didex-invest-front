@@ -51,3 +51,9 @@
 .mat-button-wrapper #no-button-styles {
   color: $ddx-yellow;
 }
+.cdk-overlay-container {
+  position: sticky;
+  z-index: 1000;
+  bottom: 0;
+  top: unset;
+}
