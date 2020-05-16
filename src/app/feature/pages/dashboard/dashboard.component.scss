@@ -65,12 +65,10 @@
 }
 
 .item-carousels {
-  /* padding: 10px; */
   font-size: 12px;
-  align-content: center;
   border: 1px solid $ddx-light;
   border-radius: 8px;
-  margin: 0 5px;
+  margin: 0 10px;
 }
 
 #item-carousels-wrapper {
@@ -360,8 +358,8 @@ th.mat-header-cell {
     }
 
     .investment-header {
-      width: 90%;
-      margin: 0 auto;
+      /* width: 90%;
+      margin: 0 auto; */
       padding: 10px 0;
       flex-direction: column;
     }
@@ -389,27 +387,18 @@ th.mat-header-cell {
     }
 
     .item-carousels {
-      margin: 0 40px;
+      margin-left: 0px;
+      max-width: 320px;
     }
   }
 
-  ::ng-deep .owl-dot.active span {
-    border-radius: 20px !important;
-    width: 30px !important;
-    transition: width 0.5s !important;
-   }
    
 }
 
 @media only screen and (max-width: 960px) {
 
   .item {
-    margin: 0 auto;
     max-width: 300px;
-  }
-
-  .item-carousels {
-    margin: 0 10px;
   }
 
   .investment-header {
@@ -423,6 +412,11 @@ th.mat-header-cell {
     p {
       margin-bottom: 30px;
     }
+  }
+
+  .item-carousels {
+    margin-left: 0px;
+    max-width: 320px;
   }
 }
 

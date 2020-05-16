@@ -159,3 +159,38 @@ input[type='number'] {
 .cdk-overlay-container {
   position: absolute;
 }
+
+@media only screen and (max-width: 460px) {
+  
+  ::ng-deep .owl-stage-outer {
+    width: 450px;
+  }
+
+  ::ng-deep .owl-dot.active span {
+    border-radius: 20px !important;
+    width: 30px !important;
+    transition: width 0.5s !important;
+  }
+
+  ::ng-deep .owl-item.active {
+    max-width: 320px;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .owl-stage-outer {
+      width: 750px;
+  }
+
+  ::ng-deep .owl-dot.active span {
+    border-radius: 20px !important;
+    width: 30px !important;
+    transition: width 0.5s !important;
+  }
+
+  ::ng-deep .owl-item.active {
+    max-width: 320px;
+  }
+
+}
+

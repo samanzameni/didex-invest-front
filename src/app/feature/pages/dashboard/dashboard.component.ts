@@ -72,7 +72,7 @@ export class DashboardComponent implements OnInit {
   CarouselOptions = {
     responsive: {
       320: {
-        items: 1,
+        items: 1 ,
       },
       600: {
         items: 2,
