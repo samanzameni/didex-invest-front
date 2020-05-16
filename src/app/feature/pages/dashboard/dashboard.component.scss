@@ -68,7 +68,7 @@
   font-size: 12px;
   border: 1px solid $ddx-light;
   border-radius: 8px;
-  margin: 0 10px;
+  margin-left: 20px;
 }
 
 #item-carousels-wrapper {
@@ -416,6 +416,7 @@ th.mat-header-cell {
 
   .item-carousels {
     margin-left: 0px;
+    margin-right: 10px;
     max-width: 320px;
   }
 }
@@ -424,6 +425,12 @@ th.mat-header-cell {
 
   #carousel-wrapper {
     min-height: 478px;
+  }
+
+  .item-carousels {
+    margin-left: 0px;
+    margin-right: 20px;
+    max-width: 320px;
   }
 
 }
