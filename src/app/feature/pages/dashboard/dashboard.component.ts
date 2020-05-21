@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
@@ -33,7 +33,8 @@ export class DashboardComponent implements OnInit {
   constructor(
     public dialog: MatDialog,
     private dashboardService: DashboardRESTService,
-    private authService: AuthService
+    private authService: AuthService,
+    private changeDetectorRefs: ChangeDetectorRef
   ) {
     this.open = {
       fundId: null,
@@ -104,6 +105,7 @@ export class DashboardComponent implements OnInit {
               ? this.days + (this.days === 1 ? ' day' : ' days')
               : '';
         }
+        this.changeDetectorRefs.detectChanges();
       },
       (err) => {
         // console.log(err);
@@ -136,6 +138,7 @@ export class DashboardComponent implements OnInit {
         }
         this.dataSource.data = this.records;
         this.dataSource.paginator = this.paginator;
+        this.changeDetectorRefs.detectChanges();
       },
       (err) => {
         // console.log(err);
@@ -146,6 +149,7 @@ export class DashboardComponent implements OnInit {
     this.open.fundId = fund.id;
     const dialogRef = this.dialog.open(DashboardModalComponent, {
       width: '500px',
+      autoFocus: false,
       data: {
         id: this.open.fundId,
         min: fund.minimumFund,
@@ -155,7 +159,7 @@ export class DashboardComponent implements OnInit {
       },
     });
     dialogRef.afterClosed().subscribe((result) => {
-      if (!!result && result.needUpdate === true) {
+      if (!!result && result.data.needUpdate === true) {
         this.showRecords();
         this.showFunds();
       }
@@ -167,7 +171,7 @@ export class DashboardComponent implements OnInit {
       data: { id: closeId, needUpdate: false },
     });
     dialogRef.afterClosed().subscribe((result) => {
-      if (!!result && result.needUpdate === true) {
+      if (!!result && result.data.needUpdate === true) {
         this.showRecords();
         this.showFunds();
       }

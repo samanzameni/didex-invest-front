@@ -36,8 +36,8 @@ export class DashboardModalComponent implements OnInit {
         '',
         [
           Validators.required,
-          Validators.max(this.data.max),
-          Validators.min(this.data.min),
+          // Validators.max(this.data.max),
+          // Validators.min(this.data.min),
         ],
       ],
       check: [false, [Validators.requiredTrue]],

@@ -3,3 +3,21 @@
   font-size: 14px;
   font-weight: normal;
 }
+.mat-dialog-title {
+  line-height: 50px;
+  font-family: overpass, 'Helvetica Neue', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  border-bottom: 2px solid #00124b;
+  margin-bottom: 16px;
+}
+.mat-dialog-content{
+  p {
+    font-size: 16px;
+    font-weight: 300;
+  }
+}
+.mat-flat-button.mat-primary[disabled], .mat-flat-button.mat-accent[disabled], .mat-flat-button.mat-warn[disabled], .mat-flat-button[disabled][disabled], .mat-raised-button.mat-primary[disabled], .mat-raised-button.mat-accent[disabled], .mat-raised-button.mat-warn[disabled], .mat-raised-button[disabled][disabled], .mat-fab.mat-primary[disabled], .mat-fab.mat-accent[disabled], .mat-fab.mat-warn[disabled], .mat-fab[disabled][disabled], .mat-mini-fab.mat-primary[disabled], .mat-mini-fab.mat-accent[disabled], .mat-mini-fab.mat-warn[disabled], .mat-mini-fab[disabled][disabled]{
+  color: #f5aa288f;
+  border: 1px solid #f5aa288f;
+}
