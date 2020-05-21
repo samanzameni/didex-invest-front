@@ -77,7 +77,7 @@ body {
 }
 .mat-dialog-container {
   background-color: #0d2161;
-  padding: 0  24px 24px 24px !important;
+  padding: 0 24px 24px 24px !important;
   font-family: overpass, 'Helvetica Neue', sans-serif;
 }
 a {
@@ -151,12 +151,49 @@ input[type='number'] {
 .mat-stroked-button:not([disabled]) {
   // border-color: #f44336;
 }
+.cdk-global-scrollblock {
+  // position: unset !important;
+  position: static;
+  width: 100%;
+  overflow-y: hidden;
+}
 .mat-error {
   font-size: 12px;
   font-weight: normal;
 }
-.cdk-global-scrollblock {
-  position: static;
-  width: 100%;
-  overflow-y: hidden;
+
+.cdk-overlay-container {
+  position: absolute;
+}
+
+@media only screen and (max-width: 460px) {
+  ::ng-deep .owl-stage-outer {
+    width: 450px;
+  }
+
+  ::ng-deep .owl-dot.active span {
+    border-radius: 20px !important;
+    width: 30px !important;
+    transition: width 0.5s !important;
+  }
+
+  ::ng-deep .owl-item.active {
+    max-width: 320px;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .owl-stage-outer {
+    width: 750px;
+  }
+
+  ::ng-deep .owl-dot.active span {
+    border-radius: 20px !important;
+    width: 30px !important;
+    transition: width 0.5s !important;
+  }
+
+  ::ng-deep .owl-item.active {
+    max-width: 320px;
+  }
 }
