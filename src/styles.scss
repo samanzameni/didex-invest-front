@@ -162,8 +162,16 @@ input[type='number'] {
   font-weight: normal;
 }
 
-@media only screen and (max-width: 460px) {
+// this media query is intended for removing horizontal scrolling only
+
+@media only screen and (max-width: 400px) {
   ::ng-deep .owl-stage-outer {
+    width: 290px;
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  .owl-stage-outer {
     width: 350px;
   }
 
