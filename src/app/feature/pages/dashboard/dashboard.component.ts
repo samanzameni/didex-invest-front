@@ -29,7 +29,16 @@ import { CloseModalComponent } from '@feature/components';
 })
 export class DashboardComponent implements OnInit {
 
-  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+  private paginator: MatPaginator;
+
+  @ViewChild(MatPaginator) set matPaginator(mp: MatPaginator) {
+    this.paginator = mp;
+    this.setDataSourceAttributes();
+  }
+
+  setDataSourceAttributes() {
+    this.dataSource.paginator = this.paginator;
+  }
 
   ids: number[];
   needUpdate: boolean;
@@ -143,8 +152,8 @@ export class DashboardComponent implements OnInit {
           }
         }
         this.dataSource.data = this.records;
-        console.log(this.paginator);
-        this.dataSource.paginator = this.paginator;
+        // console.log(this.records);
+        // console.log(this.paginator);
         this.changeDetectorRefs.detectChanges();
       },
       (err) => {
@@ -190,5 +199,6 @@ export class DashboardComponent implements OnInit {
     this.showFunds();
     this.showRecords();
   }
+
 
 }
