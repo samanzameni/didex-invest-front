@@ -164,7 +164,7 @@ input[type='number'] {
 
 @media only screen and (max-width: 460px) {
   ::ng-deep .owl-stage-outer {
-    width: 450px;
+    width: 350px;
   }
 
   ::ng-deep .owl-dot.active span {
@@ -174,13 +174,13 @@ input[type='number'] {
   }
 
   ::ng-deep .owl-item.active {
-    max-width: 320px;
+    max-width: 250px;
   }
 }
 
 @media only screen and (max-width: 960px) {
   .owl-stage-outer {
-    width: 750px;
+    min-width: 290px;
   }
 
   ::ng-deep .owl-dot.active span {
