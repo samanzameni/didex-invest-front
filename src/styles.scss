@@ -152,7 +152,6 @@ input[type='number'] {
   // border-color: #f44336;
 }
 .cdk-global-scrollblock {
-  // position: unset !important;
   position: static;
   width: 100%;
   overflow-y: hidden;
@@ -162,10 +161,10 @@ input[type='number'] {
   font-weight: normal;
 }
 
-.cdk-overlay-container {
+/* .cdk-overlay-container {
   position: absolute;
 }
-
+ */
 @media only screen and (max-width: 460px) {
   ::ng-deep .owl-stage-outer {
     width: 450px;

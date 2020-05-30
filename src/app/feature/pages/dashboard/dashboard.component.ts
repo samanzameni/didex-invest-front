@@ -3,7 +3,6 @@ import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import {OverlayModule} from '@angular/cdk/overlay';
 
 import { AuthService } from '@core/services';
 import { DashboardRESTService } from '@core/services/REST';
@@ -144,6 +143,7 @@ export class DashboardComponent implements OnInit {
           }
         }
         this.dataSource.data = this.records;
+        console.log(this.paginator);
         this.dataSource.paginator = this.paginator;
         this.changeDetectorRefs.detectChanges();
       },
