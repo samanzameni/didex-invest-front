@@ -1,11 +1,12 @@
 variables:
-  RELEASE_FOLDER: "dist"
+  RELEASE_FOLDER: 'dist'
   DEPLOY_FOLDER: 'c:\sites\didex.investClient'
 
 stages:
   # - build
   # - test
   - deploy
+  # - deliver
 
 # build_job:
 #   stage: build
@@ -29,6 +30,14 @@ deploy_job:
     - npm i
     - npm run build-dev
     - xcopy  /S /Q /Y /F .\dist C:\sites\didex.investClient\
-  # dependencies:
-  #   - build_job
-  #   - test_job
+# deliver_job:
+#   stage: deliver
+#   only:
+#     - tags
+#   script:
+#     - npm i
+#     - npm run build
+#     - xcopy  /S /Q /Y /F .\dist C:\sites-prod\didex.investClient\
+# dependencies:
+#   - build_job
+#   - test_job
