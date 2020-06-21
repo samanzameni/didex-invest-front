@@ -11,7 +11,7 @@
   width: 100%;
   height: 60px;
   box-sizing: border-box;
-  padding: 5px 10px;
+  padding: 5px 15px;
 
   .link-button {
     display: none;
@@ -45,26 +45,37 @@
   }
 
   .navbar-items__container {
+    display: flex;
     align-items: center;
 
     .auth-button {
       height: max-content;
       margin: 2px;
     }
+
+    .locale-selector.mat-form-field-appearance-legacy {
+      width: 70px;
+      text-align: right;
+
+      ::ng-deep .mat-form-field-wrapper,
+      .mat-form-field-wrapper {
+        .mat-form-field-underline {
+          display: none;
+        }
+      }
+    }
   }
 }
 
-@media screen and (min-width: 640px) {
+@media screen and (min-width: $break-mobile) {
   :host {
-    padding: 5px 40px;
-
     .link-button {
       display: block;
     }
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: $break-narrow-tablet) {
   :host {
     .logo__container {
       a {

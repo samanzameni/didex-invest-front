@@ -1,9 +1,9 @@
 <div fxLayout="column" fxLayoutAlign="start">
   <div class="header">
     <h1>
-      DidEx Invest
+      {{ 'dashboard.header_content.header_title' | ddxLocale }}
     </h1>
-    <h3>The Simple Way To Earn</h3>
+    <h3>{{ 'dashboard.header_content.header_subtitle' | ddxLocale }}</h3>
   </div>
   <div
     fxLayout="row"
@@ -19,13 +19,12 @@
       fxFlex.xs="100"
       class="investment-header-content"
     >
-      <h2>Select Your</h2>
-      <h2 class="highlighted">Investment Plan</h2>
+      <h2>{{ 'dashboard.hero_content.hero_title' | ddxLocale }}</h2>
+      <h2 class="highlighted">
+        {{ 'dashboard.hero_content.hero_title_highlighted' | ddxLocale }}
+      </h2>
       <p>
-        To invest your funds in an investment plan you must have funds on the
-        main balance. Each investment plan is created for its interest and
-        duration. If you withdraw funds from the investment plan earlier than
-        required, interest will not be charged.
+        {{ 'dashboard.hero_content.hero_paragraph' | ddxLocale }}
       </p>
     </div>
 
@@ -95,7 +94,12 @@
               class="card-content-duration"
               fxLayoutAlign="center"
             >
-              <div fxFlex="30">Duration</div>
+              <div fxFlex="30">
+                {{
+                  'dashboard.carousel_content.carousel_card_duration'
+                    | ddxLocale
+                }}
+              </div>
               <div fxFlex="70">
                 {{ fun.yearsDisplay }}{{ fun.monthsDisplay
                 }}{{ fun.daysDisplay }}
@@ -103,7 +107,13 @@
             </div>
             <div fxLayout="row" fxLayoutAlign="center" class="card-content">
               <div fxFlex="80" id="plan-style">
-                <b>{{ fundsEnum[fun.type] }} Plan</b>
+                <b
+                  >{{ fundsEnum[fun.type] }}
+                  {{
+                    'dashboard.carousel_content.carousel_card_plan_type'
+                      | ddxLocale
+                  }}</b
+                >
               </div>
             </div>
             <div fxLayout="row" fxLayoutAlign="start" class="card-content">
@@ -114,7 +124,10 @@
                   class="button-carousels"
                   (click)="openDialog(fun)"
                 >
-                  Subscribe
+                  {{
+                    'dashboard.carousel_content.carousel_card_subscribe_button'
+                      | ddxLocale
+                  }}
                 </button>
               </div>
             </div>
@@ -127,7 +140,10 @@
                   >
                     <mat-expansion-panel-header>
                       <mat-panel-title>
-                        More
+                        {{
+                          'dashboard.carousel_content.expansion_panel_button_text'
+                            | ddxLocale
+                        }}
                       </mat-panel-title>
                     </mat-expansion-panel-header>
                     <div
@@ -136,7 +152,10 @@
                       fxLayoutAlign="start"
                     >
                       <div fxFlex="40">
-                        Total Supply
+                        {{
+                          'dashboard.carousel_content.expansion_panel_content_total_supply'
+                            | ddxLocale
+                        }}
                       </div>
                       <div fxFlex="60">
                         {{ fun.totalSupply }}
@@ -149,7 +168,10 @@
                       fxLayoutAlign="start"
                     >
                       <div fxFlex="40">
-                        Expiration Date
+                        {{
+                          'dashboard.carousel_content.expansion_panel_content_expiration_date'
+                            | ddxLocale
+                        }}
                       </div>
                       <div fxFlex="60">
                         {{ fun.expirationDate | date: 'mediumDate' }}
@@ -166,7 +188,7 @@
   </div>
   <div class="tableDesign">
     <div class="table-header">
-      My Investment History
+      {{ 'dashboard.table_content.table_header_text' | ddxLocale }}
     </div>
     <div class="mat-elevation-z8">
       <ng-template [ngIf]="isAuthorized" [ngIfElse]="notAuthorized">
@@ -207,7 +229,12 @@
             </ng-container>
 
             <ng-container matColumnDef="id">
-              <th mat-header-cell *matHeaderCellDef>Close Investment</th>
+              <th mat-header-cell *matHeaderCellDef>
+                {{
+                  'dashboard.table_content.table_close_investment_button_text'
+                    | ddxLocale
+                }}
+              </th>
               <td mat-cell *matCellDef="let element">
                 <button
                   class="close-button"
@@ -221,7 +248,10 @@
                     aria-hidden="false"
                     aria-label="Example home icon"
                     >close</mat-icon
-                  >Close
+                  >{{
+                    'dashboard.table_content.table_close_investment_button_text'
+                      | ddxLocale
+                  }}
                 </button>
               </td>
             </ng-container>
@@ -237,14 +267,18 @@
       </ng-template>
       <ng-template #notAuthorized>
         <div class="auth-message-container">
-          <h3>You should sign in to see your investment records</h3>
+          <h3>
+            {{ 'dashboard.table_content.not_authorized_message' | ddxLocale }}
+          </h3>
           <a
             class="auth-button"
             routerLink="/external-redirect"
             [queryParams]="{ redirect_url: '/auth/signin', from: '/invest' }"
           >
             <button mat-raised-button color="primary">
-              Sign In
+              {{
+                'dashboard.table_content.not_authorized_button_text' | ddxLocale
+              }}
             </button>
           </a>
         </div>

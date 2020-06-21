@@ -1,6 +1,18 @@
 @import '../../../../styles.scss';
 
 body {
+  .mat-select-panel {
+    &.locale-selector-panel {
+      transform: none !important;
+      margin-top: 30px !important;
+
+      .mat-option {
+        text-align: center;
+      }
+    }
+  }
+
+  .mat-select-panel,
   .mat-menu-panel {
     background: $ddx-dark-lighter;
 
@@ -30,9 +42,6 @@ body {
         display: flex;
         cursor: pointer;
         user-select: none;
-
-        font-size: 14px;
-        line-height: 14px;
 
         &:hover,
         &:active,
@@ -81,10 +90,6 @@ dropdown-menu {
       display: flex;
       align-items: center;
       justify-content: space-between;
-    }
-
-    .mat-icon {
-      // @extend .has-transition;
     }
 
     &.is-open {

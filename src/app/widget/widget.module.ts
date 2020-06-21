@@ -12,9 +12,23 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDividerModule } from '@angular/material/divider';
+import {
+  ArrangeCenterDirective,
+  ArrangeInlineDirective,
+  ArrangeInlineWrapDirective,
+  ArrangeStackDirective,
+} from './directives';
 
 @NgModule({
-  declarations: [DropdownMenuComponent, ProButtonComponent],
+  declarations: [
+    DropdownMenuComponent,
+    ProButtonComponent,
+    //
+    ArrangeCenterDirective,
+    ArrangeInlineDirective,
+    ArrangeInlineWrapDirective,
+    ArrangeStackDirective,
+  ],
   imports: [
     CommonModule,
     RouterModule,

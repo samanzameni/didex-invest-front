@@ -21,8 +21,7 @@ export class DropdownMenuComponent implements OnInit {
   @Input() caption: string;
   @Input() icon: string;
 
-  @ViewChild('theMenuTrigger')
-  theMenuTrigger: MatMenuTrigger;
+  @ViewChild('theMenuTrigger') theMenuTrigger: MatMenuTrigger;
 
   private isOpenState: boolean;
 
