@@ -1,6 +1,16 @@
 {
   "title": "Dashboard",
 
+  "navbar_content": {
+    "navbar_item_1": "Trade",
+    "navbar_item_2": "Invest"
+  },
+
+  "account_content": {
+    "account_title": "Hello,",
+    "account_signout_button": "Sign Out"
+  },
+
   "header_content": {
     "header_title": "DidEx Invest",
     "header_subtitle": "The Simple Way To Earn "
@@ -14,17 +24,38 @@
 
   "carousel_content": {
     "carousel_card_duration": "Duration",
-    "carousel_card_plan_type": "Plan",
+
+    "carousel_card_beginner_plan_type": "Beginner Plan",
+    "carousel_card_standard_plan_type": "Standard Plan",
+    "carousel_card_advanced_plan_type": "Advanced Plan",
+
+    "carousel_card_profit_type_1": "Annualized",
+    "carousel_card_profit_type_2": "Estimated Annual",
+
+    "carousel_card_plan_type_1": "Fixed Plan",
+    "carousel_card_plan_type_2": "Flexible Plan",
+
     "carousel_card_subscribe_button": "Subscribe",
+
     "expansion_panel_button_text": "More",
     "expansion_panel_content_total_supply": "Total Supply",
     "expansion_panel_content_expiration_date": "Expiration Date"
   },
 
   "table_content": {
+    "table_column_date": "Date",
+    "table_column_plan": "Plan",
+    "table_column_action": "Action",
+    "table_column_before": "Before",
+    "table_column_after": "After",
+    "table_column_sum_accrued": "Sum Accrued",
+    "table_column_close_investment": "Close Investment",
+
     "table_header_text": "My Investment History",
     "table_close_investment_button_text": "Close",
     "not_authorized_message": "You should sign in to see your investment records",
-    "not_authorized_button_text": "Sign In"
+    "not_authorized_button_text": "Sign In",
+
+    "table_paginator": "Items per page:"
   }
 }
