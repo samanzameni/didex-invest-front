@@ -90,7 +90,7 @@ export class DashboardComponent implements OnInit {
       1200: {
         items: 3,
         dots: true,
-        nav: true,
+        // nav: true,
       },
     },
   };
