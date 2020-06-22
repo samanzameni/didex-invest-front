@@ -4,13 +4,15 @@ import { environment } from '@environments/environment';
 import { Observable } from 'rxjs';
 
 import { StorageService } from '@core/services/ddx-storage.service';
+import { LocaleService } from '@core/services/ddx-locale.service';
 import { CONSTANTS } from '@core/util/constants';
 
 @Injectable()
 export abstract class AbstractRESTService {
   constructor(
     protected storageService: StorageService,
-    protected http: HttpClient
+    protected http: HttpClient,
+    protected localeService: LocaleService
   ) {
     this.baseURL = environment.production
       ? CONSTANTS.SERVER_URL
@@ -138,6 +140,7 @@ export abstract class AbstractRESTService {
     const headers = new HttpHeaders({
       Authorization: `Bearer ${this.userAccessToken}`,
       'Content-Type': 'application/json; charset=utf-8',
+      'Accept-Language': this.localeService.currentLocale,
     });
     return headers;
   }
@@ -146,6 +149,7 @@ export abstract class AbstractRESTService {
     this.userAccessToken = this.storageService.getUserAccessToken();
     const headers = new HttpHeaders({
       Authorization: `Bearer ${this.userAccessToken}`,
+      'Accept-Language': this.localeService.currentLocale,
     });
     return headers;
   }

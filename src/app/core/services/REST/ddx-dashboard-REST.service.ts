@@ -4,14 +4,16 @@ import { Observable } from 'rxjs';
 import { StorageService } from '@core/services/ddx-storage.service';
 import { AbstractRESTService } from '@core/templates';
 import { OpenInvestmentData, CloseInvestmentData } from '@core/models';
+import { LocaleService } from '../ddx-locale.service';
 
 @Injectable()
 export class DashboardRESTService extends AbstractRESTService {
   constructor(
     protected storageService: StorageService,
-    protected http: HttpClient
+    protected http: HttpClient,
+    protected localeService: LocaleService
   ) {
-    super(storageService, http);
+    super(storageService, http, localeService);
   }
 
   getFunds(): Observable<any> {

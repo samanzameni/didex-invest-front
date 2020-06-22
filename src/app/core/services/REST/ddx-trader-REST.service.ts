@@ -1,10 +1,21 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AbstractRESTService } from '@core/templates';
 import { Trader } from '@core/models';
+import { StorageService } from '../ddx-storage.service';
+import { LocaleService } from '../ddx-locale.service';
 
 @Injectable()
 export class TraderRESTService extends AbstractRESTService {
+  constructor(
+    protected storageService: StorageService,
+    protected http: HttpClient,
+    protected localeService: LocaleService
+  ) {
+    super(storageService, http, localeService);
+  }
+
   public requestGetTraderInfo(): Observable<Trader> {
     return this.httpGET('api/Trader') as Observable<Trader>;
   }
