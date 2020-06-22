@@ -36,6 +36,7 @@
         [options]="CarouselOptions"
         [items]="funds"
         [carouselClasses]="['owl-theme', 'sliding']"
+        [ngClass]="{ center_owl_items: centerCarousels }"
       >
         <div class="item" *ngFor="let fun of funds">
           <div class="item-carousels">

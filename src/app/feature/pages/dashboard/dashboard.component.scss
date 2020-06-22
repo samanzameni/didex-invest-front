@@ -399,12 +399,9 @@ th.mat-header-cell {
       max-width: 320px;
     }
   }
-
-   
 }
 
 @media only screen and (max-width: 960px) {
-
   .item {
     max-width: 300px;
   }
@@ -414,7 +411,6 @@ th.mat-header-cell {
   }
 
   .investment-header-content {
-
     margin-right: 0;
 
     p {
@@ -436,7 +432,6 @@ th.mat-header-cell {
 }
 
 @media only screen and (max-width: 1200px) {
-
   #carousel-wrapper {
     min-height: 478px;
   }
@@ -444,9 +439,8 @@ th.mat-header-cell {
   .item-carousels {
     max-width: 320px;
   }
-
 }
 
-.mat-dialog-container{
+.mat-dialog-container {
   padding: 24px;
 }
