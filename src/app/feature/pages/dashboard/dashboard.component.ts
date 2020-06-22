@@ -20,15 +20,12 @@ import {
 import { DashboardModalComponent } from '@feature/components';
 import { CloseModalComponent } from '@feature/components';
 
-
-
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
-
   private paginator: MatPaginator;
 
   @ViewChild(MatPaginator) set matPaginator(mp: MatPaginator) {
@@ -42,6 +39,7 @@ export class DashboardComponent implements OnInit {
 
   ids: number[];
   needUpdate: boolean;
+  centerCarousels: boolean;
   constructor(
     public dialog: MatDialog,
     private dashboardService: DashboardRESTService,
@@ -81,7 +79,7 @@ export class DashboardComponent implements OnInit {
   CarouselOptions = {
     responsive: {
       320: {
-        items: 1 ,
+        items: 1,
       },
       600: {
         items: 2,
@@ -97,12 +95,14 @@ export class DashboardComponent implements OnInit {
     },
   };
 
-
-
   showFunds() {
     return this.dashboardService.getFunds().subscribe(
       (res: any) => {
         this.funds = res;
+        console.log(res);
+        if (this.funds.length <= 2) {
+          this.centerCarousels = true;
+        }
         for (const i of this.funds) {
           this.years = Math.floor(i.duration / 365);
           this.months = Math.floor((i.duration % 365) / 30);
@@ -194,11 +194,8 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-
   ngOnInit() {
     this.showFunds();
     this.showRecords();
   }
-
-
 }
