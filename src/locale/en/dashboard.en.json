@@ -57,5 +57,22 @@
     "not_authorized_button_text": "Sign In",
 
     "table_paginator": "Items per page:"
+  },
+
+  "close_modal_content": {
+    "close_modal_header": "Close Investment",
+    "close_modal_message": "Would you want to close your investment fund? It cause you will lost your profits which is you've earned.",
+    "close_modal_making_sure_message": "Are you sure to close?",
+    "close_modal_button_text_1": "No, I'm Not Sure",
+    "close_modal_button_text_2": "Yes, I'm Sure"
+  },
+
+  "dashboard_modal_content": {
+    "dashboard_modal_header": "Subscribe",
+    "dashboard_modal_label": "Subscription Amount",
+    "dashboard_modal_error": "Quantity is required.",
+    "dashboard_modal_service_agreement_message_part_1": "I have read and I agree to",
+    "dashboard_modal_service_agreement_message_part_2": "Didex Invest Service Agreement",
+    "dashboard_modal_button_text": "Confirm"
   }
 }
