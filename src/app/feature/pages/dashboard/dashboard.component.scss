@@ -72,10 +72,8 @@
 }
 
 ::ng-deep .owl-item {
-  &:not(:first-child) {
-    .item-carousels {
-      margin-left: 20px;
-    }
+  .item-carousels {
+    margin-left: 20px;
   }
 }
 
