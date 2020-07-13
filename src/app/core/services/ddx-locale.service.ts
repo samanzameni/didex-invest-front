@@ -2,9 +2,10 @@ import { Injectable, ApplicationRef } from '@angular/core';
 
 import * as en_locale from '@locale/en';
 import * as cn_locale from '@locale/cn';
+import * as ru_locale from '@locale/ru';
 import { StorageService } from './ddx-storage.service';
 
-export type Locale = 'en' | 'cn';
+export type Locale = 'en' | 'cn' | 'ru';
 export type LocaleModel = {
   locale: Locale;
   caption: string;
@@ -23,6 +24,7 @@ export class LocaleService {
     this.localeModels = [
       { locale: 'en', caption: 'English' },
       { locale: 'cn', caption: '中文' },
+      { locale: 'ru', caption: 'русский' },
     ];
 
     this.changeLocale(this.storageService.getStoredLocale() || 'en');
@@ -89,11 +91,13 @@ export class LocaleService {
     }
 
     try {
-      debugger;
       let localeFile;
       switch (this.locale) {
         case 'cn':
           localeFile = cn_locale[decodedMessageID.messageSection];
+          break;
+        case 'ru':
+          localeFile = ru_locale[decodedMessageID.messageSection];
           break;
         case 'en':
         default:
