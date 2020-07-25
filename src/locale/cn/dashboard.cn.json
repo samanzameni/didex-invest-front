@@ -12,6 +12,22 @@
     "hero_paragraph": "如要进行投资，请确保您的币币账户有资金. 每个投资计划都是根据其利润及持续时间创建. 如您在约定时间前提取投资资金，将不会计算利润."
   },
 
+  "close_modal_content": {
+    "close_modal_header": "取消投资",
+    "close_modal_message": "您确定要取消投资吗？如果确定，您将失去已有收益.",
+    "close_modal_making_sure_message": "您确定要取消吗?",
+    "close_modal_button_text_1": "再考虑一下 ",
+    "close_modal_button_text_2": "确定取消"
+  },
+  "dashboard_modal_content": {
+    "dashboard_modal_header": "提交",
+    "dashboard_modal_label": "提交金额",
+    "dashboard_modal_error": "请输入金额.",
+    "dashboard_modal_service_agreement_message_part_1": "已阅读并同意",
+    "dashboard_modal_service_agreement_message_part_2": "Didex 投资服务协议",
+    "dashboard_modal_button_text": "确定"
+  },
+
   "carousel_content": {
     "carousel_card_duration": "持续时间",
     "carousel_card_plan_type": "投资计划",
