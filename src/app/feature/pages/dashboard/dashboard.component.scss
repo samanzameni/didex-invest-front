@@ -69,13 +69,12 @@
   font-size: 12px;
   border: 1px solid $ddx-light;
   border-radius: 8px;
+  max-width: 270px;
 }
 
 ::ng-deep .owl-item {
-  &:not(:first-child) {
-    .item-carousels {
-      margin-left: 20px;
-    }
+  .item-carousels {
+    margin-left: 20px;
   }
 }
 
