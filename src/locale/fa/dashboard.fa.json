@@ -1,0 +1,67 @@
+{
+  "title": "داشبورد",
+
+  "header_content": {
+    "header_title": "DidEx سرمایه‌گذاری",
+    "header_subtitle": "راهی آسان برای کسب درآمد"
+  },
+
+  "hero_content": {
+    "hero_title": "برنامه معاملاتی",
+    "hero_title_highlighted": "خود را انتخاب کنید",
+    "hero_paragraph": "برای این که منابع مالی خود را سرمایه‌گذاری کنید، باید موجودی کافی داشته باشید. هر پلن سرمایه‌گذاری یک درصد سود و مدت زمان خاص خودش را دارد. اگر زودتر از زمان گفته‌شده منابع مالی خود را از پلن سرمایه‌گذاری خارج کنید، سودی به شما تعلق نمی‌گیرد."
+  },
+
+  "carousel_content": {
+    "carousel_card_duration": "مدت زمان",
+
+    "carousel_card_beginner_plan_type": "پلن مبتدی",
+    "carousel_card_standard_plan_type": "پلن استاندارد",
+    "carousel_card_advanced_plan_type": "پلن پیشرفته",
+
+    "carousel_card_profit_type_1": "سالانه",
+    "carousel_card_profit_type_2": "Estimated Annual",
+
+    "carousel_card_plan_type_1": "پلن ثابت",
+    "carousel_card_plan_type_2": "پلن منعطف",
+
+    "carousel_card_subscribe_button": "اشتراک",
+
+    "expansion_panel_button_text": "بیشتر",
+    "expansion_panel_content_total_supply": "موجودی",
+    "expansion_panel_content_expiration_date": "تاریخ انقضا"
+  },
+
+  "table_content": {
+    "table_column_date": "تاریخ",
+    "table_column_plan": "پلن",
+    "table_column_action": "عملیات",
+    "table_column_before": "قبل",
+    "table_column_after": "بعد",
+    "table_column_sum_accrued": "جمع متعلقات",
+    "table_column_close_investment": "بستن سرمایه‌گذاری",
+
+    "table_header_text": "تاریخچه سرمایه‌گذاری‌های من",
+    "table_close_investment_button_text": "بستن",
+    "not_authorized_message": "برای دیدن تاریخچه سرمایه‌گذاری‌های خود باید وارد شوید",
+    "not_authorized_button_text": "ورود",
+
+    "table_paginator": "تعداد موارد هر صفحه"
+  },
+
+  "close_modal_content": {
+    "close_modal_header": "ابطال پس انداز",
+    "close_modal_message": " آیا می خواهید حساب پس انداز خود را ببندید ؟ این باعث می شود که سود خود را که به دست آورده اید از دست بدهید ",
+    "close_modal_making_sure_message": "آیا از بستن مطمئن هستید ؟?",
+    "close_modal_button_text_1": "خیر مطمئن نیستم",
+    "close_modal_button_text_2": "بله مطمئنم"
+  },
+  "dashboard_modal_content": {
+    "dashboard_modal_header": "افتتاح پس انداز",
+    "dashboard_modal_label": "مبلغ پس انداز",
+    "dashboard_modal_error": "مقدار لازم است.",
+    "dashboard_modal_service_agreement_message_part_1": "من مطالعه کردم و موافق هستم",
+    "dashboard_modal_service_agreement_message_part_2": "توافقنامه خدمات سرمایه گذاری در دیدکس",
+    "dashboard_modal_button_text": "تایید"
+  }
+}
