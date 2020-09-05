@@ -40,7 +40,7 @@
 .investment-header-content {
   /* padding-right: 10px; */
   min-width: 293px;
-  margin-right: 30px;
+  margin-inline-end: 30px;
 
   h2 {
     margin: auto;
@@ -74,13 +74,13 @@
 
 ::ng-deep .owl-item {
   .item-carousels {
-    margin-left: 20px;
+    margin-inline-start: 20px;
   }
 }
 
 #item-carousels-wrapper {
   border-bottom: 1px solid $ddx-light;
-  padding-left: 20px;
+  padding-inline-start: 20px;
   margin-bottom: 5px;
   line-height: 30px;
   font-size: 14px;
@@ -95,7 +95,7 @@
 }
 
 #item-carousels-inner-wrapper div:nth-child(2) {
-  text-align: right;
+  text-align: start;
 }
 
 #fund-currency-short-name {
@@ -191,7 +191,7 @@
 #carousel-card__percent {
   color: $ddx-yellow;
   font-size: 1rem;
-  text-align: right;
+  text-align: start;
 }
 
 #plan-style {
@@ -205,7 +205,7 @@
 }
 
 .card-content-duration div:nth-child(2) {
-  text-align: right;
+  text-align: start;
 }
 
 /* expansion panel starts here */
@@ -216,13 +216,12 @@
 }
 
 .mat-expansion-panel-header {
-  font-family: segoe, 'Helvetica Neue', sans-serif;
   max-width: 55px;
   margin: 0 auto;
 }
 
 .mat-expansion-panel-header-title {
-  justify-content: end;
+  justify-content: flex-end;
   padding-top: 4px;
 }
 
@@ -236,7 +235,7 @@
 
 .expansion-panel-content div:nth-child(2) {
   font-size: 12px;
-  text-align: right;
+  text-align: end;
 }
 
 /* expansion panel ends here */
@@ -251,7 +250,7 @@
 .table-header {
   border-bottom: 1px solid $ddx-light;
   padding: 25px;
-  text-align: left;
+  text-align: start;
 }
 
 .table-footer {
@@ -296,7 +295,7 @@ table {
 }
 
 td.mat-cell:last-of-type {
-  padding-right: 0px;
+  padding-inline-end: 0px;
 }
 
 .mat-icon {
@@ -341,11 +340,11 @@ td.mat-cell:last-of-type {
 }
 
 td.mat-cell {
-  text-align: left;
+  text-align: start;
 }
 
 th.mat-header-cell {
-  text-align: left;
+  text-align: start;
 }
 
 @media only screen and (max-width: 460px) {
@@ -373,7 +372,7 @@ th.mat-header-cell {
     }
 
     .investment-header-content {
-      padding-right: 0px;
+      padding-inline-end: 0px;
       margin: 30px 0;
       text-align: center;
 
@@ -395,7 +394,7 @@ th.mat-header-cell {
     }
 
     .item-carousels {
-      margin-left: 0px;
+      margin-inline-start: 0px;
       max-width: 320px;
     }
   }
@@ -411,7 +410,7 @@ th.mat-header-cell {
   }
 
   .investment-header-content {
-    margin-right: 0;
+    margin-inline-end: 0;
 
     p {
       margin-bottom: 30px;
@@ -419,8 +418,8 @@ th.mat-header-cell {
   }
 
   .item-carousels {
-    margin-left: 0px;
-    margin-right: 10px;
+    margin-inline-start: 0px;
+    margin-inline-end: 10px;
     max-width: 320px;
   }
 }

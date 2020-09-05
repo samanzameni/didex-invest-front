@@ -12,6 +12,8 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
+import { MatIconModule } from '@angular/material/icon';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 const routes: Routes = [
   {
@@ -42,6 +44,8 @@ const routes: Routes = [
     MatButtonModule,
     MatMenuModule,
     MatSelectModule,
+    MatIconModule,
+    MatExpansionModule,
   ],
 })
 export class MainModule {}

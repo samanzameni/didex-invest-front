@@ -1,7 +1,10 @@
 @import 'assets/styles/reset';
+@import 'assets/styles/kit';
 @import 'assets/styles/constants';
 @import 'assets/styles/colors';
 @import 'assets/styles/segoe';
+@import 'assets/styles/iransans';
+@import 'assets/styles/OCR-A';
 
 // @import 'https://overpass-30e2.kxcdn.com/overpass.css';
 
@@ -11,7 +14,6 @@ body {
 }
 body {
   margin: 0;
-  font-family: segoe, 'Helvetica Neue', sans-serif !important;
   background-color: #0d2161;
   color: $ddx-light;
   font-weight: lighter;
@@ -48,7 +50,7 @@ body {
 
 .owl-carousel .owl-item img {
   width: unset;
-  margin-right: 3px;
+  margin-inline-end: 3px;
 }
 
 .center_owl_items {
@@ -82,7 +84,6 @@ body {
 .mat-flat-button,
 .mat-fab,
 .mat-mini-fab {
-  font-family: segoe, 'Helvetica Neue', sans-serif !important;
 }
 .mat-table {
   background: #0d2161;
@@ -90,7 +91,6 @@ body {
 .mat-dialog-container {
   background-color: #0d2161;
   padding: 0 24px 24px 24px !important;
-  font-family: segoe, 'Helvetica Neue', sans-serif;
 }
 a {
   color: $ddx-light;
@@ -160,9 +160,6 @@ input[type='number'] {
   padding: 0 0 16px !important;
 }
 
-.mat-stroked-button:not([disabled]) {
-  // border-color: #f44336;
-}
 .cdk-global-scrollblock {
   position: static;
   width: 100%;
@@ -212,4 +209,28 @@ input[type='number'] {
   ::ng-deep .owl-item.active {
     max-width: 320px;
   }
+}
+
+////////
+
+.mat-form-field-wrapper {
+  margin-top: 0.75em;
+  margin-bottom: 0.25em;
+  padding-bottom: 0.25em;
+}
+
+.mat-error {
+  margin: 4px 0;
+}
+
+.mat-paginator-range-label {
+  direction: ltr;
+}
+
+::ng-deep .mat-select-arrow {
+  border: none;
+  background-image: url(assets/icons/icon-arrow-down.svg);
+  background-repeat: no-repeat;
+  height: 7px;
+  width: 12px;
 }

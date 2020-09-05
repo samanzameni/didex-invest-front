@@ -1,5 +1,5 @@
 <div class="logo__container">
-  <a arrangeInline href="/">
+  <a arrangeInline routerLink="/">
     <img
       src="assets/images/logo-white-symbol.svg"
       alt="didex symbol"
@@ -10,105 +10,376 @@
       id="didexLogoText"
       alt="didex text"
     />
+    <span>{{ 'navbar.trade' | ddxLocale }}</span>
   </a>
 </div>
-<div class="navbar-items__container" [ngSwitch]="isAuthorized">
-  <mat-form-field class="locale-selector">
-    <mat-select
-      disableOptionCentering
-      [value]="currentLocaleModel.locale"
-      panelClass="locale-selector-panel"
-      (valueChange)="handleLocaleChange($event)"
+
+<button (click)="toggleMenu()" class="hamburger-menu">
+  <mat-icon aria-hidden="false" aria-label="mobile menu">menu</mat-icon>
+</button>
+
+<div class="navbar-container" [ngClass]="{ show: isHamburgerMenuClicked }">
+  <div class="navbar-items__container" [ngSwitch]="isAuthorized">
+    <div
+      class="mobile-menu__container"
+      *ngIf="isHamburgerMenuClicked; else desktopMenu"
     >
-      <mat-option *ngFor="let item of availableLocales" [value]="item.locale">
-        {{ item.caption }}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
+      <div class="mobile-navbar__inner-container">
+        <a arrangeInline (click)="toggleMenu()" href="/">
+          <img
+            src="assets/images/logo-white-symbol.svg"
+            alt="didex symbol"
+            width="50px"
+          />
 
-  <ng-container *ngSwitchCase="true">
-    <!-- <dropdown-menu title="Account" icon="account_balance_wallet">
-      <a mat-menu-item routerLink="/account/funds">{{
-        'navbar.funds' | ddxLocale
-      }}</a>
-      <a mat-menu-item routerLink="/account/reports">{{
-        'navbar.reports' | ddxLocale
-      }}</a>
-    </dropdown-menu> -->
+          <span>{{ 'navbar.trade' | ddxLocale }}</span>
+        </a>
 
-    <dropdown-menu title="Profile" icon="person">
-      <span mat-menu-item disabled class="navbar__personal-info-item"
-        >{{ 'navbar.hello' | ddxLocale }}, {{ personalInfo }}</span
-      >
-      <span
-        mat-menu-item
-        disabled
-        class="navbar__personal-info-item blue"
-        *ngIf="!!traderEmail"
-        >{{ traderEmail }}</span
-      >
-      <mat-divider></mat-divider>
-      <!-- <a
-        mat-menu-item
-        routerLink="/user/settings"
-        [queryParams]="{ tab: 'general' }"
-        >{{ 'navbar.general_settings' | ddxLocale }}</a
-      >
-      <a
-        mat-menu-item
-        routerLink="/user/settings"
-        [queryParams]="{ tab: 'security' }"
-        >{{ 'navbar.security' | ddxLocale }}</a
-      >
-      <a
-        mat-menu-item
-        routerLink="/user/settings"
-        [queryParams]="{ tab: '2fa' }"
-        >{{ 'navbar.2fa' | ddxLocale }}</a
-      >
-      <a
-        mat-menu-item
-        routerLink="/user/settings"
-        [queryParams]="{ tab: 'kyc' }"
-        >{{ 'navbar.kyc' | ddxLocale }}</a
-      > -->
-      <button
-        mat-flat-button
-        color="accent"
-        class="sign-out-button"
-        (click)="requestSignOut()"
-      >
-        {{ 'navbar.sign_out' | ddxLocale }}
-      </button>
-    </dropdown-menu>
-  </ng-container>
+        <button (click)="toggleMenu()" class="hamburger-menu">
+          <mat-icon aria-hidden="false" aria-label="mobile menu">menu</mat-icon>
+        </button>
+      </div>
 
-  <ng-container *ngSwitchCase="false">
-    <a
-      class="auth-button"
-      routerLink="/external-redirect"
-      [queryParams]="{ redirect_url: '/auth/signin', from: '/invest' }"
-    >
-      <button mat-stroked-button>
-        {{ 'navbar.sign_in' | ddxLocale }}
-      </button>
-    </a>
-    <a
-      class="auth-button"
-      routerLink="/external-redirect"
-      [queryParams]="{ redirect_url: '/auth/signup', from: '/invest' }"
-    >
-      <button mat-stroked-button>
-        {{ 'navbar.sign_up' | ddxLocale }}
-      </button>
-    </a>
-  </ng-container>
+      <ng-container *ngSwitchCase="true">
+        <mat-accordion>
+          <mat-expansion-panel class="mat-elevation-z0">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <mat-icon
+                  class="mobile-menu__icon"
+                  svgIcon="product"
+                  aria-hidden="false"
+                  aria-label="product SVG icon"
+                ></mat-icon>
+                {{ 'navbar.product' | ddxLocale }}
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <a
+              (click)="toggleMenu()"
+              mat-menu-item
+              class="active expansion-panel__content"
+              routerLink="/"
+            >
+              {{ 'navbar.trade' | ddxLocale }}
+            </a>
+            <a
+              (click)="toggleMenu()"
+              mat-menu-item
+              class="expansion-panel__content"
+              href="/invest"
+              >{{ 'navbar.invest' | ddxLocale }}</a
+            >
+          </mat-expansion-panel>
+          <mat-expansion-panel class="mat-elevation-z0">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <mat-icon
+                  class="mobile-menu__icon"
+                  svgIcon="profile"
+                  aria-hidden="false"
+                  aria-label="profile SVG icon"
+                ></mat-icon>
+                {{ 'navbar.profile' | ddxLocale }}
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <span
+              mat-menu-item
+              class="expansion-panel__content navbar__personal-info-item"
+              >{{ 'navbar.hello' | ddxLocale }}, {{ personalInfo }}</span
+            >
+            <span
+              mat-menu-item
+              disabled
+              class="expansion-panel__content navbar__personal-info-item blue"
+              *ngIf="!!traderEmail"
+              >{{ traderEmail }}</span
+            >
 
-  <dropdown-menu title="Applications" icon="apps">
-    <a mat-menu-item class="active" routerLink="/">Trade</a>
-    <!-- TODO: URL -->
-    <!-- <a mat-menu-item routerLink="/">Academy</a> -->
-    <!-- TODO: URL -->
-    <a mat-menu-item href="/invest">Invest</a>
-  </dropdown-menu>
+            <a
+              (click)="toggleMenu()"
+              mat-menu-item
+              class="expansion-panel__content"
+              routerLink="/user/settings"
+              [queryParams]="{ tab: 'general' }"
+              >{{ 'navbar.general_settings' | ddxLocale }}</a
+            >
+            <a
+              (click)="toggleMenu()"
+              mat-menu-item
+              class="expansion-panel__content"
+              routerLink="/user/settings"
+              [queryParams]="{ tab: 'security' }"
+              >{{ 'navbar.security' | ddxLocale }}</a
+            >
+            <a
+              (click)="toggleMenu()"
+              mat-menu-item
+              class="expansion-panel__content"
+              routerLink="/user/settings"
+              [queryParams]="{ tab: '2fa' }"
+              >{{ 'navbar.2fa' | ddxLocale }}</a
+            >
+            <a
+              (click)="toggleMenu()"
+              mat-menu-item
+              class="expansion-panel__content"
+              routerLink="/user/settings"
+              [queryParams]="{ tab: 'kyc' }"
+              >{{ 'navbar.kyc' | ddxLocale }}</a
+            >
+          </mat-expansion-panel>
+          <mat-expansion-panel class="mat-elevation-z0">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <mat-icon
+                  class="mobile-menu__icon"
+                  svgIcon="account"
+                  aria-hidden="false"
+                  aria-label="account SVG icon"
+                ></mat-icon>
+                {{ 'navbar.account' | ddxLocale }}
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <a
+              (click)="toggleMenu()"
+              class="expansion-panel__content"
+              mat-menu-item
+              routerLink="/account/funds"
+              >{{ 'navbar.funds' | ddxLocale }}</a
+            >
+            <a
+              (click)="toggleMenu()"
+              class="expansion-panel__content"
+              mat-menu-item
+              routerLink="/account/reports"
+              >{{ 'navbar.reports' | ddxLocale }}</a
+            >
+          </mat-expansion-panel>
+          <mat-expansion-panel class="mat-elevation-z0">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <mat-icon
+                  class="mobile-menu__icon"
+                  svgIcon="locale-selector"
+                  aria-hidden="false"
+                  aria-label="locale selector SVG icon"
+                ></mat-icon>
+                {{ currentLocaleModel.caption }}
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <a
+              class="expansion-panel__content"
+              id="locale-items"
+              *ngFor="let item of availableLocales"
+              (click)="onLocaleSelection(item.locale)"
+            >
+              {{ item.caption }}
+            </a>
+          </mat-expansion-panel>
+        </mat-accordion>
+        <button
+          mat-flat-button
+          class="sign-out-button__mobile"
+          (click)="requestSignOut()"
+        >
+          <mat-icon
+            class="mobile-menu__icon expansion-panel__content"
+            id="sign-out__icon"
+            svgIcon="log-out"
+            aria-hidden="false"
+            aria-label="log out SVG icon"
+          ></mat-icon>
+          <span>{{ 'navbar.sign_out' | ddxLocale }}</span>
+        </button>
+      </ng-container>
+      <ng-container *ngSwitchCase="false">
+        <div id="auth-buttons-mobile__container">
+          <button
+            mat-stroked-button
+            class="auth-button-mobile"
+            routerLink="/external-redirect"
+            [queryParams]="{ redirect_url: '/auth/signin', from: '/trade' }"
+          >
+            {{ 'navbar.sign_in' | ddxLocale }}
+          </button>
+
+          <button
+            mat-raised-button
+            color="primary"
+            class="auth-button-mobile"
+            routerLink="/external-redirect"
+            [queryParams]="{ redirect_url: '/auth/signup', from: '/trade' }"
+          >
+            {{ 'navbar.sign_up' | ddxLocale }}
+          </button>
+        </div>
+        <mat-accordion>
+          <mat-expansion-panel class="mat-elevation-z0">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <mat-icon
+                  class="mobile-menu__icon"
+                  svgIcon="product"
+                  aria-hidden="false"
+                  aria-label="product SVG icon"
+                ></mat-icon>
+                {{ 'navbar.product' | ddxLocale }}
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <a
+              (click)="toggleMenu()"
+              mat-menu-item
+              class="active expansion-panel__content"
+              routerLink="/"
+            >
+              {{ 'navbar.trade' | ddxLocale }}
+            </a>
+            <a
+              (click)="toggleMenu()"
+              mat-menu-item
+              class="expansion-panel__content"
+              href="/invest"
+              >{{ 'navbar.invest' | ddxLocale }}</a
+            >
+          </mat-expansion-panel>
+
+          <mat-expansion-panel class="mat-elevation-z0">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <mat-icon
+                  class="mobile-menu__icon"
+                  svgIcon="locale-selector"
+                  aria-hidden="false"
+                  aria-label="locale selector SVG icon"
+                ></mat-icon>
+                {{ currentLocaleModel.caption }}
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <a
+              class="expansion-panel__content"
+              id="locale-items"
+              *ngFor="let item of availableLocales"
+              (click)="onLocaleSelection(item.locale)"
+            >
+              {{ item.caption }}
+            </a>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </ng-container>
+    </div>
+
+    <ng-template #desktopMenu>
+      <mat-form-field class="locale-selector">
+        <mat-select
+          disableOptionCentering
+          [value]="currentLocaleModel.locale"
+          panelClass="locale-selector-panel"
+          (valueChange)="handleLocaleChange($event)"
+        >
+          <mat-option
+            *ngFor="let item of availableLocales"
+            [value]="item.locale"
+          >
+            {{ item.caption }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <ng-container *ngSwitchCase="true">
+        <dropdown-menu
+          title="{{ 'navbar.account' | ddxLocale }}"
+          icon="account"
+          [hasArrow]="true"
+        >
+          <a mat-menu-item routerLink="/account/funds">{{
+            'navbar.funds' | ddxLocale
+          }}</a>
+          <a mat-menu-item routerLink="/account/reports">{{
+            'navbar.reports' | ddxLocale
+          }}</a>
+        </dropdown-menu>
+
+        <dropdown-menu
+          title="{{ 'navbar.profile' | ddxLocale }}"
+          icon="profile"
+          [hasArrow]="true"
+        >
+          <span mat-menu-item disabled class="navbar__personal-info-item"
+            >{{ 'navbar.hello' | ddxLocale }}, {{ personalInfo }}</span
+          >
+          <span
+            mat-menu-item
+            disabled
+            class="navbar__personal-info-item blue"
+            *ngIf="!!traderEmail"
+            >{{ traderEmail }}</span
+          >
+          <mat-divider></mat-divider>
+          <a
+            mat-menu-item
+            routerLink="/user/settings"
+            [queryParams]="{ tab: 'general' }"
+            >{{ 'navbar.general_settings' | ddxLocale }}</a
+          >
+          <a
+            mat-menu-item
+            routerLink="/user/settings"
+            [queryParams]="{ tab: 'security' }"
+            >{{ 'navbar.security' | ddxLocale }}</a
+          >
+          <a
+            mat-menu-item
+            routerLink="/user/settings"
+            [queryParams]="{ tab: '2fa' }"
+            >{{ 'navbar.2fa' | ddxLocale }}</a
+          >
+          <a
+            mat-menu-item
+            routerLink="/user/settings"
+            [queryParams]="{ tab: 'kyc' }"
+            >{{ 'navbar.kyc' | ddxLocale }}</a
+          >
+          <button
+            mat-flat-button
+            color="accent"
+            class="sign-out-button"
+            (click)="requestSignOut()"
+          >
+            {{ 'navbar.sign_out' | ddxLocale }}
+          </button>
+        </dropdown-menu>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="false">
+        <div id="auth-buttons__container">
+          <a
+            class="auth-button"
+            routerLink="/external-redirect"
+            [queryParams]="{ redirect_url: '/auth/signin', from: '/trade' }"
+          >
+            <button mat-stroked-button>
+              {{ 'navbar.sign_in' | ddxLocale }}
+            </button>
+          </a>
+          <a
+            class="auth-button"
+            routerLink="/external-redirect"
+            [queryParams]="{ redirect_url: '/auth/signup', from: '/trade' }"
+          >
+            <button mat-stroked-button>
+              {{ 'navbar.sign_up' | ddxLocale }}
+            </button>
+          </a>
+        </div>
+      </ng-container>
+
+      <dropdown-menu icon="desktop-menu" [hasArrow]="false">
+        <a mat-menu-item href="/">{{ 'navbar.home' | ddxLocale }}</a>
+        <a mat-menu-item href="/trade">{{ 'navbar.trade' | ddxLocale }}</a>
+        <a mat-menu-item href="/invest">{{ 'navbar.invest' | ddxLocale }}</a>
+      </dropdown-menu>
+    </ng-template>
+  </div>
 </div>

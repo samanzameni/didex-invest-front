@@ -12,6 +12,17 @@ body {
     }
   }
 
+  .icon-arrow__down {
+    position: relative; //safari support
+    // height: 7px;
+    width: 12px;
+    // margin: 0px 4px 7px 4px;
+    @extend .has-transition;
+    &.is-open {
+      transform: rotateZ(180deg);
+    }
+  }
+
   .mat-select-panel,
   .mat-menu-panel {
     background: $ddx-dark-lighter;
@@ -28,7 +39,7 @@ body {
     .mat-menu-content {
       .sign-out-button {
         margin: 5px 10px;
-        width: calc(100% - 20px);
+        width: 225px;
         height: 30px;
         line-height: 30px;
       }
@@ -68,12 +79,35 @@ dropdown-menu {
   display: flex;
 
   height: fit-content;
-  margin: 3px;
+  margin: 3px 0 3px 20px;
   box-sizing: border-box;
+
+  button {
+    div {
+      margin: 0 10px;
+      display: inline;
+      position: relative;
+    }
+  }
 
   & > button.mat-icon-button {
     &.is-open {
       color: $ddx-accent-main;
+
+      .mat-icon svg {
+        stroke: $ddx-accent-main;
+        fill: $ddx-accent-main;
+
+        path,
+        circle {
+          stroke: $ddx-accent-main;
+        }
+
+        rect {
+          stroke: $ddx-accent-main;
+          fill: $ddx-accent-main;
+        }
+      }
     }
   }
 
@@ -84,18 +118,22 @@ dropdown-menu {
     border-color: $ddx-light !important;
     background-color: $ddx-dark-main;
 
-    .mat-button-wrapper {
-      width: 100%;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    .mat-icon {
+      @extend .has-transition;
+      margin: 0 5px;
+      // vertical-align: baseline;
     }
 
     &.is-open {
       .mat-icon {
-        transform: rotateX(180deg);
+        transform: rotateZ(180deg);
       }
     }
+  }
+}
+
+@media screen and (min-width: $break-mobile) {
+  dropdown-menu {
+    margin-left: 0;
   }
 }

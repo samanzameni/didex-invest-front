@@ -1,13 +1,22 @@
 <ng-template [ngIf]="icon" [ngIfElse]="stroked">
   <button
     mat-icon-button
+    disableRipple
     [ngClass]="{ 'is-open': isOpen }"
     [matMenuTriggerFor]="theMenu"
     (menuOpened)="onMenuOpen($event)"
     (menuClosed)="onMenuClose($event)"
     #theMenuTrigger
   >
-    <mat-icon>{{ icon }}</mat-icon>
+    <mat-icon svgIcon="{{ icon }}">{{ icon }}</mat-icon>
+    <div>{{ title }}</div>
+    <ng-container *ngIf="hasArrow"
+      ><mat-icon
+        [ngClass]="{ 'is-open': isOpen }"
+        svgIcon="arrow-down"
+        class="icon-arrow__down"
+      ></mat-icon
+    ></ng-container>
   </button>
 </ng-template>
 
@@ -21,7 +30,7 @@
     #theMenuTrigger
   >
     <span matPrefix>{{ caption }}</span>
-    <mat-icon matSuffix>keyboard_arrow_down</mat-icon>
+    <mat-icon svgIcon="arrow-down" matSuffix></mat-icon>
   </button>
 </ng-template>
 
