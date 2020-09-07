@@ -1,30 +1,26 @@
-import { Component } from '@angular/core';
-import {
-  LocaleService,
-  TawkToService,
-  DirectionService,
-  Direction,
-  Locale,
-} from '@core/services';
-import { Observable } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { LocaleService, TawkToService, DirectionService } from '@core/services';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   constructor(
     private localeService: LocaleService,
     private tawkToService: TawkToService,
     private directionService: DirectionService
   ) {}
 
-  get direction$(): Observable<Direction> {
-    return this.directionService.direction$;
-  }
+  ngOnInit(): void {
+    const body = document.querySelector('body');
+    this.directionService.direction$.subscribe((dir) => {
+      body.setAttribute('dir', dir);
+    });
 
-  get locale$(): Observable<Locale> {
-    return this.localeService.locale$;
+    this.localeService.locale$.subscribe((locale) => {
+      body.classList.value = locale;
+    });
   }
 }

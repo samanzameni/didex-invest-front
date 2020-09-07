@@ -1,12 +1,13 @@
+@import '~@angular/material/theming';
+
 @import 'assets/styles/reset';
-@import 'assets/styles/kit';
-@import 'assets/styles/constants';
 @import 'assets/styles/colors';
+@import 'assets/styles/constants';
 @import 'assets/styles/segoe';
 @import 'assets/styles/iransans';
 @import 'assets/styles/OCR-A';
 
-// @import 'https://overpass-30e2.kxcdn.com/overpass.css';
+@import 'assets/styles/kit';
 
 html,
 body {
@@ -77,14 +78,6 @@ body {
   }
 }
 
-.mat-button,
-.mat-raised-button,
-.mat-icon-button,
-.mat-stroked-button,
-.mat-flat-button,
-.mat-fab,
-.mat-mini-fab {
-}
 .mat-table {
   background: #0d2161;
 }
