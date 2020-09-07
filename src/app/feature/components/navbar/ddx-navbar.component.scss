@@ -39,6 +39,10 @@
     }
   }
 
+  ::ng-deep .mat-expansion-panel-content {
+    background-color: transparent;
+  }
+
   .mat-expansion-panel-header {
     padding: 0;
 
@@ -58,7 +62,12 @@
     background: none;
   }
 
+  .mat-expansion-panel-header:not([aria-disabled='true']) {
+    background-color: transparent;
+  }
+
   .expansion-panel__content {
+    background-color: transparent;
     height: unset;
     padding: 10px 0;
     margin-inline-start: 13px;
@@ -242,6 +251,7 @@
             margin-bottom: 30px;
 
             a {
+              display: flex;
               height: 100%;
               text-decoration: none;
               color: $ddx-light;
