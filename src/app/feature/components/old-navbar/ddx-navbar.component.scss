@@ -1,0 +1,88 @@
+@import '../../../../styles.scss';
+
+:host {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: $ddx-dark-main;
+  color: white;
+
+  width: 100%;
+  height: 60px;
+  box-sizing: border-box;
+  padding: 5px 15px;
+
+  .link-button {
+    display: none;
+  }
+
+  .logo__container {
+    height: 100%;
+
+    a {
+      height: 100%;
+      text-decoration: none;
+      color: $ddx-light;
+      align-items: center;
+
+      &:active {
+        color: $ddx-light;
+      }
+
+      img {
+        height: 100%;
+        object-fit: contain;
+        margin: 0 3px;
+      }
+
+      #didexLogoText {
+        height: 35%;
+        object-fit: contain;
+        display: none;
+      }
+    }
+  }
+
+  .navbar-items__container {
+    display: flex;
+    align-items: center;
+
+    .auth-button {
+      height: max-content;
+      margin: 2px;
+    }
+
+    .locale-selector.mat-form-field-appearance-legacy {
+      width: 70px;
+      text-align: right;
+
+      ::ng-deep .mat-form-field-wrapper,
+      .mat-form-field-wrapper {
+        .mat-form-field-underline {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $break-mobile) {
+  :host {
+    .link-button {
+      display: block;
+    }
+  }
+}
+
+@media screen and (min-width: $break-narrow-tablet) {
+  :host {
+    .logo__container {
+      a {
+        #didexLogoText {
+          display: flex;
+        }
+      }
+    }
+  }
+}
