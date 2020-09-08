@@ -27,6 +27,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { Routes, RouterModule } from '@angular/router';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { WidgetModule } from '@widget/widget.module';
+import { WrongPageComponent } from '@feature/components/wrong-page/wrong-page.component';
 
 const routes: Routes = [
   {
@@ -40,6 +41,7 @@ const routes: Routes = [
     DashboardComponent,
     DashboardModalComponent,
     CloseModalComponent,
+    WrongPageComponent
   ],
   imports: [
     CommonModule,

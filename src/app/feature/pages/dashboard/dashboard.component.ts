@@ -162,6 +162,7 @@ export class DashboardComponent implements OnInit {
     );
   }
   openDialog(fund): void {
+    console.log(fund);
     this.open.fundId = fund.id;
     const dialogRef = this.dialog.open(DashboardModalComponent, {
       width: '500px',

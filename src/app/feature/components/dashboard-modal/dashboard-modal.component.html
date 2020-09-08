@@ -14,7 +14,7 @@
           [(ngModel)]="openDialog.amount"
           formControlName="number"
         />
-        <span matSuffix  >{{ data.name }}</span>
+        <span matSuffix >{{ data.name }}</span>
       </mat-form-field>
       <div
         *ngIf="
@@ -30,12 +30,12 @@
         >
           Quantity is required.
         </div>
-        <!--        <div *ngIf="dashForm.controls['number'].errors.max" class="error-css">-->
-        <!--          The number is greater than Max.-->
-        <!--        </div>-->
-        <!--        <div *ngIf="dashForm.controls['number'].errors.min" class="error-css">-->
-        <!--          The number is less than Min.-->
-        <!--        </div>-->
+                <div *ngIf="dashForm.controls['number'].errors.max" class="error-css">
+                  The number is greater than Max.
+                </div>
+                <div *ngIf="dashForm.controls['number'].errors.min" class="error-css">
+                  The number is less than Min.
+                </div>
       </div>
       <mat-error *ngIf="amountError">{{ showError }}</mat-error>
       <mat-checkbox
