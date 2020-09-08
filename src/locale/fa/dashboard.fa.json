@@ -2,7 +2,7 @@
   "title": "داشبورد",
 
   "header_content": {
-    "header_title": "DidEx سرمایه‌گذاری",
+    "header_title": "سرمایه‌گذاری دیدکس",
     "header_subtitle": "راهی آسان برای کسب درآمد"
   },
 
@@ -12,15 +12,15 @@
     "hero_paragraph": "برای این که منابع مالی خود را سرمایه‌گذاری کنید، باید موجودی کافی داشته باشید. هر پلن سرمایه‌گذاری یک درصد سود و مدت زمان خاص خودش را دارد. اگر زودتر از زمان گفته‌شده منابع مالی خود را از پلن سرمایه‌گذاری خارج کنید، سودی به شما تعلق نمی‌گیرد."
   },
 
-   "navbar_content": {
-     "navbar_item_1": "بازار حرفه ای",
-     "navbar_item_2": "سرمایه گذاری"
-   },
+  "navbar_content": {
+    "navbar_item_1": "بازار حرفه ای",
+    "navbar_item_2": "سرمایه گذاری"
+  },
 
-   "account_content": {
-     "account_title": "سلام,",
-     "account_signout_button": "خروج"
-   },
+  "account_content": {
+    "account_title": "سلام,",
+    "account_signout_button": "خروج"
+  },
 
   "carousel_content": {
     "carousel_card_duration": "مدت زمان",
@@ -75,5 +75,4 @@
     "dashboard_modal_service_agreement_message_part_2": "توافقنامه خدمات سرمایه گذاری در دیدکس",
     "dashboard_modal_button_text": "تایید"
   }
-
 }
