@@ -1,12 +1,14 @@
 <h1 mat-dialog-title>
-  <b>Close Investment</b>
+  <b>
+    {{ 'dashboard.close_modal_content.close_modal_header' | ddxLocale }}  </b>
 </h1>
 <div mat-dialog-content>
   <p>
-    Would you want to close your investment fund?<br />It cause you will lost
-    your profits which is you've earned.
+    {{ 'dashboard.close_modal_content.close_modal_message' | ddxLocale }}
   </p>
-  <p>Are you sure to close?</p>
+  <p>
+    {{ 'dashboard.close_modal_content.close_modal_making_sure_message' | ddxLocale }}
+  </p>
 </div>
 <mat-error *ngIf="amountError">{{ showError }}</mat-error>
 <mat-error *ngIf="errorVariable">{{ showError }}</mat-error>
@@ -24,7 +26,7 @@
         mat-stroked-button
         (click)="onNoClick()"
       >
-        No, I'm Not Sure
+        {{ 'dashboard.close_modal_content.close_modal_button_text_1' | ddxLocale }}
       </button>
     </div>
     <div fxFlex="100">
@@ -34,7 +36,7 @@
         color="primary"
         (click)="closePost()"
       >
-        Yes, I'm Sure
+        {{ 'dashboard.close_modal_content.close_modal_button_text_2' | ddxLocale }}
       </button>
     </div>
   </div>
