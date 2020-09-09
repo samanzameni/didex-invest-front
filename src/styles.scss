@@ -61,6 +61,7 @@ body {
   .owl-stage-outer {
     display: flex;
     justify-content: center;
+    flex-direction: column;
   }
 }
 
@@ -175,7 +176,7 @@ input[type='number'] {
 @media only screen and (max-width: 460px) {
   .owl-stage-outer {
     width: 100%;
-    max-width: 320px;
+    max-width: 310px;
     min-width: unset;
   }
 
