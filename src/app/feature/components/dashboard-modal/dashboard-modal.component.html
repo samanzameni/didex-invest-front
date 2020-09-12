@@ -33,10 +33,10 @@
           {{ 'dashboard.dashboard_modal_content.dashboard_modal_error' | ddxLocale }}
         </div>
                 <div *ngIf="dashForm.controls['number'].errors.max" class="error-css">
-                  The number is greater than Max.
+                  {{ 'dashboard.dashboard_modal_content.dashboard_modal_max_error' | ddxLocale }}
                 </div>
                 <div *ngIf="dashForm.controls['number'].errors.min" class="error-css">
-                  The number is less than Min.
+                  {{ 'dashboard.dashboard_modal_content.dashboard_modal_min_error' | ddxLocale }}
                 </div>
       </div>
       <mat-error *ngIf="amountError">{{ showError }}</mat-error>

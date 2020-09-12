@@ -71,6 +71,8 @@
     "dashboard_modal_header": "افتتاح پس انداز",
     "dashboard_modal_label": "مبلغ پس انداز",
     "dashboard_modal_error": "مقدار لازم است.",
+    "dashboard_modal_max_error": "تعداد بیشتر از Max است.",
+    "dashboard_modal_min_error": "تعداد کمتر از Min است.",
     "dashboard_modal_service_agreement_message_part_1": "من مطالعه کردم و موافق هستم",
     "dashboard_modal_service_agreement_message_part_2": "توافقنامه خدمات سرمایه گذاری در دیدکس",
     "dashboard_modal_button_text": "تایید"

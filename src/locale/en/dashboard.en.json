@@ -71,6 +71,8 @@
     "dashboard_modal_header": "Subscribe",
     "dashboard_modal_label": "Subscription Amount",
     "dashboard_modal_error": "Quantity is required.",
+    "dashboard_modal_max_error": "The number is greater than Max.",
+    "dashboard_modal_min_error": "The number is less than Min.",
     "dashboard_modal_service_agreement_message_part_1": "I have read and I agree to",
     "dashboard_modal_service_agreement_message_part_2": "Didex Invest Service Agreement",
     "dashboard_modal_button_text": "Confirm"
