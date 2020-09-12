@@ -99,32 +99,28 @@
               (click)="toggleMenu()"
               mat-menu-item
               class="expansion-panel__content"
-              routerLink="/user/settings"
-              [queryParams]="{ tab: 'general' }"
+              href="/trade/user/settings?tab=general"
               >{{ 'navbar.general_settings' | ddxLocale }}</a
             >
             <a
               (click)="toggleMenu()"
               mat-menu-item
               class="expansion-panel__content"
-              routerLink="/user/settings"
-              [queryParams]="{ tab: 'security' }"
+              href="/trade/user/settings?tab=security"
               >{{ 'navbar.security' | ddxLocale }}</a
             >
             <a
               (click)="toggleMenu()"
               mat-menu-item
               class="expansion-panel__content"
-              routerLink="/user/settings"
-              [queryParams]="{ tab: '2fa' }"
+              href="/trade/user/settings?tab=2fa"
               >{{ 'navbar.2fa' | ddxLocale }}</a
             >
             <a
               (click)="toggleMenu()"
               mat-menu-item
               class="expansion-panel__content"
-              routerLink="/user/settings"
-              [queryParams]="{ tab: 'kyc' }"
+              href="/trade/user/settings?tab=kyc"
               >{{ 'navbar.kyc' | ddxLocale }}</a
             >
           </mat-expansion-panel>
@@ -144,14 +140,14 @@
               (click)="toggleMenu()"
               class="expansion-panel__content"
               mat-menu-item
-              routerLink="/account/funds"
+              href="/trade/account/funds"
               >{{ 'navbar.funds' | ddxLocale }}</a
             >
             <a
               (click)="toggleMenu()"
               class="expansion-panel__content"
               mat-menu-item
-              routerLink="/account/reports"
+              href="/trade/account/reports"
               >{{ 'navbar.reports' | ddxLocale }}</a
             >
           </mat-expansion-panel>
@@ -231,7 +227,7 @@
               (click)="toggleMenu()"
               mat-menu-item
               class="active expansion-panel__content"
-              routerLink="/"
+              href="/trade"
             >
               {{ 'navbar.trade' | ddxLocale }}
             </a>
@@ -239,7 +235,7 @@
               (click)="toggleMenu()"
               mat-menu-item
               class="expansion-panel__content"
-              href="/invest"
+              routerLink="/"
               >{{ 'navbar.invest' | ddxLocale }}</a
             >
           </mat-expansion-panel>
@@ -293,10 +289,10 @@
           icon="account"
           [hasArrow]="true"
         >
-          <a mat-menu-item routerLink="/account/funds">{{
+          <a mat-menu-item href="/trade/account/funds">{{
             'navbar.funds' | ddxLocale
           }}</a>
-          <a mat-menu-item routerLink="/account/reports">{{
+          <a mat-menu-item href="/trade/account/reports">{{
             'navbar.reports' | ddxLocale
           }}</a>
         </dropdown-menu>
@@ -317,30 +313,18 @@
             >{{ traderEmail }}</span
           >
           <mat-divider></mat-divider>
-          <a
-            mat-menu-item
-            routerLink="/user/settings"
-            [queryParams]="{ tab: 'general' }"
-            >{{ 'navbar.general_settings' | ddxLocale }}</a
-          >
-          <a
-            mat-menu-item
-            routerLink="/user/settings"
-            [queryParams]="{ tab: 'security' }"
-            >{{ 'navbar.security' | ddxLocale }}</a
-          >
-          <a
-            mat-menu-item
-            routerLink="/user/settings"
-            [queryParams]="{ tab: '2fa' }"
-            >{{ 'navbar.2fa' | ddxLocale }}</a
-          >
-          <a
-            mat-menu-item
-            routerLink="/user/settings"
-            [queryParams]="{ tab: 'kyc' }"
-            >{{ 'navbar.kyc' | ddxLocale }}</a
-          >
+          <a mat-menu-item href="/trade/user/settings?tab=general">{{
+            'navbar.general_settings' | ddxLocale
+          }}</a>
+          <a mat-menu-item href="/trade/user/settings?tab=security">{{
+            'navbar.security' | ddxLocale
+          }}</a>
+          <a mat-menu-item href="/trade/user/settings?tab=2fa">{{
+            'navbar.2fa' | ddxLocale
+          }}</a>
+          <a mat-menu-item href="/trade/user/settings?tab=kyc">{{
+            'navbar.kyc' | ddxLocale
+          }}</a>
           <button
             mat-flat-button
             color="accent"
@@ -357,7 +341,7 @@
           <a
             class="auth-button"
             routerLink="/external-redirect"
-            [queryParams]="{ redirect_url: '/auth/signin', from: '/trade' }"
+            [queryParams]="{ redirect_url: '/auth/signin', from: '/invest' }"
           >
             <button mat-stroked-button>
               {{ 'navbar.sign_in' | ddxLocale }}
@@ -366,7 +350,7 @@
           <a
             class="auth-button"
             routerLink="/external-redirect"
-            [queryParams]="{ redirect_url: '/auth/signup', from: '/trade' }"
+            [queryParams]="{ redirect_url: '/auth/signup', from: '/invest' }"
           >
             <button mat-stroked-button>
               {{ 'navbar.sign_up' | ddxLocale }}
