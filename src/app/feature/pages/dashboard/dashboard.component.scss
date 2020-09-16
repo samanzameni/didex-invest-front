@@ -69,7 +69,7 @@
   font-size: 12px;
   border: 1px solid $ddx-light;
   border-radius: 8px;
-  max-width: 270px;
+  max-width: 95%;
 }
 
 ::ng-deep .owl-item {
@@ -94,9 +94,9 @@
   font-size: 0.75rem;
 }
 
-#item-carousels-inner-wrapper div:nth-child(2) {
-  text-align: start;
-}
+//#item-carousels-inner-wrapper div:nth-child(2) {
+//  text-align: start;
+//}
 
 #fund-currency-short-name {
   color: $ddx-yellow;
@@ -204,9 +204,9 @@
   padding: 0px 10px;
 }
 
-.card-content-duration div:nth-child(2) {
-  text-align: start;
-}
+//.card-content-duration div:nth-child(2) {
+//  text-align: start;
+//}
 
 /* expansion panel starts here */
 
@@ -443,4 +443,10 @@ th.mat-header-cell {
 
 .mat-dialog-container {
   padding: 24px;
+}
+.align-right{
+  text-align: end;
+}
+.align-left{
+  text-align: start;
 }

@@ -230,3 +230,15 @@ input[type='number'] {
   height: 7px;
   width: 12px;
 }
+::ng-deep .owl-dot.active span {
+  border-radius: 20px !important;
+  width: 30px !important;
+  transition: width 0.5s !important;
+}
+::ng-deep .owl-dots {
+  display: inline;
+  vertical-align: bottom;
+}
+::ng-deep .owl-nav {
+  display: inline;
+}
