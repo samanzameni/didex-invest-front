@@ -205,6 +205,7 @@ input[type='number'] {
   ::ng-deep .owl-item.active {
     max-width: 320px;
   }
+
 }
 
 ////////
@@ -238,7 +239,9 @@ input[type='number'] {
 ::ng-deep .owl-dots {
   display: inline;
   vertical-align: bottom;
+  margin-inline-start: -100px;
 }
 ::ng-deep .owl-nav {
   display: inline;
+  margin-inline-start: -50px;
 }

@@ -417,11 +417,19 @@ th.mat-header-cell {
       margin-bottom: 30px;
     }
   }
-
   .item-carousels {
     margin-inline-start: 0px;
     margin-inline-end: 10px;
     max-width: 320px;
+  }
+  ::ng-deep .owl-dots {
+    display: inline;
+    vertical-align: bottom;
+    margin-inline-start: 0;
+  }
+  ::ng-deep .owl-nav {
+    display: inline;
+    margin-inline-start: 0;
   }
 }
 

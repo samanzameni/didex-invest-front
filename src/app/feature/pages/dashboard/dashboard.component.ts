@@ -81,14 +81,17 @@ export class DashboardComponent implements OnInit {
     responsive: {
       320: {
         items: 1,
-        dots: false,
         nav: false,
       },
       600: {
         items: 2,
+        dots: true,
+        nav: false,
       },
       1000: {
         items: 2,
+        dots: true,
+        nav: true,
       },
       1200: {
         items: 3,
