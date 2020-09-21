@@ -77,20 +77,26 @@ export class DashboardComponent implements OnInit {
   days: any;
 
   CarouselOptions = {
-    nav: true,
+
     responsive: {
       320: {
         items: 1,
+        nav: false,
       },
       600: {
         items: 2,
+        dots: true,
+        nav: false,
       },
       1000: {
         items: 2,
+        dots: true,
+        nav: true,
       },
       1200: {
         items: 3,
         dots: true,
+        nav: true,
       },
     },
   };
