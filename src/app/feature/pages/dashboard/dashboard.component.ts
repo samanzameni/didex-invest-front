@@ -77,7 +77,6 @@ export class DashboardComponent implements OnInit {
   days: any;
 
   CarouselOptions = {
-
     responsive: {
       320: {
         items: 1,
@@ -105,7 +104,6 @@ export class DashboardComponent implements OnInit {
     return this.dashboardService.getFunds().subscribe(
       (res: any) => {
         this.funds = res;
-        console.log(res);
         if (this.funds.length <= 2) {
           this.centerCarousels = true;
         }
@@ -128,9 +126,7 @@ export class DashboardComponent implements OnInit {
         }
         this.changeDetectorRefs.detectChanges();
       },
-      (err) => {
-        // console.log(err);
-      }
+      (err) => {}
     );
   }
 
@@ -158,17 +154,12 @@ export class DashboardComponent implements OnInit {
           }
         }
         this.dataSource.data = this.records;
-        // console.log(this.records);
-        // console.log(this.paginator);
         this.changeDetectorRefs.detectChanges();
       },
-      (err) => {
-        // console.log(err);
-      }
+      (err) => {}
     );
   }
   openDialog(fund): void {
-    console.log(fund);
     this.open.fundId = fund.id;
     const dialogRef = this.dialog.open(DashboardModalComponent, {
       width: '500px',

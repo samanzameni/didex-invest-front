@@ -1,13 +1,12 @@
+@import './styles/reset';
+
 @import '~@angular/material/theming';
+$mat-theme-ignore-duplication-warnings: true;
 
-@import 'assets/styles/reset';
-@import 'assets/styles/colors';
-@import 'assets/styles/constants';
-@import 'assets/styles/segoe';
-@import 'assets/styles/iransans';
-@import 'assets/styles/OCR-A';
+@import './styles/colors';
+@import './styles/constants';
 
-@import 'assets/styles/kit';
+@import './styles/kit';
 
 html,
 body {
@@ -205,7 +204,6 @@ input[type='number'] {
   ::ng-deep .owl-item.active {
     max-width: 320px;
   }
-
 }
 
 ////////
