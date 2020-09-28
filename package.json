@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --aot --port 4002 --host 0.0.0.0",
+    "start": "ng serve --aot --port 4002",
     "build": "ng build --prod --base-href /invest/ --deploy-url /invest/",
     "build-dev": "ng build --base-href /invest/ --deploy-url /invest/",
     "test": "ng test",
