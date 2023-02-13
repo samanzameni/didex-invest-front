@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { DropdownMenuComponent, ProButtonComponent } from '@widget/components';
+import {DropdownMenuComponent, ExternalUrlRedirectorComponent, ProButtonComponent} from '@widget/components';
 
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
@@ -23,6 +23,7 @@ import {
   declarations: [
     DropdownMenuComponent,
     ProButtonComponent,
+    ExternalUrlRedirectorComponent,
     //
     ArrangeCenterDirective,
     ArrangeInlineDirective,
@@ -44,6 +45,6 @@ import {
     MatSelectModule,
     MatDividerModule,
   ],
-  exports: [DropdownMenuComponent, ProButtonComponent],
+  exports: [DropdownMenuComponent, ProButtonComponent, ExternalUrlRedirectorComponent],
 })
 export class WidgetModule {}
